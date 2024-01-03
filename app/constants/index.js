@@ -1,11 +1,23 @@
 import {
-  softwareDevelopment,
   foodComet,
   Representations,
   Layer,
   BlogImage,
   Developer,
   CreativeIcon,
+  SoftwareIcon,
+  DigitalIcon,
+  ASOIcon,
+  UIIcon,
+  AIIcon,
+  Software_white,
+  CreativeWhite,
+  AIWhite,
+  ASOWhite,
+  DigitalWhite,
+  UIWhite,
+  KidQuiz,
+  DetectifyX,
 } from "../assets";
 
 export const navLinks = [
@@ -22,52 +34,62 @@ export const navLinks = [
     id: "ourClient",
     title: "Our Client",
   },
-  {
-    id: "projects",
-    title: "Projects",
-  },
+  // {
+  //   id: "projects",
+  //   title: "Projects",
+  // },
   {
     id: "blog",
     title: "Blog",
   },
-  {
-    id: "ourteam",
-    title: "Our Team",
-  },
+  // {
+  //   id: "ourteam",
+  //   title: "Our Team",
+  // },
 ];
 
 const services = [
   {
     title: "Software Development",
-    description: "We develop cross platform mobile apps using latest techs.",
-    icon: softwareDevelopment,
+    description:
+      "Turning ideas into powerful code for various platforms, iOS, Android, React, React Native and modern techs.",
+    icon: SoftwareIcon,
+    whiteIcon: Software_white,
   },
   {
     title: "Creative Designs",
-    description: "We help business by creating logo & and your brand identity.",
+    description:
+      "Our UI/UX mastery brings aesthetics and functionality together, shaping memorable digital experiences.",
     icon: CreativeIcon,
+    whiteIcon: CreativeWhite,
   },
   {
     title: "Digital Marketing",
-    description: "We help your business to stand out to your targeted audience.",
-    icon: softwareDevelopment,
+    description:
+      "Strategic digital marketing for real-world results with 10+ years of hands-on experience.",
+    icon: DigitalIcon,
+    whiteIcon: DigitalWhite,
   },
   {
     title: "ASO Expertise",
     description:
       "We provide App Store Optimization to greater visibility of your app in playstore/appstore.",
-    icon: softwareDevelopment,
+    icon: ASOIcon,
+    whiteIcon: ASOWhite,
   },
   {
     title: "UI/UX Design",
-    description: "We use figma to create robust UI/UX design for your project.",
-    icon: softwareDevelopment,
+    description:
+      "Designing interfaces that tell your brand story beautifully with Figma, Adobe, AE & more.",
+    icon: UIIcon,
+    whiteIcon: UIWhite,
   },
   {
     title: "AI/ML",
     description:
       "We are open to accept challenges to solve modern world problems using Artificial Intelligence. ",
-    icon: softwareDevelopment,
+    icon: AIIcon,
+    whiteIcon: AIWhite,
   },
 ];
 
@@ -78,39 +100,14 @@ const ourClient = [
     id: 1,
   },
   {
-    title: "Food Comet",
-    icon: foodComet,
+    title: "KidsQuiz",
+    icon: KidQuiz,
     id: 2,
   },
   {
-    title: "Food Comet",
-    icon: foodComet,
+    title: "DetectifyX",
+    icon: DetectifyX,
     id: 3,
-  },
-  {
-    title: "Food Comet",
-    icon: foodComet,
-    id: 4,
-  },
-  {
-    title: "Food Comet",
-    icon: foodComet,
-    id: 5,
-  },
-  {
-    title: "Food Comet",
-    icon: foodComet,
-    id: 6,
-  },
-  {
-    title: "Food Comet",
-    icon: foodComet,
-    id: 7,
-  },
-  {
-    title: "Food Comet",
-    icon: foodComet,
-    id: 8,
   },
 ];
 const ourProjects = [
@@ -135,46 +132,32 @@ const ourProjects = [
 ];
 const testiMonial = [
   {
-    name: "SHADAB KHAN",
+    name: "Sarah Thompson",
     icon: Layer,
     id: 1,
     description:
-      "“That will need careful attention To begin to identify aspects of students’ own portfolios To identify key portfolio features, varied styles, and organizational schemes.”",
+      "“Erex Studio exceeded our expectations! Their software solutions transformed our operations. Kudos to the talented team!”",
   },
   {
-    name: "MITHUN GORAI",
+    name: "Alex Rodriguez",
     icon: Layer,
     id: 2,
     description:
-      "“That will need careful attention To begin to identify aspects of students’ own portfolios To identify key portfolio features, varied styles, and organizational schemes.”",
+      "“Working with Erex Studio was a game-changer for our brand. Their design prowess brought our vision to life!”",
   },
   {
-    name: "GURU KARMAKAR",
+    name: "David Miller",
     icon: Layer,
     id: 3,
     description:
-      "“That will need careful attention To begin to identify aspects of students’ own portfolios To identify key portfolio features, varied styles, and organizational schemes.”",
+      "“Erex Studio's web development team delivered a site that reflects our brand perfectly!”",
   },
   {
-    name: "UDAY KUMAR",
+    name: "Rachel Carter",
     icon: Layer,
     id: 4,
     description:
-      "“That will need careful attention To begin to identify aspects of students’ own portfolios To identify key portfolio features, varied styles, and organizational schemes.”",
-  },
-  {
-    name: "NAYAN DEY",
-    icon: Layer,
-    id: 5,
-    description:
-      "“That will need careful attention To begin to identify aspects of students’ own portfolios To identify key portfolio features, varied styles, and organizational schemes.”",
-  },
-  {
-    name: "RAMESH GORAI",
-    icon: Layer,
-    id: 6,
-    description:
-      "“That will need careful attention To begin to identify aspects of students’ own portfolios To identify key portfolio features, varied styles, and organizational schemes.”",
+      "“Digital marketing brilliance! Erex Studio's strategies increased our online presence, driving significant growth!”",
   },
 ];
 const ourBlog = [

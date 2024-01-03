@@ -67,11 +67,11 @@ export default function Slick({}) {
             <div key={item.id}>
               <div className="flex flex-col items-center justify-center px-3">
                 <div className="px-4 py-4 bg-lightwhite">
-                  <p className="italic leading-6 text-secondary text-left text-[14px] lg:text-[12px] xl:text-[14px] font-poppins">
+                  <p className="italic leading-6 text-secondary text-left text-[14px] lg:text-[12px] xl:text-[14px] font-poppins line-clamp-3">
                     {item.description}
                   </p>
                   <div className="flex items-center justify-between w-full">
-                    <span className="flex items-center gap-3 lg:gap-2 lg:text-[12px] xl:text-[16px] text-primary">
+                    <span className="flex items-center gap-3 lg:gap-2 lg:text-[12px] xl:text-[16px] text-primary uppercase">
                       {/* <BsDashLg /> */}
                       {/* <BsDashLg /> */}
                       <TfiLineDashed size={30} />

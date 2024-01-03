@@ -12,6 +12,19 @@ import Representations from "./background/representations.png";
 import BlogImage from "./background/image2.png";
 import Developer from "./background/Developer.jpg";
 import CreativeIcon from "./svg/CreativeIcon.svg";
+import SoftwareIcon from "./svg/SoftwareIcon.svg";
+import DigitalIcon from "./svg/DigitalIcon.svg";
+import ASOIcon from "./svg/ASOIcon.svg";
+import UIIcon from "./svg/UIIcon.svg";
+import AIIcon from "./svg/AIIcon.svg";
+import Software_white from "./svg/Software_white.svg";
+import CreativeWhite from "./svg/CreativeWhite.svg";
+import AIWhite from "./svg/AIWhite.svg";
+import ASOWhite from "./svg/ASOWhite.svg";
+import DigitalWhite from "./svg/DigitalWhite.svg";
+import UIWhite from "./svg/UIWhite.svg";
+import KidQuiz from "./client/KidQuiz.png";
+import DetectifyX from "./client/DetectifyX.png";
 
 export {
   erexLogo,
@@ -28,4 +41,17 @@ export {
   BlogImage,
   Developer,
   CreativeIcon,
+  SoftwareIcon,
+  DigitalIcon,
+  ASOIcon,
+  UIIcon,
+  AIIcon,
+  Software_white,
+  CreativeWhite,
+  AIWhite,
+  ASOWhite,
+  DigitalWhite,
+  UIWhite,
+  KidQuiz,
+  DetectifyX,
 };

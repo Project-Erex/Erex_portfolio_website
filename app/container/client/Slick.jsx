@@ -60,8 +60,12 @@ export default function Slick({}) {
       <Slider ref={slider} {...settings}>
         {ourClient.map((client, index) => (
           <div key={client.id}>
-            <div className="flex items-center justify-center px-8 py-6 border-r-2 border-watermark">
-              <Image src={client.icon} alt={client.title} />
+            <div className="group flex items-center justify-center px-8  border-r-2 border-watermark">
+              <Image
+                src={client.icon}
+                alt={client.title}
+                className="transition-all duration-500 ease-in-out group-hover:scale-110 w-36  h-auto"
+              />
             </div>
           </div>
         ))}

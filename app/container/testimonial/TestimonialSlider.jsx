@@ -20,7 +20,7 @@ export default function Slick({}) {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     responsive: [
       {
         breakpoint: 1024,
@@ -66,12 +66,12 @@ export default function Slick({}) {
           return (
             <div key={item.id}>
               <div className="flex flex-col items-center justify-center px-3">
-                <div className="px-4 py-4 bg-lightwhite">
-                  <p className="italic leading-6 text-secondary text-left text-[14px] lg:text-[12px] xl:text-[14px] font-poppins line-clamp-3">
+                <div className="px-4 py-4 bg-lightwhite min-h-[200px] md:min-h-[180px] flex flex-col  justify-center">
+                  <p className="italic font-medium leading-5 md:leading-6 text-heading text-left text-[12px] lg:text-[12px] xl:text-[14px] font-poppins">
                     {item.description}
                   </p>
-                  <div className="flex items-center justify-between w-full">
-                    <span className="flex items-center gap-3 lg:gap-2 lg:text-[12px] xl:text-[16px] text-primary uppercase">
+                  <div className="flex items-center justify-between w-full mt-3">
+                    <span className="flex items-center gap-3 lg:gap-2 lg:text-[12px] xl:text-[16px] text-primary uppercase font-poppins font-semibold">
                       {/* <BsDashLg /> */}
                       {/* <BsDashLg /> */}
                       <TfiLineDashed size={30} />

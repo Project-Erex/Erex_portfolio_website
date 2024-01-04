@@ -23,8 +23,8 @@ const Navbar = () => {
 
   return (
     <nav
-      className={` w-screen flex items-center justify-center   border-b-2  bg-background border-watermark    fixed 
-          top-0 z-[999] sm:opacity-[0.97] md:py-5 `}>
+      className={` w-full flex items-center justify-center border-b-2  bg-background border-watermark fixed py-2
+          top-0 z-[999] md:py-4 `}>
       <div className={`${styles.xPadding}  w-full flex justify-between  items-center`}>
         <a
           href="/"
@@ -36,7 +36,7 @@ const Navbar = () => {
           <Image
             src={erexLogo}
             alt="logo"
-            className="sm:w-[85px]  sm:h-auto w-[54px]  mb-4  h-[54px] object-contain"
+            className="sm:w-[110px]  sm:h-auto w-[80px]  h-[54px] object-contain"
           />
         </a>
         <ul className="flex-row hidden gap-6 list-none lg:gap-10 xl:gap-16 md:flex">
@@ -46,26 +46,34 @@ const Navbar = () => {
               className={`${
                 active === nav.title ? "text-heading" : "text-heading"
               } hover:text-primary text-[16px] lg:text-[18px] font-regular 
-        font-federo
-                      cursor-pointer nav-links`}
+        font-federo cursor-pointer nav-links pt-2`}
               onClick={() => handleNavLinkClick(nav.id)}>
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+          {/* <button className="hidden px-6 py-2 font-federo bg-primary hover:bg-blend-darken md:block">
+            Contact Us
+          </button> */}
+          <a className="leading-loose" href="#contact">
+            <button class="relative flex h-[44px] w-32 items-center justify-center overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
+              <span class="relative z-10 font-federo text-[16px]">Contact Us</span>
+            </button>
+          </a>
         </ul>
 
-        <button className="hidden px-6 py-2 font-federo bg-primary hover:bg-blend-darken md:block">
-          Contact Us
-        </button>
-
         {/* mobile */}
-        <div className="flex items-center justify-end flex-1 w-screen md:hidden">
+        <div className="flex items-center justify-end flex-1 w-screen md:hidden ">
           {toggle ? (
             <div
-              className={`p-6 bg-background opacity-[0.98] absolute 
+              className={` py-2 bg-background  absolute 
                     top-0 left-0 w-screen h-screen
                      z-10 menu ${toggle ? "menu-open" : "menu-close"}`}>
-              <div className="flex justify-end">
+              <div className="flex px-6 pb-2 justify-between w-full items-center border-b-2 border-watermark">
+                <Image
+                  src={erexLogo}
+                  alt="logo"
+                  className="sm:w-[85px]  sm:h-auto w-[80px]  h-[54px] object-contain"
+                />
                 <Image
                   src={close}
                   alt="close"
@@ -74,21 +82,30 @@ const Navbar = () => {
                 />
               </div>
               <ul
-                className="list-none flex flex-col -gap-[1rem] 
-                    items-start justify-center ">
+                className="list-none flex flex-col px-6 -gap-[1rem] 
+                    items-start justify-center w-full  ">
                 {navLinks.map((nav) => (
                   <li
                     key={nav.id}
                     className={`${
                       active === nav.title ? "text-heading" : "text-heading"
-                    } hover:text-primary text-[34px] font-medium font-poppins py-3
-                        uppercase cursor-pointer nav-links`}
+                    } hover:text-primary text-[16px] mt-5 font-medium font-poppins 
+                        uppercase cursor-pointer nav-links w-full flex`}
                     onClick={() => handleMobileNavLinkClick(nav.id)}>
-                    <a href={`#${nav.id}`}>{nav.title}</a>
+                    <a
+                      href={`#${nav.id}`}
+                      className="w-full py-2 border-b-[1px] border-watermark">
+                      {nav.title}
+                    </a>
                   </li>
                 ))}
               </ul>
-              <button className="px-6 py-2 bg-green-500">Contact Us</button>
+              {/* <button className="px-6 py-2 bg-green-500">Contact Us</button> */}
+              <button
+                onClick={() => handleMobileNavLinkClick(contact)}
+                class="relative my-5 mx-5 flex h-[44px] w-32 items-center justify-center overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
+                <span class="relative z-10 font-federo text-[16px]">Contact Us</span>
+              </button>
             </div>
           ) : (
             <Image

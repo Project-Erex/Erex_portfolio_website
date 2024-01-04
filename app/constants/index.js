@@ -18,6 +18,9 @@ import {
   UIWhite,
   KidQuiz,
   DetectifyX,
+  Facebook,
+  Linkedin,
+  Twitter,
 } from "../assets";
 
 export const navLinks = [
@@ -28,7 +31,7 @@ export const navLinks = [
 
   {
     id: "service",
-    title: "Service",
+    title: "Services",
   },
   {
     id: "ourClient",
@@ -38,10 +41,10 @@ export const navLinks = [
   //   id: "projects",
   //   title: "Projects",
   // },
-  {
-    id: "blog",
-    title: "Blog",
-  },
+  // {
+  //   id: "blog",
+  //   title: "Blog",
+  // },
   // {
   //   id: "ourteam",
   //   title: "Our Team",
@@ -225,4 +228,17 @@ const ourTeam = [
   },
 ];
 
-export {services, ourClient, ourProjects, testiMonial, ourBlog, ourTeam};
+const ourSocialLink = [
+  {
+    icon: Facebook,
+    title: "facebook",
+    url: "https://www.facebook.com/people/Erex-Studio/61554303807037/",
+  },
+  {
+    icon: Linkedin,
+    title: "linkedin",
+    url: "https://www.linkedin.com/uas/login?session_redirect=%2Fcompany%2F99069712",
+  },
+];
+
+export {services, ourClient, ourProjects, testiMonial, ourBlog, ourTeam, ourSocialLink};

@@ -9,7 +9,7 @@ const Service = () => {
   return (
     <section
       id="service"
-      className={` ${styles.yPadding} xl:mx-36 relative lg:mx-32 md:mx-22 sm:mx-16 mx-6 px-4 lg:px-6  xl:px-10  bg-background md:border-r-2 md:border-l-2 border-watermark`}>
+      className={` ${styles.yPadding}  xl:mx-36 relative lg:mx-32 md:mx-22 sm:mx-16 mx-2 px-4 lg:px-6  xl:px-10  bg-background md:border-r-2 md:border-l-2 border-watermark`}>
       <div className="absolute flex items-center justify-center w-full px-10 ">
         <p className="font-semibold text-watermark font-poppins select-none hidden md:block md:text-[12.8vw] lg:text-[9.6vw] xl:text-[10.25vw] opacity-60 whitespace-nowrap antialiased tracking-widet lg:tracking-widest">
           SERVICES

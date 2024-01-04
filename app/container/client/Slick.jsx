@@ -16,7 +16,7 @@ export default function Slick({}) {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     responsive: [
       {
         breakpoint: 1024,
@@ -60,7 +60,7 @@ export default function Slick({}) {
       <Slider ref={slider} {...settings}>
         {ourClient.map((client, index) => (
           <div key={client.id}>
-            <div className="group flex items-center justify-center px-8  border-r-2 border-watermark">
+            <div className="group flex items-center justify-center px-8  md:border-r-2 border-watermark">
               <Image
                 src={client.icon}
                 alt={client.title}

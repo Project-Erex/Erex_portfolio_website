@@ -23,9 +23,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={` w-full flex items-center justify-center border-b-2  bg-background border-watermark fixed py-2
+      className={` w-full flex items-center justify-center border-b-2 2xl:border-b-4  bg-background border-watermark fixed py-2
           top-0 z-[999] md:py-4 `}>
-      <div className={`${styles.xPadding}  w-full flex justify-between  items-center`}>
+      <div
+        className={`${styles.xPadding}  w-full flex justify-between  max-w-screen-2xl items-center`}>
         <a
           href="/"
           className="flex items-center "
@@ -39,7 +40,7 @@ const Navbar = () => {
             className="sm:w-[110px]  sm:h-auto w-[80px]  h-[54px] object-contain"
           />
         </a>
-        <ul className="flex-row hidden gap-6 list-none lg:gap-10 xl:gap-16 md:flex">
+        <ul className="flex-row hidden gap-6 list-none lg:gap-8 xl:gap-16 md:flex">
           {navLinks.map((nav) => (
             <li
               key={nav.id}
@@ -68,7 +69,7 @@ const Navbar = () => {
               className={` py-2 bg-background  absolute 
                     top-0 left-0 w-screen h-screen
                      z-10 menu ${toggle ? "menu-open" : "menu-close"}`}>
-              <div className="flex px-6 pb-2 justify-between w-full items-center border-b-2 border-watermark">
+              <div className="flex items-center justify-between w-full px-6 pb-2 border-b-2 border-watermark">
                 <Image
                   src={erexLogo}
                   alt="logo"
@@ -101,11 +102,13 @@ const Navbar = () => {
                 ))}
               </ul>
               {/* <button className="px-6 py-2 bg-green-500">Contact Us</button> */}
-              <button
-                onClick={() => handleMobileNavLinkClick(contact)}
-                class="relative my-5 mx-5 flex h-[44px] w-32 items-center justify-center overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
-                <span class="relative z-10 font-federo text-[16px]">Contact Us</span>
-              </button>
+              <a href="#contact">
+                <button
+                  onClick={() => handleMobileNavLinkClick(contact)}
+                  class="relative my-5 mx-5 flex h-[44px] w-32 items-center justify-center overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
+                  <span class="relative z-10 font-federo text-[16px]">Contact Us</span>
+                </button>
+              </a>
             </div>
           ) : (
             <Image

@@ -28,16 +28,16 @@ const Hero = () => {
   }, [textArray.length]);
   return (
     <>
-      <section className="pt-[82px] bg-background">
-        <div className="w-full border-b-2 border-watermark ">
+      <section className="pt-[82px] bg-background flex justify-center w-full">
+        <div className="w-full border-b-2 2xl:border-b-0 border-watermark max-w-screen-2xl ">
           <div
-            className={`${styles.xMargin} xl:mx-36 relative lg:mx-32 md:mx-22 sm:mx-16 mx-6 flex-col-reverse md:flex-row md:border-r-2 md:border-l-2 flex  border-watermark h-full md:h-screen bg-background  bg-cover `}>
-            <div className="absolute flex items-center justify-center w-full px-10 ">
+            className={`${styles.xMargin} relative 2xl:border-b-4  flex-col-reverse md:flex-row md:border-r-2 md:border-l-2 flex  border-watermark h-full md:h-screen 2xl:h-[50vh] bg-background  bg-cover  `}>
+            <div className="absolute flex items-center justify-center w-full px-10 2xl:hidden">
               <p className="font-semibold text-watermark font-poppins opacity-60 select-none hidden md:block md:text-[12.8vw] lg:text-[9.6vw] xl:text-[10.25vw]  whitespace-nowrap antialiased tracking-widet lg:tracking-widest">
                 EREX STUDIO
               </p>
             </div>
-            <div className="flex flex-col items-center justify-center h-full gap-10 px-4 py-10 md:py-10 lg:px-6 xl:px-10 md:items-start md:w-1/2 ">
+            <div className="flex flex-col items-center justify-center h-full gap-10 px-4 pb-10 md:py-10 lg:px-6 xl:px-10 md:items-start md:w-1/2 ">
               <div className="md:h-[120px] h-[135px] flex justify-center md:items-start items-center">
                 <span className=" text-heading md:pt-5 select-none font-federo font-semibold text-[28px] md:text-left text-center leading-[48px] md:leading-[48px] md:text-[34px]  lg:leading-[52px] lg:text-[40px]  xl:leading-[62px] xl:text-[42px] drop-shadow-xl">
                   {textArray[currentTextIndex]}
@@ -54,7 +54,7 @@ const Hero = () => {
                 </button>
               </a>
             </div>
-            <div className="w-full h-auto md:h-full z-30 md:w-1/2">
+            <div className="z-30 w-full h-auto md:h-full md:w-1/2">
               {/* <Spline
                 className="hidden md:block"
                 scene="https://prod.spline.design/6li3mjiZmpzR3QRo/scene.splinecode"

@@ -25,6 +25,7 @@ module.exports = {
         watermark: "#EBEBEB",
         bghover: "#19181D",
       },
+      screens: {"2xl": "1636px"},
     },
   },
   plugins: [],

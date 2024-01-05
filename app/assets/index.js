@@ -25,6 +25,7 @@ import DigitalWhite from "./svg/DigitalWhite.svg";
 import UIWhite from "./svg/UIWhite.svg";
 import KidQuiz from "./client/KidQuiz.png";
 import DetectifyX from "./client/DetectifyX.png";
+
 import Facebook from "./svg/facebook.svg";
 import Linkedin from "./svg/linkedin.svg";
 import Twitter from "./svg/twitter.svg";

@@ -20,7 +20,6 @@ import {
   DetectifyX,
   Facebook,
   Linkedin,
-  Twitter,
 } from "../assets";
 
 export const navLinks = [

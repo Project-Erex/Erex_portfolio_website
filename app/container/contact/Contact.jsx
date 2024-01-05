@@ -24,6 +24,16 @@ export default function Contact() {
     resolver: yupResolver(Schema),
   });
 
+  const showToastMessage = () => {
+    toast.success("Form Submitted Successfully", {
+      position: toast.POSITION.TOP_RIGHT,
+    });
+  };
+  const showToastErrorMessage = () => {
+    toast.error("Something Went Wrong!", {
+      position: toast.POSITION.TOP_RIGHT,
+    });
+  };
   // const onSubmit = (data) => console.log("form submit", data);
 
   const BASE_URL = "https://backend.foodcomet.app/web";
@@ -47,85 +57,87 @@ export default function Contact() {
       await res.json();
       if (res.status === 200) {
         setIsLoading(false);
-        await toast("Form Submitted Successfully");
+        await showToastMessage();
       }
     } catch (err) {
       console.error(err);
       setIsLoading(false);
-      await toast("Something Went Wrong!");
+      await showToastErrorMessage();
     }
   };
 
   return (
-    <section className="w-full bg-gray-100" id="contact">
-      <div
-        className={`${styles.yPadding}  xl:mx-36 lg:mx-32 md:mx-22 sm:mx-16 mx-2 md:border-x-2 border-watermark  h-full  relative  bg-backgroundGray  `}>
-        <div className="py-10 mx-4 lg:mx-6 xl:mx-10 bg-lightwhite">
-          <div className="flex flex-col items-center justify-center w-full gap-2">
-            <span className="font-federo z-50  text-secondary text-[28px] md:text-[44px] xl:text-[70px] text-center font-normal">
-              Send A Message
-            </span>
-            <p className="font-normal font-poppins text-gray leading-[18px] text-center text-[10px]  md:text-[18px] px-4">
-              Your email address will not be published. All fields are required
-            </p>
-          </div>
-          <form
-            action=""
-            onSubmit={handleSubmit(onSubmit)}
-            className="w-full px-6 pt-10 space-y-4">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+    <section className="flex justify-center w-full bg-background " id="contact">
+      <div className="w-full max-w-screen-2xl">
+        <div
+          className={`${styles.yPadding}  ${styles.xMargin} md:border-x-2 bg-background border-watermark  h-full  relative  bg-backgroundGray  `}>
+          <div className="py-10 mx-4 lg:mx-6 xl:mx-10 bg-lightwhite">
+            <div className="flex flex-col items-center justify-center w-full gap-2">
+              <span className="font-federo z-50  text-secondary text-[28px] md:text-[44px] xl:text-[70px] text-center font-normal">
+                Send A Message
+              </span>
+              <p className="font-normal font-poppins text-gray leading-[18px] text-center text-[10px]  md:text-[18px] px-4">
+                Your email address will not be published. All fields are required
+              </p>
+            </div>
+            <form
+              action=""
+              onSubmit={handleSubmit(onSubmit)}
+              className="w-full px-6 pt-10 space-y-4">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div>
+                  <label className="mb-3 text-secondary" for="name">
+                    Name*
+                  </label>
+                  <input
+                    className="w-full p-3 mt-2 text-sm font-normal border-2 focus:outline-none focus:border-2 focus:border-primary text-secondary font-poppins border-watermark bg-background"
+                    placeholder="Your Name"
+                    type="text"
+                    id="name"
+                    {...register("name")}
+                  />
+                  <p className="text-red-500">{errors.name?.message}</p>
+                </div>
+                <div>
+                  <label className="mb-3 text-secondary" for="email">
+                    Email*
+                  </label>
+                  <input
+                    className="w-full p-3 mt-2 text-sm font-normal border-2 focus:outline-none focus:border-2 focus:border-primary text-secondary font-poppins border-watermark bg-background"
+                    placeholder="Your Email address"
+                    type="text"
+                    id="email"
+                    {...register("email")}
+                  />
+
+                  <p className="text-red-500">{errors.email?.message}</p>
+                </div>
+              </div>
+
               <div>
-                <label className="mb-3 text-secondary" for="name">
-                  Name*
+                <label className="mb-3 text-secondary" for="message">
+                  Message*
                 </label>
-                <input
+
+                <textarea
+                  {...register("message")}
                   className="w-full p-3 mt-2 text-sm font-normal border-2 focus:outline-none focus:border-2 focus:border-primary text-secondary font-poppins border-watermark bg-background"
-                  placeholder="Your Name"
-                  type="text"
-                  id="name"
-                  {...register("name")}
-                />
-                <p className="text-red-500">{errors.name?.message}</p>
+                  placeholder="Your Message"
+                  rows="8"
+                  id="message"></textarea>
+                <p className="text-red-500">{errors.message?.message}</p>
               </div>
-              <div>
-                <label className="mb-3 text-secondary" for="email">
-                  Email*
-                </label>
-                <input
-                  className="w-full p-3 text-sm mt-2  font-normal border-2 focus:outline-none focus:border-2 focus:border-primary text-secondary font-poppins border-watermark bg-background"
-                  placeholder="Your Email address"
-                  type="text"
-                  id="email"
-                  {...register("email")}
-                />
 
-                <p className="text-red-500">{errors.email?.message}</p>
+              <div className="flex justify-between mt-4">
+                <button
+                  type="submit"
+                  class="relative z-10 font-federo text-[16px] flex h-[50px] w-full sm:w-40 items-center justify-center overflow-hidden text-white  bg-primary">
+                  {isloading ? <ThreeDots width="50" color="#FFFFFF" /> : "Submit Now"}
+                </button>
+                <ToastContainer />
               </div>
-            </div>
-
-            <div>
-              <label className="mb-3 text-secondary" for="message">
-                Message*
-              </label>
-
-              <textarea
-                {...register("message")}
-                className="w-full p-3 mt-2  text-sm font-normal border-2 focus:outline-none focus:border-2 focus:border-primary text-secondary font-poppins border-watermark bg-background"
-                placeholder="Your Message"
-                rows="8"
-                id="message"></textarea>
-              <p className="text-red-500">{errors.message?.message}</p>
-            </div>
-
-            <div className="mt-4">
-              <button
-                type="submit"
-                class="relative z-10 font-federo text-[16px] flex h-[50px] w-full sm:w-40 items-center justify-center overflow-hidden text-white  bg-primary">
-                {isloading ? <ThreeDots width="50" color="#FFFFFF" /> : "Submit Now"}
-              </button>
-              <ToastContainer />
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </section>

@@ -19,7 +19,7 @@ export default function Slick({}) {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 4000,
     responsive: [
       {

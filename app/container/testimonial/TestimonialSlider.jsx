@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import {testiMonial} from "@/app/constants";
 // import {BsDashLg} from "react-icons/bs";
 import {TfiLineDashed} from "react-icons/tfi";
+import {motion} from "framer-motion";
 import Image from "next/image";
 
 export default function Slick({}) {
@@ -64,24 +65,38 @@ export default function Slick({}) {
       <Slider ref={slider} {...settings}>
         {testiMonial.map((item, index) => {
           return (
-            <div key={item.id}>
-              <div className="flex flex-col items-center justify-center px-3">
-                <div className="px-4 py-4 bg-lightwhite min-h-[200px] md:min-h-[180px] flex flex-col  justify-center">
-                  <p className="italic font-medium leading-5 md:leading-6 text-heading text-left text-[12px] lg:text-[12px] xl:text-[14px] font-poppins">
-                    {item.description}
-                  </p>
-                  <div className="flex items-center justify-between w-full mt-3">
-                    <span className="flex items-center gap-3 lg:gap-2 lg:text-[12px] xl:text-[16px] text-primary uppercase font-poppins font-semibold">
-                      {/* <BsDashLg /> */}
-                      {/* <BsDashLg /> */}
-                      <TfiLineDashed size={30} />
-                      {item.name}
-                    </span>
-                    <Image className="w-9 lg:w-9 xl:w-11" src={item.icon} />
+            <motion.div
+              key={index}
+              initial={{y: 100, opacity: 0}}
+              whileInView={{
+                y: 0,
+                opacity: 1,
+                transition: {
+                  duration: 0.8,
+                  ease: [0.65, 0, 0.35, 1],
+                  delay: 0.1 * index,
+                },
+              }}
+              viewport={{once: true}}>
+              <div key={index}>
+                <div className="flex flex-col items-center justify-center px-3">
+                  <div className="px-4 py-4 bg-lightwhite min-h-[200px] md:min-h-[180px] flex flex-col  justify-center">
+                    <p className="italic font-medium leading-5 md:leading-6 text-heading text-left text-[12px] lg:text-[12px] xl:text-[14px] font-poppins">
+                      {item.description}
+                    </p>
+                    <div className="flex items-center justify-between w-full mt-3">
+                      <span className="flex items-center gap-3 lg:gap-2 lg:text-[12px] xl:text-[16px] text-primary uppercase font-poppins font-semibold">
+                        {/* <BsDashLg /> */}
+                        {/* <BsDashLg /> */}
+                        <TfiLineDashed size={30} />
+                        {item.name}
+                      </span>
+                      <Image className="w-9 lg:w-9 xl:w-11" src={item.icon} alt="icon" />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </Slider>

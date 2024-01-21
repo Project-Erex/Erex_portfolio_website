@@ -20,6 +20,8 @@ import {
   DetectifyX,
   Facebook,
   Linkedin,
+  NpmLogo,
+  Frame,
 } from "../assets";
 
 export const navLinks = [
@@ -240,4 +242,34 @@ const ourSocialLink = [
   },
 ];
 
-export {services, ourClient, ourProjects, testiMonial, ourBlog, ourTeam, ourSocialLink};
+const OurContribution = [
+  {
+    title: "@erexstudio/detect-country-currency",
+    description:
+      "A simple JavaScript function to detect the currency based on the user's country code.",
+    logo: NpmLogo,
+    icon: Frame,
+    id: 1,
+    url: "https://www.npmjs.com/package/@erexstudio/detect-country-currency",
+  },
+  {
+    title: "@erexstudio/geo-span-measure",
+    description:
+      "A simple npm package for calculating distance between two coordinates using the Haversine formula.",
+    logo: NpmLogo,
+    icon: Frame,
+    id: 2,
+    url: "https://www.npmjs.com/package/@erexstudio/geo-span-measure",
+  },
+];
+
+export {
+  services,
+  ourClient,
+  ourProjects,
+  testiMonial,
+  ourBlog,
+  ourTeam,
+  ourSocialLink,
+  OurContribution,
+};

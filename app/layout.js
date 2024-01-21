@@ -1,5 +1,7 @@
 import {Federo, Poppins, Rubik} from "next/font/google";
 import "./globals.css";
+import Navbar from "./container/navbar/Navbar";
+import Footer from "./container/footer/Footer";
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
@@ -57,7 +59,9 @@ export default function RootLayout({children}) {
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body>
+        <Navbar />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

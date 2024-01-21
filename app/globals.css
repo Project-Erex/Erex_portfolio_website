@@ -29,3 +29,130 @@ body {
 .nav-links:hover::after {
   width: 100%;
 }
+
+/* Add these styles to your CSS */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out; /* Adjust the duration and easing as needed */
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-in-out; /* Adjust the duration and easing as needed */
+}
+
+.animation > div > div {
+  padding: 0.25rem 0rem;
+  height: 8.81rem;
+  margin-bottom: 5.81rem;
+  display: inline-block;
+}
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  .animation > div > div {
+    height: 8.81rem;
+    padding: 0.25rem 0rem;
+    margin-bottom: 6.31rem;
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 800px) {
+  .animation > div > div {
+    height: 8.81rem;
+    padding: 0.25rem 0rem;
+    margin-bottom: 7.31rem;
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .animation > div > div {
+    height: 8.81rem;
+    padding: 0.25rem 0rem;
+    margin-bottom: 5rem;
+    display: inline-block;
+  }
+}
+@media only screen and (min-width: 417px) and (max-width: 480px) {
+  .animation > div > div {
+    height: 9.81rem;
+    padding: 0.75rem 0rem;
+    margin-bottom: 4.35rem;
+
+    display: inline-block;
+  }
+}
+@media only screen and (max-width: 417px) {
+  .animation > div > div {
+    height: 9.81rem;
+    padding: 0.75rem 0rem;
+    margin-bottom: 6.01rem;
+    display: inline-block;
+  }
+}
+
+.animation div:first-child {
+  animation: text-animation 16s infinite;
+}
+
+@keyframes text-animation {
+  0% {
+    margin-top: 0;
+  }
+  7.14% {
+    margin-top: 0;
+  }
+  14.28% {
+    margin-top: -6rem;
+  }
+  21.42% {
+    margin-top: -6rem;
+  }
+  28.56% {
+    margin-top: -16rem;
+  }
+  35.7% {
+    margin-top: -16rem;
+  }
+  42.84% {
+    margin-top: -27rem;
+  }
+  49.98% {
+    margin-top: -27rem;
+  }
+  57.12% {
+    margin-top: -16rem;
+  }
+  64.26% {
+    margin-top: -16rem;
+  }
+  71.4% {
+    margin-top: -6rem;
+  }
+  78.54% {
+    margin-top: -6rem;
+  }
+  92.82% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 0;
+  }
+}

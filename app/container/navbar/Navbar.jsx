@@ -1,35 +1,48 @@
 "use client";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {styles} from "../../styles";
 import {erexLogo, menu, close} from "@/app/assets";
 import {navLinks} from "@/app/constants";
+import {AnimatePresence, delay, motion} from "framer-motion";
+import {Link, Link as ScrollLink} from "react-scroll";
+import {RxCross2} from "react-icons/rx";
+import {CgMenuRightAlt} from "react-icons/cg";
+
 import Image from "next/image";
+import {menuSilde} from "@/app/constants/framer_motion";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
 
   const handleNavLinkClick = (id) => {
-    if (id === "home") {
-      window.scrollTo({top: 0, behavior: "smooth"});
-    }
     setActive(id);
+    localStorage.setItem("active", id);
   };
+  useEffect(() => {
+    const storedActive = localStorage.getItem("active");
+    if (storedActive) {
+      setActive(storedActive);
+    }
 
-  const handleMobileNavLinkClick = (id) => {
+    return () => {
+      localStorage.removeItem("active");
+    };
+  }, []);
+
+  const handleMobileNavLinkClick = () => {
     setToggle(!toggle);
-    handleNavLinkClick(id);
+    handleNavLinkClick("");
   };
 
   return (
     <nav
-      className={` w-full flex items-center justify-center border-b-2 2xl:border-b-4  bg-background border-watermark fixed py-2
-          top-0 z-[999] md:py-4 `}>
+      className={` w-full flex items-center justify-center border-b-2 2xl:border-b-4   bg-background border-watermark fixed py-2 top-0 z-[999] md:py-4 `}>
       <div
         className={`${styles.xPadding}  w-full flex justify-between  max-w-screen-2xl items-center`}>
-        <a
+        <Link
           href="/"
-          className="flex items-center "
+          className="flex items-center"
           onClick={() => {
             setActive("");
             window.scrollTo(0, 0);
@@ -39,85 +52,127 @@ const Navbar = () => {
             alt="logo"
             className="sm:w-[110px]  sm:h-auto w-[80px]  h-[54px] object-contain"
           />
-        </a>
-        <ul className="flex-row hidden gap-6 list-none lg:gap-8 xl:gap-16 md:flex">
+        </Link>
+        <div className="flex-row hidden gap-4 list-none lg:gap-6 xl:gap-10 md:flex">
           {navLinks.map((nav) => (
-            <li
+            <ScrollLink
               key={nav.id}
-              className={`${
-                active === nav.title ? "text-heading" : "text-heading"
-              } hover:text-primary text-[16px] lg:text-[18px] font-regular 
-        font-federo cursor-pointer nav-links pt-2`}
+              className={`${active === nav.id ? "text-primary" : "text-heading"}
+               hover:text-primary text-[16px] lg:text-[18px] px-4 py-4 font-regular font-federo cursor-pointer nav-links  `}
+              to={nav.id}
+              spy={true}
+              smooth={true}
+              offset={-90}
+              duration={300}
               onClick={() => handleNavLinkClick(nav.id)}>
-              <a href={`#${nav.id}`}>{nav.title}</a>
-            </li>
+              {nav.title}
+            </ScrollLink>
           ))}
-          {/* <button className="hidden px-6 py-2 font-federo bg-primary hover:bg-blend-darken md:block">
-            Contact Us
-          </button> */}
-          <a className="leading-loose" href="#contact">
-            <button class="relative flex h-[44px] w-32 items-center justify-center overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
-              <span class="relative z-10 font-federo text-[16px]">Contact Us</span>
+          <ScrollLink
+            className="pt-2 leading-loose"
+            to="contact"
+            spy={true}
+            offset={-90}
+            smooth={true}
+            duration={300}
+            onClick={() => handleNavLinkClick("contact")}>
+            <button className="relative flex h-[44px] w-32 items-center justify-center overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
+              <span className="relative z-10 font-federo text-[16px]">Contact Us</span>
             </button>
-          </a>
-        </ul>
+          </ScrollLink>
+        </div>
 
         {/* mobile */}
-        <div className="flex items-center justify-end flex-1 w-screen md:hidden ">
-          {toggle ? (
-            <div
-              className={` py-2 bg-background  absolute 
-                    top-0 left-0 w-screen h-screen
-                     z-10 menu ${toggle ? "menu-open" : "menu-close"}`}>
-              <div className="flex items-center justify-between w-full px-6 pb-2 border-b-2 border-watermark">
-                <Image
-                  src={erexLogo}
-                  alt="logo"
-                  className="sm:w-[85px]  sm:h-auto w-[80px]  h-[54px] object-contain"
-                />
-                <Image
-                  src={close}
-                  alt="close"
-                  className="w-[22px] h-[22px] object-contain cursor-pointer"
-                  onClick={() => setToggle(!toggle)}
-                />
-              </div>
-              <ul
-                className="list-none flex flex-col px-6 -gap-[1rem] 
-                    items-start justify-center w-full  ">
-                {navLinks.map((nav) => (
-                  <li
-                    key={nav.id}
-                    className={`${
-                      active === nav.title ? "text-heading" : "text-heading"
-                    } hover:text-primary text-[16px] mt-5 font-medium font-poppins 
-                        uppercase cursor-pointer nav-links w-full flex`}
-                    onClick={() => handleMobileNavLinkClick(nav.id)}>
-                    <a
-                      href={`#${nav.id}`}
-                      className="w-full py-2 border-b-[1px] border-watermark">
-                      {nav.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              {/* <button className="px-6 py-2 bg-green-500">Contact Us</button> */}
-              <a href="#contact">
-                <button
-                  onClick={() => handleMobileNavLinkClick(contact)}
-                  class="relative my-5 mx-5 flex h-[44px] w-32 items-center justify-center overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
-                  <span class="relative z-10 font-federo text-[16px]">Contact Us</span>
-                </button>
-              </a>
-            </div>
-          ) : (
-            <Image
-              src={menu}
-              alt="menu"
-              className="w-[34px] h-[34px] object-contain cursor-pointer"
-              onClick={() => setToggle(!toggle)}
-            />
-          )}
+        <div className="flex items-center justify-end flex-1 w-screen md:hidden">
+          <div className=" md:hidden" onClick={handleMobileNavLinkClick}>
+            {toggle ? (
+              <CgMenuRightAlt color={"#4169E1"} size={30} />
+            ) : (
+              <CgMenuRightAlt color={"#4169E1"} size={30} />
+            )}
+          </div>
+
+          <AnimatePresence mode="wait">
+            {toggle && (
+              <motion.div
+                variants={menuSilde}
+                animate="enter"
+                exit="exit"
+                initial="initial"
+                className={`py-2 bg-background absolute top-0 left-0 w-screen h-screen z-10 menu `}>
+                <div
+                  className={`flex items-center  w-full px-6  pt-1 pb-6 justify-between border-b-2   border-watermark `}>
+                  <Image
+                    src={erexLogo}
+                    alt="logo"
+                    className={`sm:w-[85px]  sm:h-auto w-[120px]  object-contain `}
+                  />
+                  <div className="pt-4">
+                    <RxCross2
+                      color={"#4169E1"}
+                      size={30}
+                      onClick={() => setToggle(!toggle)}
+                    />
+                  </div>
+                </div>
+                <ul className="list-none flex flex-col px-6 gap-[0.5rem]  pt-10  items-start justify-center w-full">
+                  {navLinks.map((nav, index) => {
+                    return (
+                      <motion.div
+                        key={index}
+                        initial={{x: 100, opacity: 0}}
+                        animate={{
+                          x: 0,
+                          opacity: 1,
+                          transition: {
+                            duration: 0.8,
+                            ease: [0.65, 0, 0.35, 1],
+                            delay: 0.2 * index,
+                          },
+                        }}
+                        exit={{
+                          x: -100,
+                          opacity: 0,
+                          transition: {
+                            duration: 0.6,
+                            ease: [0.65, 0, 0.35, 1],
+                            delay: 0.3 * index,
+                          },
+                        }}>
+                        <ScrollLink
+                          onClick={() => handleMobileNavLinkClick(nav.id)}
+                          key={index}
+                          className={`${
+                            active === nav.title ? "text-heading" : "text-heading"
+                          } hover:text-primary text-[24px] mt-5 font-medium font-poppins uppercase cursor-pointer w-full  flex`}
+                          to={nav.id}
+                          spy={true}
+                          smooth={true}
+                          offset={-70}
+                          duration={300}>
+                          {nav.title}
+                        </ScrollLink>
+                      </motion.div>
+                    );
+                  })}
+                </ul>
+                <ScrollLink
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={300}>
+                  <button
+                    onClick={() => handleMobileNavLinkClick("#contact")}
+                    className="relative my-8 mx-6 flex h-[50px] w-40 items-center justify-center overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
+                    <span className="relative z-10 font-federo text-[20px]">
+                      Contact Us
+                    </span>
+                  </button>
+                </ScrollLink>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </nav>

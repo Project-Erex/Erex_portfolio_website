@@ -37,6 +37,7 @@ import TESTIMONIAL from "./svg/TESTIMONIAL.svg";
 import PACKAGES from "./svg/PACKAGES.svg";
 import NpmLogo from "./svg/Npm.svg";
 import Frame from "./svg/Frame.svg";
+import Benar from "./background/benar.png";
 
 export {
   erexLogo,
@@ -78,4 +79,5 @@ export {
   NpmLogo,
   Arrow2,
   Frame,
+  Benar,
 };

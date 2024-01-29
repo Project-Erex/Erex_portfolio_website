@@ -8,6 +8,7 @@ import Link from "next/link";
 import SocialLink from "./SocialLink";
 import {HiArrowUp} from "react-icons/hi";
 import {motion} from "framer-motion";
+// import Particles from "@/app/components/heading/Particles";
 
 export default function Footer() {
   const scrollUp = () => {
@@ -22,11 +23,14 @@ export default function Footer() {
     repeatType: "loop",
   };
   return (
-    <div className="flex justify-center w-full bg-lightwhite">
-      <div className="w-full max-w-screen-2xl">
+    <div className="relative flex justify-center w-full bg-lightwhite">
+      {/* <div className="absolute w-full h-full">
+        <Particles />
+      </div> */}
+      <div className="z-50 w-full max-w-screen-2xl">
         <section className={`${styles.xMargin}  ${styles.xdivPadding} md:pt-16 pt-6`}>
           <div className="grid w-full grid-cols-1 border-b-2 md:grid-cols-2 lg:grid-cols-3 border-watermark">
-            <div className="flex flex-col items-start justify-center w-full mb-10 lg:pr-4 xl:pr-0 md:justify-center">
+            <div className="flex flex-col items-start justify-center w-full mb-10 md:mb-24 lg:pr-4 xl:pr-0 md:justify-center">
               <a href="/#" className="mb-6 inline-block max-w-[160px]">
                 <Image src={erexLogo} alt="logo" className="max-w-full" />
               </a>

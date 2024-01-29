@@ -18,12 +18,12 @@ export default function ContributionCard({logo, icon, description, title, url}) 
             <Link
               href={url}
               target="_blank"
-              className="px-2 py-2 bg-white group-hover:bg-opacity-10">
+              className="px-2 py-2 transition-all duration-500 bg-white group-hover:bg-opacity-10">
               <Image src={icon} alt={title} />
             </Link>
           </div>
           <div className="w-full h-auto ">
-            <h1 className="text-heading font-federo font-normal text-[18px] lg:text-[24px] xl:text-[30px] text-start  leading-normal transition-all duration-500 group-hover:text-white">
+            <h1 className="text-heading ` font-federo font-normal text-[18px] lg:text-[24px] xl:text-[30px] text-start  leading-normal transition-all duration-500 group-hover:text-white">
               {title}
             </h1>
           </div>

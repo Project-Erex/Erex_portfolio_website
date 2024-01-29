@@ -244,13 +244,13 @@ const ourSocialLink = [
 
 const OurContribution = [
   {
-    title: "@erexstudio/detect-country-currency",
+    title: "@erexstudio/react-read-more-text",
     description:
-      "A simple JavaScript function to detect the currency based on the user's country code.",
+      "A versatile React component for seamlessly implementing 'Read More/Show Less' functionality with customizable styles.",
     logo: NpmLogo,
     icon: Frame,
     id: 1,
-    url: "https://www.npmjs.com/package/@erexstudio/detect-country-currency",
+    url: "https://www.npmjs.com/package/@erexstudio/react-read-more-text",
   },
   {
     title: "@erexstudio/geo-span-measure",

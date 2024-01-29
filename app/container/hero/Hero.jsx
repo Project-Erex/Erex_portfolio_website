@@ -12,40 +12,15 @@ import {
   fadeInTopVariant,
   fadeInVariant,
 } from "@/app/constants/framer_motion";
-// import Particles from "@/app/components/heading/Particles";
 
 const Hero = () => {
   const transition = {duration: 4.5, yoyo: Infinity, ease: "easeInOut"};
-  // const textArray = [
-  //   "Shaping the Future of Digital Possibilities.",
-  //   "Building Tomorrow's Digital Landscape Today.",
-  //   "Code to Creativity: Your Goals, Our Expertise.",
-  //   "Transforming Ideas into Digital Triumphs.",
-  // ];
 
-  // const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  // const [isFading, setIsFading] = useState(false);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setIsFading(true);
-
-  //     setTimeout(() => {
-  //       setCurrentTextIndex((prevIndex) =>
-  //         prevIndex === textArray.length - 1 ? 0 : prevIndex + 1,
-  //       );
-  //       setIsFading(false);
-  //     }, 150); // Adjust this delay to control the fade-out time
-  //   }, 4000);
-
-  //   return () => clearInterval(interval);
-  // }, [textArray.length]);
   return (
     <>
       <section
         id="home"
         className="relative flex justify-center w-full pt-20 bg-background">
-        <div className="absolute w-full h-screen">{/* <Particles /> */}</div>
         <div className="w-full border-b-2 2xl:border-b-0 border-watermark max-w-screen-2xl ">
           <div
             className={`${styles.xMargin} relative 2xl:border-b-4 pb-16 bg-background  md:py-20 xl:pt-5 xl:pb-20 flex-col-reverse md:flex-row md:border-r-2 md:border-l-2 flex  border-watermark h-full md:min-h-full 2xl:min-h-full bg-green-60  bg-cover  `}>
@@ -75,23 +50,15 @@ const Hero = () => {
                 />
               </svg>
             </motion.div>
-            <div className="flex flex-col items-center justify-center h-full px-4 md:pl-4 bg-fuchsia-00 bg-red-40 lg:px-6 xl:px-10 md:items-start md:w-1/2 ">
+            <div className="z-50 flex flex-col items-center justify-center h-full px-4 md:pl-4 bg-fuchsia-00 bg-red-40 lg:px-6 xl:px-10 md:items-start md:w-1/2 ">
               <div className="flex flex-col items-center justify-center w-full h-full gap-8 md:items-start md:pt-24 xl:mt-32 md:gap-8 lg:gap-10">
                 <motion.div
                   variants={fadeInLeftVariant}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{once: true}}
-                  className="flex items-center md:h-36 md:justify-start md:items-start">
-                  {/* <span
-                    className={`text-heading select-none font-federo font-semibold text-[28px] md:text-left text-center leading-[48px] md:leading-[42px] md:text-[36px] lg:leading-[46px] lg:text-[40px] xl:leading-[62px] xl:text-[42px] drop-shadow-xl ${
-                      isFading ? "fade-out" : "fade-in"
-                    }`}>
-                    {textArray[currentTextIndex]}
-                  </span>
-                  ; */}
-
-                  <section
+                  className="flex items-center overflow-hidden md:h-36 md:justify-start md:items-start">
+                  <div
                     className={`py-4 overflow-hidden text-center h-36 md:text-left md:h-36 lg:h-36 xl:h-32 animation`}>
                     <div className="first">
                       <div className="text-4xl md:leading-[36px] md:text-[34px] lg:leading-[38px] lg:text-[36px] xl:text-[42px] xl:leading-[46px]  font-semibold select-none text-heading font-federo">
@@ -113,7 +80,7 @@ const Hero = () => {
                         Transforming Ideas into Digital Triumphs.
                       </div>
                     </div>
-                  </section>
+                  </div>
                 </motion.div>
                 <motion.h2
                   variants={fadeInLeftchildrenVariant}
@@ -131,7 +98,7 @@ const Hero = () => {
                   animate="visible"
                   className="leading-loose"
                   href="#contact">
-                  <button class="relative flex h-[50px] w-40 items-center justify-center overflow-hidden bg-gray-800 text-white shadow-primary shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
+                  <button class="relative flex h-[50px] w-40 items-center justify-center overflow-hidden  text-white shadow-primary shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
                     <span class="relative z-10 font-federo text-[16px]">Hire Us</span>
                   </button>
                 </motion.a>
@@ -148,13 +115,23 @@ const Hero = () => {
                 whileInView="visible"
                 viewport={{once: true}}
                 className="flex items-center justify-center w-full xl:mt-12 md:h-full">
-                <Image
-                  className=" w-[371px] md:w-[500px] "
-                  height={0}
-                  width={0}
-                  src={Rocket}
-                  alt="Erex"
-                />
+                <motion.div
+                  initial={{y: -20}}
+                  animate={{y: 20}}
+                  transition={{
+                    type: "smooth",
+                    repeatType: "mirror",
+                    duration: 2,
+                    repeat: Infinity,
+                  }}>
+                  <Image
+                    className=" w-[371px] md:w-[500px] "
+                    height={0}
+                    width={0}
+                    src={Rocket}
+                    alt="Erex"
+                  />
+                </motion.div>
               </motion.div>
             </div>
           </div>

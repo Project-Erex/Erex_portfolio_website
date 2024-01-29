@@ -17,85 +17,83 @@ export default function ParticlesComponent() {
   const particlesLoaded = (container) => {
     console.log(container);
   };
+  const option = {
+    autoPlay: true,
+    style: {
+      position: "absolute",
+    },
+    fpsLimit: 60,
+    interactivity: {
+      events: {
+        onClick: {
+          enable: true,
+          mode: "push",
+        },
+        onHover: {
+          enable: true,
+          mode: "repulse",
+        },
+        resize: true,
+      },
+      modes: {
+        push: {
+          quantity: 4,
+        },
+        repulse: {
+          distance: 200,
+          duration: 0.4,
+          distance: 200,
+        },
+      },
+    },
+    particles: {
+      color: {
+        value: "#4169E1",
+      },
+      links: {
+        color: "#001B79",
+        distance: 150,
+        enable: true,
+        opacity: 0.8,
+        width: 1,
+      },
+      move: {
+        direction: "none",
+        enable: true,
+        outModes: {
+          default: "bounce",
+        },
+        random: false,
+        speed: 1,
+        straight: false,
+      },
+      number: {
+        density: {
+          enable: true,
+          area: 1200,
+        },
+        value: 80,
+      },
+      opacity: {
+        value: 0.5,
+      },
+      shape: {
+        type: "circle",
+      },
+      size: {
+        value: {min: 1, max: 5},
+      },
+    },
+    detectRetina: true,
+  };
 
   return (
     <>
       {init && (
         <TSParticles // Use the renamed 'TSParticles' component
-          id="tsparticles"
+          id="tsp;articles"
           particlesLoaded={particlesLoaded}
-          options={{
-            autoPlay: true,
-            // fullScreen: false,
-            background: {
-              // color: {
-              //   value: "#",
-              // },
-            },
-            fpsLimit: 60,
-            interactivity: {
-              events: {
-                onClick: {
-                  enable: true,
-                  mode: "push",
-                },
-                onHover: {
-                  enable: true,
-                  mode: "repulse",
-                },
-                resize: true,
-              },
-              modes: {
-                push: {
-                  quantity: 4,
-                },
-                repulse: {
-                  distance: 200,
-                  duration: 0.4,
-                  distance: 400,
-                },
-              },
-            },
-            particles: {
-              color: {
-                value: "#4169E1",
-              },
-              links: {
-                color: "#4169E1",
-                distance: 150,
-                enable: true,
-                opacity: 0.5,
-                width: 1,
-              },
-              move: {
-                direction: "none",
-                enable: true,
-                outModes: {
-                  default: "bounce",
-                },
-                random: false,
-                speed: 6,
-                straight: false,
-              },
-              number: {
-                density: {
-                  enable: true,
-                  area: 800,
-                },
-                value: 80,
-              },
-              opacity: {
-                value: 0.5,
-              },
-              shape: {
-                type: "circle",
-              },
-              size: {
-                value: {min: 1, max: 5},
-              },
-            },
-            detectRetina: true,
-          }}
+          options={option}
         />
       )}
     </>

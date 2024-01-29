@@ -9,10 +9,12 @@ import {motion} from "framer-motion";
 // import Image from "next/image";
 const Service = () => {
   return (
-    <section id="service" className="flex justify-center w-full ">
+    <section
+      id="service"
+      className="flex justify-center w-full border-t-2 2xl:border-t-0 border-watermark bg-background ">
       <div className="w-full max-w-screen-2xl">
         <div
-          className={` ${styles.yPadding} ${styles.xMargin} ${styles.xdivPadding}    relative   bg-background md:border-r-2 md:border-l-2 border-watermark`}>
+          className={` ${styles.yPadding} ${styles.xMargin} ${styles.xdivPadding} 2xl:border-t-4   relative  md:border-r-2 md:border-l-2 border-watermark`}>
           <Heading
             text={"Check Services"}
             text2={"Our Best Services"}

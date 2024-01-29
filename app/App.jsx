@@ -9,11 +9,13 @@ import Footer from "./container/footer/Footer";
 import Contact from "./container/contact/Contact";
 import Contribution from "./container/contribution/Contribution";
 import GoToTop from "./components/heading/GoToTop";
+import BenarImage from "./container/benar/Benar";
 
 export default function App() {
   return (
     <>
       <Hero />
+      <BenarImage />
       <Contribution />
       <Service />
       <Client />

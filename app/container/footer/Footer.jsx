@@ -1,5 +1,7 @@
 "use client";
 
+import {useRouter} from "next/navigation";
+
 import {styles} from "@/app/styles";
 import Image from "next/image";
 
@@ -8,9 +10,12 @@ import Link from "next/link";
 import SocialLink from "./SocialLink";
 import {HiArrowUp} from "react-icons/hi";
 import {motion} from "framer-motion";
+import {redirect} from "next/navigation";
 // import Particles from "@/app/components/heading/Particles";
 
 export default function Footer() {
+  const router = useRouter();
+
   const scrollUp = () => {
     window.scrollTo({
       top: 0,
@@ -84,6 +89,12 @@ export default function Footer() {
               © 2024. <text className="underline underline-offset-2">Erex Studio</text>{" "}
               All Rights Reserved.
             </text>
+            {/* <button
+              className="text-red-400"
+              type="button"
+              onClick={() => router.push("/priceing")}>
+              Dashboard
+            </button> */}
           </div>
           <div className="relative flex items-center justify-center w-full md:hidden ">
             <div

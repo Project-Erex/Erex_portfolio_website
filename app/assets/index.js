@@ -29,6 +29,7 @@ import DetectifyX from "./client/DetectifyX.png";
 import Facebook from "./svg/facebook.svg";
 import Linkedin from "./svg/linkedin.svg";
 import Twitter from "./svg/twitter.svg";
+import Instagram from "./svg/instagram.svg";
 import Mail from "./svg/quill_mail.svg";
 import EREXSTUDIO from "./svg/EREXSTUDIO.svg";
 import SERVICES from "./svg/SERVICES.svg";
@@ -38,7 +39,12 @@ import PACKAGES from "./svg/PACKAGES.svg";
 import NpmLogo from "./svg/Npm.svg";
 import Frame from "./svg/Frame.svg";
 import Benar from "./background/benar.png";
-
+import SmalBusiness from "./icons/Layer.png";
+import MediumBusiness from "./icons/Vector.png";
+import Enterprise from "./icons/Vectorhome.png";
+import Wave1 from "./background/wave.png";
+import Wave2 from "./background/wave2.png";
+import Wave3 from "./background/wave3.png";
 export {
   erexLogo,
   menu,
@@ -72,6 +78,7 @@ export {
   Twitter,
   Mail,
   EREXSTUDIO,
+  Instagram,
   SERVICES,
   CLIENTS,
   TESTIMONIAL,
@@ -80,4 +87,10 @@ export {
   Arrow2,
   Frame,
   Benar,
+  SmalBusiness,
+  MediumBusiness,
+  Enterprise,
+  Wave1,
+  Wave2,
+  Wave3,
 };

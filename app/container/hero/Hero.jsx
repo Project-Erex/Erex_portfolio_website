@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {styles} from "../../styles";
 import {motion} from "framer-motion";
 // import Spline from "@splinetool/react-spline";
 import {EREXSTUDIO, Rocket} from "@/app/assets";
-
 import Image from "next/image";
 import {
   fadeInLeftVariant,
@@ -12,6 +11,7 @@ import {
   fadeInTopVariant,
   fadeInVariant,
 } from "@/app/constants/framer_motion";
+import TextAnimation from "@/app/components/heading/TextAnimation";
 
 const Hero = () => {
   const transition = {duration: 4.5, yoyo: Infinity, ease: "easeInOut"};
@@ -30,8 +30,7 @@ const Hero = () => {
               whileInView="visible"
               viewport={{once: true}}
               className="absolute items-center justify-center hidden w-full md:flex top-10 lg:pt-0 xl:pt-12 md:px-4 lg:px-6 xl:px-10">
-              {/* <Image src={EREXSTUDIO} alt="EREXSTUDIO" />
-               */}
+              {/* <Image src={EREXSTUDIO} alt="EREXSTUDIO" /> */}
               <svg
                 width="1358"
                 height="145"
@@ -51,43 +50,21 @@ const Hero = () => {
               </svg>
             </motion.div>
             <div className="z-50 flex flex-col items-center justify-center h-full px-4 md:pl-4 bg-fuchsia-00 bg-red-40 lg:px-6 xl:px-10 md:items-start md:w-1/2 ">
-              <div className="flex flex-col items-center justify-center w-full h-full gap-8 md:items-start md:pt-24 xl:mt-32 md:gap-8 lg:gap-10">
+              <div className="relative flex flex-col items-center justify-center w-full h-full md:pt-24 lg:pt-24 xl:pt-52 md:items-start">
                 <motion.div
                   variants={fadeInLeftVariant}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{once: true}}
-                  className="flex items-center overflow-hidden md:h-36 md:justify-start md:items-start">
-                  <div
-                    className={`py-4 overflow-hidden text-center h-36 md:text-left md:h-36 lg:h-36 xl:h-32 animation`}>
-                    <div className="first">
-                      <div className="text-4xl md:leading-[36px] md:text-[34px] lg:leading-[38px] lg:text-[36px] xl:text-[42px] xl:leading-[46px]  font-semibold select-none text-heading font-federo">
-                        Shaping the Future of Digital Possibilities.
-                      </div>
-                    </div>
-                    <div className="second">
-                      <div className="text-4xl  md:leading-[36px] md:text-[36px]  lg:leading-[38px] lg:text-[36px]   xl:text-[42px] xl:leading-[46px] font-semibold select-none text-heading font-federo">
-                        Building Tomorrow&apos;s Digital Landscape Today.
-                      </div>
-                    </div>
-                    <div className="third">
-                      <div className="text-4xl  md:leading-[36px] md:text-[36px]  lg:leading-[38px] lg:text-[36px]  xl:text-[42px] xl:leading-[46px] font-semibold select-none text-heading font-federo">
-                        Code to Creativity: Your Goals, Our Expertise.
-                      </div>
-                    </div>
-                    <div className="four">
-                      <div className="text-4xl  md:leading-[36px] md:text-[36px]  lg:leading-[38px] lg:text-[36px]  xl:text-[42px] xl:leading-[46px] font-semibold select-none text-heading font-federo">
-                        Transforming Ideas into Digital Triumphs.
-                      </div>
-                    </div>
-                  </div>
+                  className="w-full">
+                  <TextAnimation />
                 </motion.div>
                 <motion.h2
                   variants={fadeInLeftchildrenVariant}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{once: true}}
-                  className="text-gray capitalize font-poppins select-none text-[16px] font-normal leading-[26px] text-justify  md:text-justify">
+                  className="text-gray bg-background  md:pb-10  md:pt-7 pb-8 pt-8  capitalize font-poppins select-none text-[16px] font-normal leading-[26px] text-justify  md:text-justify">
                   Erex Studio pioneers digital transformation, delivering cutting-edge
                   software, captivating designs, and strategic digital marketing. Elevate
                   your brand with our innovative solutions and expert guidance.

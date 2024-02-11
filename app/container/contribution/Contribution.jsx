@@ -14,10 +14,10 @@ export default function Contribution() {
   return (
     <section
       id="contribution"
-      className="flex items-center justify-center w-full border-t-2 2xl:border-t-0 bg-background border-watermark">
+      className="flex items-center justify-center w-full bg-background ">
       <div className="w-full max-w-screen-2xl">
         <div
-          className={` ${styles.yPadding} ${styles.xMargin} ${styles.xdivPadding} 2xl:border-t-4    relative   bg-background md:border-x-2  border-watermark`}>
+          className={` ${styles.yPadding} ${styles.xMargin} ${styles.xdivPadding}     relative   bg-background md:border-x-2  border-watermark`}>
           <Heading
             text={"Contribution"}
             text2={"Our Contribution"}

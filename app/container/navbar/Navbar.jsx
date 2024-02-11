@@ -10,21 +10,24 @@ import {CgMenuRightAlt} from "react-icons/cg";
 
 import Image from "next/image";
 import {menuSilde} from "@/app/constants/framer_motion";
+import ErexLogo from "@/app/components/ErexLogo";
+import {useRouter} from "next/navigation";
 
 const Navbar = () => {
+  const router = useRouter();
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
 
   const handleNavLinkClick = (id) => {
-    setActive(id);
     localStorage.setItem("active", id);
+    setActive(id);
   };
+
   useEffect(() => {
     const storedActive = localStorage.getItem("active");
     if (storedActive) {
       setActive(storedActive);
     }
-
     return () => {
       localStorage.removeItem("active");
     };
@@ -34,7 +37,6 @@ const Navbar = () => {
     setToggle(!toggle);
     handleNavLinkClick("");
   };
-
   return (
     <nav
       className={` w-full flex items-center justify-center border-b-2 2xl:border-b-4   bg-background border-watermark fixed py-2 top-0 z-[999] md:py-4 `}>
@@ -45,29 +47,31 @@ const Navbar = () => {
           className="flex items-center"
           onClick={() => {
             setActive("");
+            router.push("/");
             window.scrollTo(0, 0);
           }}>
-          <Image
-            src={erexLogo}
-            alt="logo"
-            className="sm:w-[110px]  sm:h-auto w-[80px]  h-[54px] object-contain"
-          />
+          <ErexLogo />
         </Link>
         <div className="flex-row hidden gap-4 list-none lg:gap-6 xl:gap-10 md:flex">
-          {navLinks.map((nav) => (
-            <ScrollLink
-              key={nav.id}
-              className={`${active === nav.id ? "text-primary" : "text-heading"}
+          {navLinks.map((nav, index) => {
+            console.log("nav", nav.id);
+            return (
+              <ScrollLink
+                key={index}
+                className={`${active === nav.id ? "text-primary" : "text-heading"}
                hover:text-primary text-[16px] lg:text-[18px] px-4 py-4 font-regular font-federo cursor-pointer nav-links  `}
-              to={nav.id}
-              spy={true}
-              smooth={true}
-              offset={-90}
-              duration={300}
-              onClick={() => handleNavLinkClick(nav.id)}>
-              {nav.title}
-            </ScrollLink>
-          ))}
+                to={nav.id}
+                spy={true}
+                smooth={true}
+                offset={-90}
+                duration={300}
+                onClick={() => {
+                  handleMobileNavLinkClick(nav.id);
+                }}>
+                {nav.title}
+              </ScrollLink>
+            );
+          })}
           <ScrollLink
             className="pt-2 leading-loose"
             to="contact"

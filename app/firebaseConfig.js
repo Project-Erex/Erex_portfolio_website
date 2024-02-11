@@ -1,7 +1,10 @@
+"use client";
+
 import {initializeApp} from "firebase/app";
 import "firebase/firestore";
+import {getAnalytics} from "firebase/analytics";
 
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyB0vOGgjmrQkUCuNRGOVc8tJGotRMlqWKg",
   authDomain: "erex-studio.firebaseapp.com",
   databaseURL: "https://erex-studio-default-rtdb.firebaseio.com",
@@ -12,6 +15,5 @@ const firebaseConfig = {
   measurementId: "G-3ECVELKGF2",
 };
 
-const app = initializeApp(firebaseConfig);
-
-export {app};
+const firebase = initializeApp(firebaseConfig);
+export const analytics = typeof window !== "undefined" ? getAnalytics(firebase) : null;

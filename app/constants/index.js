@@ -22,6 +22,14 @@ import {
   Linkedin,
   NpmLogo,
   Frame,
+  SmalBusiness,
+  MediumBusiness,
+  Enterprise,
+  Wave1,
+  Wave2,
+  Wave3,
+  Twitter,
+  Instagram,
 } from "../assets";
 
 export const navLinks = [
@@ -240,6 +248,16 @@ const ourSocialLink = [
     title: "linkedin",
     url: "https://www.linkedin.com/uas/login?session_redirect=%2Fcompany%2F99069712",
   },
+  {
+    icon: Twitter,
+    title: "Twitter",
+    url: "https://twitter.com/erexstudio",
+  },
+  {
+    icon: Instagram,
+    title: "Instagram",
+    url: "https://www.instagram.com/erexstudio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+  },
 ];
 
 const OurContribution = [
@@ -262,6 +280,30 @@ const OurContribution = [
     url: "https://www.npmjs.com/package/@erexstudio/geo-span-measure",
   },
 ];
+const DigitalMarketing = [
+  {
+    icon: SmalBusiness,
+    title: "Small Business",
+    price: "4900/",
+    wave: Wave1,
+    id: 1,
+  },
+  {
+    icon: MediumBusiness,
+    title: "Medium Business",
+    price: "8990/",
+    wave: Wave2,
+
+    id: 2,
+  },
+  {
+    icon: Enterprise,
+    title: "Enterprise",
+    id: 3,
+    wave: Wave3,
+    price: "Contact Us",
+  },
+];
 
 export {
   services,
@@ -272,4 +314,5 @@ export {
   ourTeam,
   ourSocialLink,
   OurContribution,
+  DigitalMarketing,
 };

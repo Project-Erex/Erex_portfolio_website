@@ -11,7 +11,6 @@ import React, {useRef} from "react";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
 import {motion} from "framer-motion";
-
 export default function Contact() {
   const [isloading, setIsLoading] = useState(false);
   const form = useRef();

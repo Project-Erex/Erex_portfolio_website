@@ -3,6 +3,7 @@ import {styles} from "../../styles";
 import Heading from "@/app/components/heading/Heading";
 import {ourBlog} from "@/app/constants";
 import Blogcard from "./Blogcard";
+import Checkbox from "@/app/components/Checkbox";
 export default function Blog() {
   return (
     <section className="w-full border-b-2 border-watermark ">

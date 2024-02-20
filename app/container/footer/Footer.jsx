@@ -1,21 +1,16 @@
 "use client";
 
-import {useRouter} from "next/navigation";
-
 import {styles} from "@/app/styles";
 import Image from "next/image";
 
 import {Mail, erexLogo} from "@/app/assets";
-import Link from "next/link";
 import SocialLink from "./SocialLink";
 import {HiArrowUp} from "react-icons/hi";
 import {motion} from "framer-motion";
-import {redirect} from "next/navigation";
 // import Particles from "@/app/components/heading/Particles";
+import {Link, Link as ScrollLink} from "react-scroll";
 
 export default function Footer() {
-  const router = useRouter();
-
   const scrollUp = () => {
     window.scrollTo({
       top: 0,
@@ -27,6 +22,16 @@ export default function Footer() {
     repeat: Infinity,
     repeatType: "loop",
   };
+
+  const Client = [{label: "Food Comet"}, {label: "Kids Quiz"}, {label: "DetectifyX"}];
+  const Services = [
+    {label: "Software Development"},
+    {label: "Creative Design"},
+    {label: "Digital Marketing"},
+    {label: "ASO Expertise"},
+    {label: "UI/UX Design"},
+    {label: "AI/ML"},
+  ];
   return (
     <div className="relative flex justify-center w-full bg-lightwhite">
       {/* <div className="absolute w-full h-full">
@@ -36,9 +41,16 @@ export default function Footer() {
         <section className={`${styles.xMargin}  ${styles.xdivPadding} md:pt-16 pt-6`}>
           <div className="grid w-full grid-cols-1 border-b-2 md:grid-cols-2 lg:grid-cols-3 border-watermark">
             <div className="flex flex-col items-start justify-center w-full mb-10 md:mb-24 lg:pr-4 xl:pr-0 md:justify-center">
-              <a href="/#" className="mb-6 inline-block max-w-[160px]">
+              <ScrollLink
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+                className="mb-6 inline-block max-w-[160px]">
                 <Image src={erexLogo} alt="logo" className="max-w-full" />
-              </a>
+              </ScrollLink>
+
               <p className="text-base mb-7 text-body-color text-gray">
                 West Bengal India
               </p>
@@ -54,21 +66,50 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex flex-row-reverse w-full md:flex-row">
-              <LinkGroup header="Our Client">
-                <NavLink href="/#ourClient" label="Food Comet" />
-                <NavLink href="/#ourClient" label="Kids Quiz" />
-                <NavLink href="/#ourClient" label="DetectifyX" />
-                {/* <NavLink href="/#" label="Legal" />
-              <NavLink href="/#" label="Site Map" /> */}
-              </LinkGroup>
-              <LinkGroup header="Our Services">
-                <NavLink href="/#service" label="Software Development" />
-                <NavLink href="/#service" label="Creative Design" />
-                <NavLink href="/#service" label="Digital Marketing" />
-                <NavLink href="/#service" label="ASO Expertise" />
-                <NavLink href="/#service" label="UI/UX Design" />
-                <NavLink href="/#service" label="AI/ML" />
-              </LinkGroup>
+              <div className="w-full ">
+                <div className="w-full mb-10 md:pt-8 lg:pt-0">
+                  <h4 className="mb-6 text-xl font-normal font-federo text-secondary">
+                    Our Client
+                  </h4>
+                  <ul className="space-y-3">
+                    {Client.map((client, index) => (
+                      <li key={index}>
+                        <ScrollLink
+                          to="ourClient"
+                          spy={true}
+                          smooth={true}
+                          offset={-70}
+                          duration={500}
+                          className="inline-block text-base leading-normal cursor-pointer text-body-color hover:text-primary text-gray">
+                          {client.label}
+                        </ScrollLink>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="w-full ">
+                <div className="w-full mb-10 md:pt-8 lg:pt-0">
+                  <h4 className="mb-6 text-xl font-normal font-federo text-secondary">
+                    Our Client
+                  </h4>
+                  <ul className="space-y-3">
+                    {Services.map((services, index) => (
+                      <li key={index}>
+                        <ScrollLink
+                          to="service"
+                          spy={true}
+                          smooth={true}
+                          offset={-70}
+                          duration={500}
+                          className="inline-block text-base leading-normal cursor-pointer text-body-color hover:text-primary text-gray">
+                          {services.label}
+                        </ScrollLink>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
             <div className="flex justify-start w-full lg:justify-end lg:pl-8 xl:pl-0">
               <div className="flex flex-col items-start mb-10 ">
@@ -115,31 +156,3 @@ export default function Footer() {
     </div>
   );
 }
-
-const LinkGroup = ({children, header}) => {
-  return (
-    <>
-      <div className="w-full ">
-        <div className="w-full mb-10 md:pt-8 lg:pt-0">
-          <h4 className="mb-6 text-xl font-normal font-federo text-secondary">
-            {header}
-          </h4>
-          <ul className="space-y-3">{children}</ul>
-        </div>
-      </div>
-    </>
-  );
-};
-
-const NavLink = ({href, label}) => {
-  return (
-    <li>
-      <Link
-        className="inline-block text-base leading-normal text-body-color hover:text-primary text-gray"
-        href={href}
-        passHref>
-        {label}
-      </Link>
-    </li>
-  );
-};

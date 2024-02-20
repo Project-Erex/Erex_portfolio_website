@@ -11,6 +11,7 @@ module.exports = {
         poppins: ["var(--font-poppins)"],
         rubik: ["var(--font-rubik)"],
         federo: ["var(--font-federo)"],
+        public: ["var(--font-public)"],
       },
       colors: {
         primary: "#4169E1",
@@ -24,6 +25,7 @@ module.exports = {
         lightGray: "#AFAFAF",
         watermark: "#EBEBEB",
         bghover: "#19181D",
+        bordercolor: "#DBE0E5",
       },
       screens: {"2xl": "1636px"},
     },

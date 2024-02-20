@@ -12,8 +12,12 @@ import {
   fadeInVariant,
 } from "@/app/constants/framer_motion";
 import TextAnimation from "@/app/components/heading/TextAnimation";
+import HeroImage from "@/app/components/HeroImage";
+import {useRouter} from "next/navigation";
 
 const Hero = () => {
+  const router = useRouter();
+
   const transition = {duration: 4.5, yoyo: Infinity, ease: "easeInOut"};
 
   return (
@@ -86,29 +90,14 @@ const Hero = () => {
                 className="hidden md:block"
                 scene="https://prod.spline.design/6li3mjiZmpzR3QRo/scene.splinecode"
               /> */}
+
               <motion.div
                 variants={fadeInVariant}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{once: true}}
                 className="flex items-center justify-center w-full xl:mt-12 md:h-full">
-                <motion.div
-                  initial={{y: -20}}
-                  animate={{y: 20}}
-                  transition={{
-                    type: "smooth",
-                    repeatType: "mirror",
-                    duration: 2,
-                    repeat: Infinity,
-                  }}>
-                  <Image
-                    className=" w-[371px] md:w-[500px] "
-                    height={0}
-                    width={0}
-                    src={Rocket}
-                    alt="Erex"
-                  />
-                </motion.div>
+                <HeroImage />
               </motion.div>
             </div>
           </div>

@@ -79,6 +79,7 @@ import {firebaseConfig} from "../firebaseConfig";
 import {Rocket} from "../assets";
 import {motion} from "framer-motion";
 
+// new //
 export default function HeroImage() {
   const defaultImage = Rocket;
   const [imageData, setImageData] = useState(null);
@@ -118,7 +119,7 @@ export default function HeroImage() {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [imageData]);
 
   const handleImageError = () => {
     setError("Image loading error");

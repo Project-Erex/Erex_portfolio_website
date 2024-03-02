@@ -138,11 +138,12 @@ export default function HeroImage() {
             repeat: Infinity,
           }}>
           <Image
-            className="w-[371px] md:w-[500px]"
+            className="w-[371px]  md:w-[500px]"
             height={0}
             width={0}
             src={defaultImage}
             alt="Erex"
+            draggable="false"
           />
         </motion.div>
       ) : (
@@ -155,6 +156,7 @@ export default function HeroImage() {
               width={0}
               src={imageData}
               alt="Erex"
+              draggable="false"
               onError={handleImageError}
             />
           )}

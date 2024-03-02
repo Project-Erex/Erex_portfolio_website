@@ -1,6 +1,6 @@
 "use client";
 
-import {DigitalMarketing} from "@/app/constants";
+import {DigitalMarketing, mediumBusiness, smallBusiness} from "@/app/constants";
 import {styles} from "@/app/styles";
 import React, {useEffect, useState} from "react";
 import {
@@ -20,7 +20,8 @@ import {GoDotFill} from "react-icons/go";
 import {get, getDatabase, ref} from "firebase/database";
 import {initializeApp} from "firebase/app";
 import {firebaseConfig} from "../firebaseConfig";
-import {motion} from "framer-motion";
+// import {motion} from "framer-motion";
+import {motion, useMotionValue, useTransform, animate} from "framer-motion";
 import {useRouter} from "next/navigation";
 export default function Pricing() {
   const router = useRouter();
@@ -29,6 +30,10 @@ export default function Pricing() {
   const [isMobileBanner, setIsMobileBanner] = useState();
   const [isExpanded, setIsExpanded] = useState(false);
 
+  const count = useMotionValue(0);
+  const counts = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const price = useTransform(counts, (latests) => Math.round(latests));
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
@@ -59,6 +64,12 @@ export default function Pricing() {
       .catch((error) => {
         console.error("Error getting data:", error);
       });
+  }, []);
+  useEffect(() => {
+    const controls = animate(count, 8990, {duration: 5});
+    const control = animate(counts, 5990, {duration: 4});
+
+    return controls.stop, control.stop;
   }, []);
 
   return (
@@ -142,42 +153,26 @@ export default function Pricing() {
                       <div>
                         <text className="flex items-center gap-1 text-secondary">
                           <LuIndianRupee size={32} />
-                          <p className="text-4xl font-medium font-rubik">
-                            {DigitalMarketing[0].price}
-                          </p>
+                          <motion.div className="text-4xl font-medium font-rubik">
+                            {/* {DigitalMarketing[0].price} */}
+                            {price}
+                          </motion.div>
                           <span className="text-[#4169E1] pt-3">Month</span>
                         </text>
                       </div>
                     </div>
                     {/* ******************************** */}
                     <div className="flex flex-col gap-3 px-5 rounded-b-[15px] pb-7 ">
-                      <div className="flex items-start gap-3">
-                        <FaCheck color="#4169E1" />
-                        <p className="text-secondary font-poppins">
-                          Social Media Handle Facebook & Instagram.
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <FaCheck color="#4169E1" />
-                        <p className="text-secondary font-poppins">
-                          Create & post promotional banners
-                          <br /> 4 in a month.
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <FaCheck color="#4169E1" />
-                        <p className="text-secondary font-poppins">
-                          Create hoarding design for stores
-                          <br /> (Max 3 in a month) .
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <FaCheck color="#4169E1" />
-                        <p className="text-secondary font-p4ppins">
-                          Basic Logo design support.
-                        </p>
+                      <div className="flex flex-col items-start gap-3 ">
+                        {smallBusiness.map((item, index) => (
+                          <div key={index} className="flex w-full gap-3 ">
+                            <div className="mt-1">{item.icon}</div>
+                            <p className="text-secondary font-poppins">{item.title}</p>
+                          </div>
+                        ))}
                       </div>
                     </div>
+
                     {/* ******************************** */}
                   </div>
                 </div>
@@ -218,51 +213,22 @@ export default function Pricing() {
                       </div>
                       <text className="flex items-center gap-1 text-secondary">
                         <LuIndianRupee size={32} />
-                        <p className="text-4xl font-medium font-rubik">
-                          {DigitalMarketing[1].price}
-                        </p>
+                        <motion.div className="text-4xl font-medium font-rubik">
+                          {/* {DigitalMarketing[1].price} */}
+                          {rounded}
+                        </motion.div>
                         <span className="text-[#A259FF] pt-3">Month</span>
                       </text>
                     </div>
                     {/* ******************************** */}
-                    <div className="flex flex-col gap-3 px-5 rounded-b-[15px] pb-7">
-                      <div className="flex items-start gap-3">
-                        <FaCheck color="#A259FF" />
-                        <p className="text-secondary font-poppins">
-                          Social Media Handle Facebook & Instagram.
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <FaCheck color="#A259FF" />
-                        <p className="text-secondary font-poppins">
-                          Create 8 banners and post on <br />
-                          social media each month.
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <FaCheck color="#A259FF" />
-                        <p className="text-secondary font-poppins">
-                          Short video & reels post (max 2 per month)
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <FaCheck color="#A259FF" />
-                        <p className="text-secondary font-poppins">
-                          Logo and Store banner design support.
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <FaCheck color="#A259FF" />
-                        <p className="text-secondary font-poppins">
-                          Static Website for the business. <br />
-                          (Domain & server price excluded).
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <FaCheck color="#A259FF" />
-                        <p className="text-secondary font-poppins">
-                          Basic market analysis report monthly.
-                        </p>
+                    <div className="flex flex-col gap-3 px-5 rounded-b-[15px] pb-7 ">
+                      <div className="flex flex-col items-start gap-3 ">
+                        {mediumBusiness.map((item, index) => (
+                          <div key={index} className="flex w-full gap-3 ">
+                            <div className="mt-1">{item.icon}</div>
+                            <p className="text-secondary font-poppins">{item.title}</p>
+                          </div>
+                        ))}
                       </div>
                     </div>
                     {/* ******************************** */}
@@ -301,39 +267,51 @@ export default function Pricing() {
                     {/* ******************************** */}
                     <div className="flex flex-col gap-3 rounded-b-[15px] px-5  pb-7">
                       <div className="flex items-start gap-3">
-                        <FaCheck color="#F24E1E" />
+                        <div className="mt-1">
+                          <FaCheck color="#F24E1E" />
+                        </div>
                         <p className="text-secondary font-poppins">
                           Social Media Handle Facebook & Instagram.
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
-                        <FaCheck color="#F24E1E" />
+                        <div className="mt-1">
+                          <FaCheck color="#F24E1E" />
+                        </div>
                         <p className="text-secondary font-poppins">
                           Create 8 banners and post on <br />
                           social media each month.
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
-                        <FaCheck color="#F24E1E" />
+                        <div className="mt-1">
+                          <FaCheck color="#F24E1E" />
+                        </div>
                         <p className="text-secondary font-poppins">
                           Short video & reels post (max 2 per month)
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
-                        <FaCheck color="#F24E1E" />
+                        <div className="mt-1">
+                          <FaCheck color="#F24E1E" />
+                        </div>
                         <p className="text-secondary font-poppins">
                           Logo and Store banner design support.
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
-                        <FaCheck color="#F24E1E" />
+                        <div className="mt-1">
+                          <FaCheck color="#F24E1E" />
+                        </div>
                         <p className="text-secondary font-poppins">
                           Static Website for the business.
                           <br /> (Domain & server price excluded).
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
-                        <FaCheck color="#F24E1E" />
+                        <div className="mt-1">
+                          <FaCheck color="#F24E1E" />
+                        </div>
                         <p className="text-secondary font-poppins">
                           Basic market analysis report monthly.
                         </p>
@@ -343,25 +321,33 @@ export default function Pricing() {
                           <div className={`container  ${isExpanded ? "expanded" : ""}`}>
                             <div className="flex flex-col items-start gap-3 ">
                               <div className="flex items-start gap-3 ">
-                                <FaCheck color="#F24E1E" />
+                                <div className="mt-1">
+                                  <FaCheck color="#F24E1E" />
+                                </div>
                                 <p className="text-secondary font-poppins">
                                   Create 8 banners and post on social media each month.
                                 </p>
                               </div>
                               <div className="flex items-start gap-3">
-                                <FaCheck color="#F24E1E" />
+                                <div className="mt-1">
+                                  <FaCheck color="#F24E1E" />
+                                </div>
                                 <p className="text-secondary font-poppins">
                                   Short video & reels post (max 2 per month)
                                 </p>
                               </div>
                               <div className="flex items-start gap-3">
-                                <FaCheck color="#F24E1E" />
+                                <div className="mt-1">
+                                  <FaCheck color="#F24E1E" />
+                                </div>
                                 <p className="text-secondary font-poppins">
                                   Logo and Store banner design support.
                                 </p>
                               </div>
                               <div className="flex items-start gap-3">
-                                <FaCheck color="#F24E1E" />
+                                <div className="mt-1">
+                                  <FaCheck color="#F24E1E" />
+                                </div>
                                 <p className="text-secondary font-poppins">
                                   Static Website for the business.
                                   <br /> (Domain & server price excluded).

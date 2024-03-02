@@ -195,8 +195,11 @@ export default function Contact() {
                   type="submit"
                   value="Send"
                   disabled={isloading}
-                  class="relative z-10 font-federo text-[16px] flex h-[50px] w-full sm:w-40 items-center justify-center overflow-hidden text-white  bg-primary">
-                  {isloading ? <ThreeDots width="50" color="#FFFFFF" /> : "Submit Now"}
+                  class="relative flex h-[44px] w-32 items-center justify-center overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
+                  <span className="relative z-10 font-federo text-[16px]">
+                    {" "}
+                    {isloading ? <ThreeDots width="50" color="#FFFFFF" /> : "Submit Now"}
+                  </span>
                 </button>
                 <ToastContainer />
               </motion.div>

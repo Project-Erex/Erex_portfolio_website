@@ -54,7 +54,7 @@ export default function Footer() {
               <p className="text-base mb-7 text-body-color text-gray">
                 West Bengal India
               </p>
-              <div className="flex justify-start w-full gap-2">
+              <div className="flex justify-start w-full gap-2 ">
                 <div className="px-2 py-2 rounded-full bg-background">
                   <a>
                     <Image src={Mail} alt="mail" />

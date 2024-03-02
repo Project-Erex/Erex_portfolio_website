@@ -1,3 +1,4 @@
+import {FaCheck} from "react-icons/fa6";
 import {
   foodComet,
   Representations,
@@ -305,6 +306,53 @@ const DigitalMarketing = [
   },
 ];
 
+const Check = <FaCheck color="#4169E1" />;
+const smallBusiness = [
+  {
+    icon: Check,
+    title: "Social Media Handle Facebook & Instagram.",
+  },
+  {
+    icon: Check,
+    title: "Create & post promotional banners 4 in a month.",
+  },
+  {
+    icon: Check,
+    title: "Create hoarding design for stores(Max 3 in a month).",
+  },
+  {
+    icon: Check,
+    title: "Basic Logo design support.",
+  },
+];
+const PurpleCheck = <FaCheck color="#A259FF" />;
+const mediumBusiness = [
+  {
+    icon: PurpleCheck,
+    title: "Social Media Handle Facebook & Instagram.",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Create 8 banners and post on social media each month.",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Short video & reels post (max 2 per month)",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Logo and Store banner design support.",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Static Website for the business.(Domain & server price excluded).",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Basic market analysis report monthly.",
+  },
+];
+
 export {
   services,
   ourClient,
@@ -315,4 +363,6 @@ export {
   ourSocialLink,
   OurContribution,
   DigitalMarketing,
+  smallBusiness,
+  mediumBusiness,
 };

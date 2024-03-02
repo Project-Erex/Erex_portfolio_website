@@ -36,7 +36,7 @@ export default function Business() {
     // reset();
     try {
       const response = await fetch(
-        "https://api.sheetmonkey.io/form/rTo9eUH7VqedNCJF14zJiJ",
+        "https://api.sheetmonkey.io/form/qXWPsLbQhxgJFcUBR11XAs", //https://api.sheetmonkey.io/form/rTo9eUH7VqedNCJF14zJiJ   // uday https://api.sheetmonkey.io/form/qXWPsLbQhxgJFcUBR11XAs
         {
           method: "POST",
           headers: {
@@ -91,9 +91,9 @@ export default function Business() {
                   placeholder="Example Inc"
                   type="text"
                   id="businessName"
-                  {...register("businessName")} // Pass field name to register directly
+                  {...register("BusinessName")} // Pass field name to register directly
                 />
-                <p className="mt-2 text-red-500">{errors.businessName?.message}</p>
+                <p className="mt-2 text-red-500">{errors.BusinessName?.message}</p>
               </div>
               <div className="w-full">
                 <label
@@ -106,9 +106,9 @@ export default function Business() {
                   placeholder="Example Doe"
                   type="text"
                   id="ownerName"
-                  {...register("ownerName")} // Pass field name to register directly
+                  {...register("OwnerName")} // Pass field name to register directly
                 />
-                <p className="mt-1 text-red-500">{errors.ownerName?.message}</p>
+                <p className="mt-1 text-red-500">{errors.OwnerName?.message}</p>
               </div>
             </div>
             {/* *********************************************************** */}
@@ -126,9 +126,9 @@ export default function Business() {
                   type="text"
                   maxLength="10"
                   id="phoneNo"
-                  {...register("phoneNo")}
+                  {...register("PhoneNo")}
                 />
-                <p className="mt-1 text-red-500">{errors.phoneNo?.message}</p>
+                <p className="mt-1 text-red-500">{errors.PhoneNo?.message}</p>
               </div>
               <div className="w-full">
                 <label
@@ -152,25 +152,25 @@ export default function Business() {
             <div className="w-full">
               <label
                 className="font-normal md:text-base xl:text-xl font-public text-secondary"
-                for="address">
+                for="BusinessAddress">
                 Business address <span className="text-red-500">*</span>
               </label>
 
               <textarea
-                {...register("address")}
+                {...register("BusinessAddress")}
                 className="w-full p-3 mt-2 text-sm font-normal border-2 rounded-[10px] focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background"
                 placeholder="123 Example, St, San Francisco, CA 940105"
                 rows="6"
-                id="address"
-                name="address"></textarea>
-              <p className="mt-1 text-red-500">{errors.address?.message}</p>
+                id="BusinessAddress"
+                name="BusinessAddress"></textarea>
+              <p className="mt-1 text-red-500">{errors.BusinessAddress?.message}</p>
             </div>
             {/* *********************************************************** */}
             <div className="flex flex-col w-full gap-5 py-5 md:py-10 md:gap-10 md:flex-row">
               <div className="w-full">
                 <label
                   className="font-normal md:text-base xl:text-xl font-public text-secondary"
-                  htmlFor="ownerPhoneNo">
+                  htmlFor="OwnerPhoneNo">
                   Owner contact number <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -179,9 +179,9 @@ export default function Business() {
                   type="text"
                   maxLength="10"
                   id="ownerPhoneNo"
-                  {...register("ownerPhoneNo")} // Pass field name to register directly
+                  {...register("OwnerPhoneNo")} // Pass field name to register directly
                 />
-                <p className="mt-1 text-red-500">{errors.ownerPhoneNo?.message}</p>
+                <p className="mt-1 text-red-500">{errors.OwnerPhoneNo?.message}</p>
               </div>
               <div className="flex flex-col w-full">
                 <label
@@ -192,7 +192,7 @@ export default function Business() {
 
                 <select
                   className="w-full p-3 mt-2 text-sm font-normal rounded-[10px] border-2 custom-select focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background "
-                  {...register("businesstype")}>
+                  {...register("BusinessType")}>
                   <option value="">Select business type</option>
                   <option value="restaurant">Restaurant</option>
                   <option value="hotels">Hotels</option>
@@ -201,7 +201,7 @@ export default function Business() {
                   <option value="individual_doctors">Individual Doctors</option>
                 </select>
 
-                <p className="mt-1 text-red-500">{errors.businesstype?.message}</p>
+                <p className="mt-1 text-red-500">{errors.BusinessType?.message}</p>
               </div>
             </div>
             {/* ********************************************************** */}
@@ -267,19 +267,19 @@ export default function Business() {
             <div className="w-full ">
               <label
                 className="font-normal md:text-base xl:text-xl font-public text-secondary"
-                for="WebUrl">
+                for="Url">
                 Website and social media URLs
               </label>
 
               <textarea
-                {...register("url")}
+                {...register("Url")}
                 className="w-full p-3 mt-2 rounded-[10px] overflow-y-hidden text-sm font-normal border-2 resize-none focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background"
                 placeholder="www.example.com, www.instagram.com/example, etc.
                 "
                 rows="4"
-                id="url"
-                name="url"></textarea>
-              <p className="mt-1 text-red-500">{errors.url?.message}</p>
+                id="Url"
+                name="Url"></textarea>
+              <p className="mt-1 text-red-500">{errors.Url?.message}</p>
             </div>
 
             {/* ************************************************************************** */}
@@ -293,7 +293,7 @@ export default function Business() {
 
                 <select
                   className="w-full p-3 mt-2 rounded-[10px] text-sm font-normal border-2 custom-select focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background "
-                  {...register("audience")}>
+                  {...register("Audience")}>
                   <option value="">Select business audience</option>
                   <option value="generic_local_customers">Generic Local Customers</option>
                   <option value="all_india">All India</option>
@@ -301,7 +301,7 @@ export default function Business() {
                   <option value="worldwide">Worldwide</option>
                 </select>
 
-                <p className="mt-1 text-red-500">{errors.audience?.message}</p>
+                <p className="mt-1 text-red-500">{errors.Audience?.message}</p>
               </div>
               <div className="flex flex-col w-full">
                 <label
@@ -312,7 +312,7 @@ export default function Business() {
 
                 <select
                   className="w-full p-3 mt-2 rounded-[10px] text-sm font-normal border-2 custom-select focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background "
-                  {...register("demographic")}>
+                  {...register("Demographic")}>
                   <option value="">Select business demographic</option>
                   <option value="general_audience">
                     General Audience (Include all types of customers)
@@ -326,7 +326,7 @@ export default function Business() {
                   <option value="others">Others</option>
                 </select>
 
-                <p className="mt-1 text-red-500">{errors.demographic?.message}</p>
+                <p className="mt-1 text-red-500">{errors.Demographic?.message}</p>
               </div>
             </div>
             {/* ************************************************************************** */}
@@ -341,7 +341,7 @@ export default function Business() {
 
                 <select
                   className="w-full p-3 mt-2 rounded-[10px] text-sm font-normal border-2 custom-select focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background "
-                  {...register("businessAge")}>
+                  {...register("BusinessAge")}>
                   <option value="">Select business age</option>
                   <option value="0-2">0 - 2 Years</option>
                   <option value="2-5">2 - 5 Years</option>
@@ -349,7 +349,7 @@ export default function Business() {
                   <option value="10+">10 + Years</option>
                 </select>
 
-                <p className="mt-1 text-red-500">{errors.businessAge?.message}</p>
+                <p className="mt-1 text-red-500">{errors.BusinessAge?.message}</p>
               </div>
               <div className="flex flex-col w-full">
                 <label
@@ -360,13 +360,13 @@ export default function Business() {
 
                 <select
                   className="w-full p-3 mt-2 rounded-[10px] text-sm font-normal border-2 custom-select focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background "
-                  {...register("businessSize")}>
+                  {...register("BusinessSize")}>
                   <option value="">Select business size</option>
                   <option value="small">Small</option>
                   <option value="medium">Medium</option>
                   <option value="large">Large</option>
                 </select>
-                <p className="mt-1 text-red-500">{errors.businessSize?.message}</p>
+                <p className="mt-1 text-red-500">{errors.BusinessSize?.message}</p>
               </div>
             </div>
             {/* ************************************************************************** */}

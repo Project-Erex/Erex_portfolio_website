@@ -1,36 +1,36 @@
 import * as yup from "yup";
 
 export const Schema = yup.object().shape({
-  businessName: yup.string().required("Business Name is required"),
-  ownerName: yup.string().required("Business Owner name is required"),
-  url: yup
+  BusinessName: yup.string().required("Business Name is required"),
+  OwnerName: yup.string().required("Business Owner name is required"),
+  Url: yup
     .string()
     .required("Social media URL is required")
     .matches(
       /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g,
       "Enter a valid social media URL",
     ),
-  address: yup.string().required("Please enter your business address"),
-  phoneNo: yup
+  BusinessAddress: yup.string().required("Please enter your business address"),
+  PhoneNo: yup
     .string()
     .required("Please enter your phone")
     .matches(
       /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/,
       "Phone number is not valid",
     ),
-  ownerPhoneNo: yup
+  OwnerPhoneNo: yup
     .string()
     .required("Please enter Business Owner phone number")
     .matches(
       /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/,
       "Please enter valid Phone No",
     ),
-  businesstype: yup.string().required("Select your business type"),
+  BusinessType: yup.string().required("Select your business type"),
   SellingPoint: yup.string().required("Tell us your USP"),
-  audience: yup.string().required("Select your targeted audience"),
-  demographic: yup.string().required("Select your targeted demographic"),
-  businessAge: yup.string().required("Please enter your business age"),
-  businessSize: yup.string().required("Select your business size"),
+  Audience: yup.string().required("Select your targeted audience"),
+  Demographic: yup.string().required("Select your targeted demographic"),
+  BusinessAge: yup.string().required("Please enter your business age"),
+  BusinessSize: yup.string().required("Select your business size"),
   // image: yup
   //   .mixed()
   //   .test("fileSize", "Max file size is 10MB", (value) => {

@@ -20,6 +20,7 @@ module.exports = {
         subheading: "#9e9e9e",
         gray: "#5A5A5A",
         background: "#FFFFFF",
+
         lightwhite: "#F5F5F5",
         liteblack: "4D4D4D",
         lightGray: "#AFAFAF",
@@ -30,5 +31,6 @@ module.exports = {
       screens: {"2xl": "1636px"},
     },
   },
+
   plugins: [],
 };

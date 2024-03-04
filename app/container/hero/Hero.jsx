@@ -13,10 +13,11 @@ import {
 } from "@/app/constants/framer_motion";
 import TextAnimation from "@/app/components/heading/TextAnimation";
 import HeroImage from "@/app/components/HeroImage";
-import {useRouter} from "next/navigation";
+import {useRef} from "react";
+import {Link, ScrollLink} from "react-scroll";
 
 const Hero = () => {
-  const router = useRouter();
+  const constraintsRef = useRef(null);
 
   const transition = {duration: 4.5, yoyo: Infinity, ease: "easeInOut"};
 
@@ -53,7 +54,7 @@ const Hero = () => {
                 />
               </svg>
             </motion.div>
-            <div className="z-50 flex flex-col items-center justify-center h-full px-4 md:pl-4 bg-fuchsia-00 bg-red-40 lg:px-6 xl:px-10 md:items-start md:w-1/2 ">
+            <div className="z-40 flex flex-col items-center justify-center h-full px-4 md:pl-4 bg-fuchsia-00 bg-red-40 lg:px-6 xl:px-10 md:items-start md:w-1/2 ">
               <div className="relative flex flex-col items-center justify-center w-full h-full md:pt-24 lg:pt-24 xl:pt-52 md:items-start">
                 <motion.div
                   variants={fadeInLeftVariant}
@@ -73,19 +74,24 @@ const Hero = () => {
                   software, captivating designs, and strategic digital marketing. Elevate
                   your brand with our innovative solutions and expert guidance.
                 </motion.h2>
-                <motion.a
+                <motion.div
                   variants={fadeInLeftchildrenVariant}
                   initial="hidden"
                   animate="visible"
-                  className="leading-loose"
-                  href="#contact">
-                  <button class="relative flex h-[50px] w-40 items-center justify-center overflow-hidden  text-white shadow-primary shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
-                    <span class="relative z-10 font-federo text-[16px]">Hire Us</span>
-                  </button>
-                </motion.a>
+                  className="leading-loose">
+                  <Link to="contact" spy={true} offset={-90} smooth={true} duration={300}>
+                    <button className="relative flex h-[50px] w-40 items-center justify-center overflow-hidden  text-white shadow-primary shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
+                      <span className="relative z-10 font-federo text-[16px]">
+                        Hire Us
+                      </span>
+                    </button>
+                  </Link>
+                </motion.div>
               </div>
             </div>
-            <div className="z-30 w-full h-auto md:h-full md:w-1/2">
+            <motion.div
+              ref={constraintsRef}
+              className="z-50 w-full h-auto md:h-full md:w-1/2">
               {/* <Spline
                 className="hidden md:block"
                 scene="https://prod.spline.design/6li3mjiZmpzR3QRo/scene.splinecode"
@@ -96,10 +102,12 @@ const Hero = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{once: true}}
-                className="flex items-center justify-center w-full xl:mt-12 md:h-full">
+                drag
+                dragConstraints={constraintsRef}
+                className="z-50 flex items-center justify-center w-full xl:mt-12 md:h-full">
                 <HeroImage />
               </motion.div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

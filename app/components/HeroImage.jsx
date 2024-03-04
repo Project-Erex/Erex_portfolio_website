@@ -79,6 +79,7 @@ import {firebaseConfig} from "../firebaseConfig";
 import {Rocket} from "../assets";
 import {motion} from "framer-motion";
 
+// new //
 export default function HeroImage() {
   const defaultImage = Rocket;
   const [imageData, setImageData] = useState(null);
@@ -118,7 +119,7 @@ export default function HeroImage() {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [imageData]);
 
   const handleImageError = () => {
     setError("Image loading error");
@@ -137,11 +138,12 @@ export default function HeroImage() {
             repeat: Infinity,
           }}>
           <Image
-            className="w-[371px] md:w-[500px]"
+            className="w-[371px]  md:w-[500px]"
             height={0}
             width={0}
             src={defaultImage}
             alt="Erex"
+            draggable="false"
           />
         </motion.div>
       ) : (
@@ -154,6 +156,7 @@ export default function HeroImage() {
               width={0}
               src={imageData}
               alt="Erex"
+              draggable="false"
               onError={handleImageError}
             />
           )}

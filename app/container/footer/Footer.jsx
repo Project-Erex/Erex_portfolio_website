@@ -23,7 +23,13 @@ export default function Footer() {
     repeatType: "loop",
   };
 
-  const Client = [{label: "Food Comet"}, {label: "Kids Quiz"}, {label: "DetectifyX"}];
+  const Client = [
+    {label: "Privacy Policy"},
+    {label: "Terms Of Use"},
+    {label: "Sales And Refunds"},
+    {label: "Legal"},
+    {label: "Site Map"},
+  ];
   const Services = [
     {label: "Software Development"},
     {label: "Creative Design"},
@@ -33,7 +39,7 @@ export default function Footer() {
     {label: "AI/ML"},
   ];
   return (
-    <div className="relative flex justify-center w-full bg-lightwhite">
+    <div className="relative flex justify-center w-full z-[999] bg-lightwhite">
       {/* <div className="absolute w-full h-full">
         <Particles />
       </div> */}
@@ -69,7 +75,7 @@ export default function Footer() {
               <div className="w-full ">
                 <div className="w-full mb-10 md:pt-8 lg:pt-0">
                   <h4 className="mb-6 text-xl font-normal font-federo text-secondary">
-                    Our Client
+                    Our Pages
                   </h4>
                   <ul className="space-y-3">
                     {Client.map((client, index) => (
@@ -91,7 +97,7 @@ export default function Footer() {
               <div className="w-full ">
                 <div className="w-full mb-10 md:pt-8 lg:pt-0">
                   <h4 className="mb-6 text-xl font-normal font-federo text-secondary">
-                    Our Client
+                    Our Services
                   </h4>
                   <ul className="space-y-3">
                     {Services.map((services, index) => (
@@ -130,12 +136,6 @@ export default function Footer() {
               © 2024. <text className="underline underline-offset-2">Erex Studio</text>{" "}
               All Rights Reserved.
             </text>
-            {/* <button
-              className="text-red-400"
-              type="button"
-              onClick={() => router.push("/priceing")}>
-              Dashboard
-            </button> */}
           </div>
           <div className="relative flex items-center justify-center w-full md:hidden ">
             <div

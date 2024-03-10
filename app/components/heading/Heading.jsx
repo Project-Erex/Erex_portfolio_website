@@ -9,7 +9,7 @@ export default function Heading({text, text2, img}) {
       {/* first-heading */}
       <div className="relative flex items-center justify-center pr-12 w-80">
         <div className="px-5 py-5 border-2 border-primary"></div>
-        <div className="absolute flex items-center bg-green-600 w-[8.5rem] right-14 justify-items-center">
+        <div className="absolute flex items-center  w-[8.5rem] right-14 justify-items-center">
           <span className="absolute left-0 whitespace-nowrap bg-background text-primary">
             {text}
           </span>

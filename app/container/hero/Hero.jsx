@@ -104,7 +104,7 @@ const Hero = () => {
                 viewport={{once: true}}
                 drag
                 dragConstraints={constraintsRef}
-                className="z-50 flex items-center justify-center w-full xl:mt-12 md:h-full">
+                className="z-50 flex items-center cursor-pointer justify-center w-full xl:mt-12 md:h-full">
                 <HeroImage />
               </motion.div>
             </motion.div>

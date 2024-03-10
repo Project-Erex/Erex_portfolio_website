@@ -9,7 +9,7 @@ export const Example = () => {
 
   return (
     <motion.div
-      className="flex w-full h-full overflow-hidden bg-fuchsia-500 place-content-center place-items-center rounded-3xl"
+      className="flex w-full h-full overflow-hidden  place-content-center place-items-center rounded-3xl"
       ref={constraintsRef}>
       <motion.div
         className="w-[150px] h-[150px] bg-white rounded-[inherit]"

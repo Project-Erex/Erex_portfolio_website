@@ -45,6 +45,19 @@ import Enterprise from "./icons/Vectorhome.png";
 import Wave1 from "./background/wave.png";
 import Wave2 from "./background/wave2.png";
 import Wave3 from "./background/wave3.png";
+import Depth from "./background/Depth.png";
+import Reveal from "./background/reveal.png";
+import Vector from "./icons/Vector-0.png";
+import Clock from "./icons/Clock0.png";
+import SaleForceTroops from "./logo/SaleForceTroops_logo.png";
+import ComputerApp from "./logo/computerApp.png";
+import MobileApp from "./logo/mobileApp.png";
+
+
+
+
+
+
 export {
   erexLogo,
   menu,
@@ -93,4 +106,11 @@ export {
   Wave1,
   Wave2,
   Wave3,
+  Depth,
+  Vector,
+  Clock,
+  SaleForceTroops,
+  ComputerApp,
+  MobileApp,
+  Reveal
 };

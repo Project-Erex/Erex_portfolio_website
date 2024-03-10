@@ -309,6 +309,7 @@ export default function Pricing() {
                     {/* ******************************** */}
                   </div>
                 </div>
+                {/*  */}
                 {/* 3RD Card */}
                 <div className=" w-full rounded-b-[15px] shadow-lg">
                   <div className="relative w-full">

@@ -15,7 +15,7 @@ const Client = () => {
         <div
           className={` ${styles.yPadding}   ${styles.xMargin} ${styles.xdivPadding} bg-background 2xl:border-y-4  md:border-x-2 border-watermark  h-full  relative  bg-backgroundGray `}>
           <Heading text={"Our Client"} text2={"Discover Our Clients"} img={CLIENTS} />
-          <div className="z-30 flex items-center justify-center w-full mt-8 overflow-hidden md:mt-8 lg:mt-10 bg-lightwhite ">
+          <div className="z-30 flex items-center justify-center w-full mt-8 overflow-hidden md:mt-8 lg:mt-10 bg-background ">
             <Slick />
           </div>
         </div>

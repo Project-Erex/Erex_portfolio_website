@@ -3,13 +3,13 @@ import * as yup from "yup";
 export const Schema = yup.object().shape({
   BusinessName: yup.string().required("Business Name is required"),
   OwnerName: yup.string().required("Business Owner name is required"),
-  Url: yup
-    .string()
-    .required("Social media URL is required")
-    .matches(
-      /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g,
-      "Enter a valid social media URL",
-    ),
+  // Url: yup
+  //   .string()
+  //   .required("Social media URL is required")
+  //   .matches(
+  //     /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g,
+  //     "Enter a valid social media URL",
+  //   ),
   BusinessAddress: yup.string().required("Please enter your business address"),
   PhoneNo: yup
     .string()

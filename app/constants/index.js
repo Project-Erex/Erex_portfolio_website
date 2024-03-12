@@ -1,4 +1,5 @@
 import {FaCheck} from "react-icons/fa6";
+import { FaCheckCircle } from "react-icons/fa";
 import {
   foodComet,
   Representations,
@@ -31,8 +32,16 @@ import {
   Wave3,
   Twitter,
   Instagram,
+  SaleForceTroops,
+  Avatarify_logo,
+  PuruliaPBD,
+  Trimz_Logo,
+  Trinayoni_logo,
 } from "../assets";
 
+const Check = <FaCheck color="#4169E1" />;
+const PurpleCheck = <FaCheck color="#A259FF" />;
+const CheckCircle = <FaCheckCircle />
 export const navLinks = [
   {
     id: "home",
@@ -113,14 +122,29 @@ const ourClient = [
     id: 1,
   },
   {
-    title: "KidsQuiz",
-    icon: KidQuiz,
+    title: "SaleForceTroops",
+    icon: SaleForceTroops,
     id: 2,
   },
   {
-    title: "DetectifyX",
-    icon: DetectifyX,
+    title: "Avatarify_logo",
+    icon: Avatarify_logo,
     id: 3,
+  },
+  {
+    title: "PuruliaPBD",
+    icon: PuruliaPBD,
+    id: 4,
+  },
+  {
+    title: "Trimz_Logo",
+    icon: Trimz_Logo,
+    id: 5,
+  },
+  {
+    title: "Trinayoni_logo",
+    icon: Trinayoni_logo,
+    id: 6,
   },
 ];
 const ourProjects = [
@@ -306,7 +330,6 @@ const DigitalMarketing = [
   },
 ];
 
-const Check = <FaCheck color="#4169E1" />;
 const smallBusiness = [
   {
     icon: Check,
@@ -325,7 +348,6 @@ const smallBusiness = [
     title: "Basic Logo design support.",
   },
 ];
-const PurpleCheck = <FaCheck color="#A259FF" />;
 const mediumBusiness = [
   {
     icon: PurpleCheck,
@@ -352,6 +374,52 @@ const mediumBusiness = [
     title: "Basic market analysis report monthly.",
   },
 ];
+
+export const Application = [
+  {
+  icon: CheckCircle,
+  title: "Lorem ipsum dolor sit amet.",
+},
+  {
+  icon: CheckCircle,
+  title: "Lorem ipsum dolor sit amet.",
+},
+  {
+  icon: CheckCircle,
+  title: "Lorem ipsum dolor sit amet.",
+},
+  {
+  icon: CheckCircle,
+  title: "Lorem ipsum dolor sit amet.",
+},
+  {
+  icon: CheckCircle,
+  title: "Lorem ipsum dolor sit amet.",
+},
+]
+export const Website = [
+  {
+  icon: CheckCircle,
+  title: "Lorem ipsum dolor sit amet.",
+},
+  {
+  icon: CheckCircle,
+  title: "Lorem ipsum dolor sit amet.",
+},
+  {
+  icon: CheckCircle,
+  title: "Lorem ipsum dolor sit amet.",
+},
+  {
+  icon: CheckCircle,
+  title: "Lorem ipsum dolor sit amet.",
+},
+  {
+  icon: CheckCircle,
+  title: "Lorem ipsum dolor sit amet.",
+},
+]
+
 
 export {
   services,

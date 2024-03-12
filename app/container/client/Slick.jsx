@@ -17,7 +17,7 @@ export default function Slick({}) {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1024,
@@ -26,7 +26,7 @@ export default function Slick({}) {
           slidesToScroll: 1,
           infinite: true,
           autoplay: true,
-          autoplaySpeed: 4000,
+          autoplaySpeed: 3000,
           dots: true,
         },
       },
@@ -75,12 +75,16 @@ export default function Slick({}) {
             }}
             viewport={{once: true}}>
             <div key={index}>
-              <div className="flex items-center justify-center w-full group md:border-r-2 border-watermark">
-                <Image
-                  src={client.icon}
-                  alt={client.title}
-                  className="h-auto transition-all duration-500 ease-in-out group-hover:scale-110 w-36"
-                />
+              <div className=" px-3 bg-white w-full h-full  ">
+                <div className="flex flex-col bg-lightwhite px-4 py-4  h-32 items-center justify-center  w-full ">
+                  <Image
+                    src={client.icon}
+                    alt={client.title}
+                    width={0}
+                    height={0}
+                    className="w-60 h-auto"
+                  />
+                </div>
               </div>
             </div>
           </motion.div>
@@ -88,4 +92,14 @@ export default function Slick({}) {
       </Slider>
     </div>
   );
+}
+
+{
+  /* <div className="flex items-center relative h-full justify-center bg-slate-600 w-full group md:border-r-2 border-watermark">
+  <Image
+    src={client.icon}
+    alt={client.title}
+    className="h-full  transition-all duration-500 ease-in-out group-hover:scale-110 w-full"
+  />
+</div>; */
 }

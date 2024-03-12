@@ -20,7 +20,6 @@ module.exports = {
         subheading: "#9e9e9e",
         gray: "#5A5A5A",
         background: "#FFFFFF",
-
         lightwhite: "#F5F5F5",
         liteblack: "4D4D4D",
         lightGray: "#AFAFAF",
@@ -29,8 +28,12 @@ module.exports = {
         bordercolor: "#DBE0E5",
       },
       screens: {"2xl": "1636px"},
+      boxShadow: {
+        '3xl': 'rgba(0, 0, 0, 0.15) 0px 5px 15px 0px',
+      }
     },
   },
 
   plugins: [],
 };
+  

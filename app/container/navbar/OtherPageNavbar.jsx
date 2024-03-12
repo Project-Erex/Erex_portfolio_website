@@ -44,6 +44,7 @@ const OtherPageNavbar = () => {
         className={`${styles.xPadding}  w-full flex justify-between  max-w-screen-2xl items-center`}>
         <Link
           href="/"
+          to="/"
           className="flex items-center"
           onClick={() => {
             setActive("");

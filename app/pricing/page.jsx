@@ -1,12 +1,20 @@
 "use client";
 
-import {DigitalMarketing, mediumBusiness, smallBusiness} from "@/app/constants";
+import {
+  Application,
+  DigitalMarketing,
+  Website,
+  mediumBusiness,
+  smallBusiness,
+} from "@/app/constants";
 import {styles} from "@/app/styles";
 import React, {useEffect, useState} from "react";
 import {
+  ComputerApp,
   Enterprise,
   Layer,
   MediumBusiness,
+  MobileApp,
   SmalBusiness,
   Wave1,
   Wave2,
@@ -16,19 +24,24 @@ import Image from "next/image";
 import {FaCheck} from "react-icons/fa6";
 
 import {LuIndianRupee} from "react-icons/lu";
-import {GoDotFill} from "react-icons/go";
 import {get, getDatabase, ref} from "firebase/database";
 import {initializeApp} from "firebase/app";
 import {firebaseConfig} from "../firebaseConfig";
-// import {motion} from "framer-motion";
 import {motion, useMotionValue, useTransform, animate} from "framer-motion";
 import {useRouter} from "next/navigation";
+import {FaRegEye} from "react-icons/fa";
+import RevealPriceModal from "../components/revealPrice/RevealPriceModal";
+import Influencers from "../components/Influencer/Influencers";
+
 export default function Pricing() {
   const router = useRouter();
 
   const [isBanner, setIsBanner] = useState();
   const [isMobileBanner, setIsMobileBanner] = useState();
   const [isExpanded, setIsExpanded] = useState(false);
+
+  const [isPrice, setIsPrice] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const count = useMotionValue(0);
   const counts = useMotionValue(0);
@@ -48,6 +61,7 @@ export default function Pricing() {
   useEffect(() => {
     initializeApp(firebaseConfig);
     const database = getDatabase();
+    handlePrice();
 
     const dataRef = ref(database, "/");
 
@@ -65,12 +79,28 @@ export default function Pricing() {
         console.error("Error getting data:", error);
       });
   }, []);
-  useEffect(() => {
+
+  const handlePrice = async () => {
+    const price = await localStorage.getItem("isPrice");
+    if (price) {
+      console.log(price, "price");
+      setIsPrice(true);
+      priceAnimation();
+    } else {
+      setIsPrice(false);
+    }
+  };
+
+  const handlePriceClick = () => {
+    setShowModal(true); // Show login form when "Price" button is clicked
+  };
+
+  const priceAnimation = () => {
     const controls = animate(count, 8990, {duration: 5});
     const control = animate(counts, 5990, {duration: 4});
 
     return controls.stop, control.stop;
-  }, []);
+  };
 
   return (
     <section className="flex justify-center w-full pt-20 bg-background">
@@ -140,12 +170,11 @@ export default function Pricing() {
                     </div>
                     <div className="flex flex-col gap-2 px-5 pb-7">
                       <div className="flex items-center gap-2 pl-2">
-                        <div className="flex items-center">
-                          {/* <LuIndianRupee size={20} color="#9e9e9e" /> */}
+                        {/* <div className="flex items-center">
                           <span className="text-lg font-normal text-subheading font-poppins">
                             <del>&#8377;10000</del>
                           </span>
-                        </div>
+                        </div> */}
                         <div className="px-[10px] py-1 text-center rounded-full flex items-center justify-center bg-opacity-20  bg-[#4169E1]">
                           <span className="text-[#4169E1]  font-medium">SAVE 59%</span>
                         </div>
@@ -153,11 +182,37 @@ export default function Pricing() {
                       <div>
                         <text className="flex items-center gap-1 text-secondary">
                           <LuIndianRupee size={32} />
-                          <motion.div className="text-4xl font-medium font-rubik">
-                            {/* {DigitalMarketing[0].price} */}
-                            {price}
-                          </motion.div>
-                          <span className="text-[#4169E1] pt-3">Month</span>
+                          <div className="flex gap-1">
+                            {showModal && (
+                              <RevealPriceModal
+                                setShowModal={setShowModal}
+                                showModal={showModal}
+                                setIsPrice={setIsPrice}
+                                priceAnimation={priceAnimation}
+                              />
+                            )}
+
+                            {!isPrice && (
+                              <>
+                                <button
+                                  onClick={handlePriceClick}
+                                  className=" text-background flex items-center gap-2 text-center bg-primary font-bold py-[6px] px-4 rounded-lg">
+                                  Show price
+                                  <span className="pt-1">
+                                    <FaRegEye size={20} />
+                                  </span>
+                                </button>
+                              </>
+                            )}
+                            {isPrice && (
+                              <>
+                                <motion.div className="text-4xl text-secondary font-bold ">
+                                  {price}
+                                </motion.div>
+                                <p className="text-[#4169E1] pt-3">Month</p>
+                              </>
+                            )}
+                          </div>
                         </text>
                       </div>
                     </div>
@@ -201,23 +256,39 @@ export default function Pricing() {
                     </div>
                     <div className="flex flex-col gap-2 px-5 pb-7">
                       <div className="flex items-center gap-2 pl-2">
-                        <div className="flex items-center">
-                          {/* <LuIndianRupee size={20} color="#9e9e9e" /> */}
+                        {/* <div className="flex items-center">
                           <span className="text-lg font-normal text-subheading font-poppins">
                             <del>&#8377;15000</del>
                           </span>
-                        </div>
+                        </div> */}
                         <div className="px-[10px] py-1 text-center rounded-full flex items-center justify-center bg-opacity-20  bg-[#A259FF]">
                           <span className="text-[#A259FF]  font-medium">SAVE 60%</span>
                         </div>
                       </div>
                       <text className="flex items-center gap-1 text-secondary">
                         <LuIndianRupee size={32} />
-                        <motion.div className="text-4xl font-medium font-rubik">
-                          {/* {DigitalMarketing[1].price} */}
-                          {rounded}
-                        </motion.div>
-                        <span className="text-[#A259FF] pt-3">Month</span>
+                        <div className="flex gap-1">
+                          {!isPrice && (
+                            <>
+                              <button
+                                onClick={handlePriceClick}
+                                className=" text-background flex items-center gap-2 text-center bg-[#A259FF] font-bold py-[6px] px-4 rounded-lg">
+                                Show price
+                                <span className="pt-1">
+                                  <FaRegEye size={20} />
+                                </span>
+                              </button>
+                            </>
+                          )}
+                          {isPrice && (
+                            <>
+                              <motion.div className="text-4xl text-secondary font-bold ">
+                                {rounded}
+                              </motion.div>
+                              <p className="text-[#A259FF] pt-3">Month</p>
+                            </>
+                          )}
+                        </div>
                       </text>
                     </div>
                     {/* ******************************** */}
@@ -234,6 +305,7 @@ export default function Pricing() {
                     {/* ******************************** */}
                   </div>
                 </div>
+                {/*  */}
                 {/* 3RD Card */}
                 <div className=" w-full rounded-b-[15px] shadow-lg">
                   <div className="relative w-full">
@@ -325,7 +397,8 @@ export default function Pricing() {
                                   <FaCheck color="#F24E1E" />
                                 </div>
                                 <p className="text-secondary font-poppins">
-                                  Create 8 banners and post on social media each month.
+                                  Marketing strategy analysis and report.(Analysis your
+                                  business and recommend strategies to grow)
                                 </p>
                               </div>
                               <div className="flex items-start gap-3">
@@ -333,7 +406,7 @@ export default function Pricing() {
                                   <FaCheck color="#F24E1E" />
                                 </div>
                                 <p className="text-secondary font-poppins">
-                                  Short video & reels post (max 2 per month)
+                                  Unique marketing campaigns.
                                 </p>
                               </div>
                               <div className="flex items-start gap-3">
@@ -341,7 +414,7 @@ export default function Pricing() {
                                   <FaCheck color="#F24E1E" />
                                 </div>
                                 <p className="text-secondary font-poppins">
-                                  Logo and Store banner design support.
+                                  Logo & Branding support.
                                 </p>
                               </div>
                               <div className="flex items-start gap-3">
@@ -349,8 +422,7 @@ export default function Pricing() {
                                   <FaCheck color="#F24E1E" />
                                 </div>
                                 <p className="text-secondary font-poppins">
-                                  Static Website for the business.
-                                  <br /> (Domain & server price excluded).
+                                  Social Media Marketing Along with Google & Facebook ads.
                                 </p>
                               </div>
                             </div>
@@ -371,37 +443,93 @@ export default function Pricing() {
             {/* !********************************************************** */}
 
             <div className="w-full h-full py-10">
-              <div className="flex items-center justify-center pb-10 text-center">
+              <div className="flex items-center justify-center pb-5 text-center">
                 <text className="text-4xl md:text-5xl lg:text-6xl text-secondary font-federo">
                   Website & App for your Business
                 </text>
               </div>
-              <div className="flex flex-col gap-5 ">
-                <div className="flex items-center gap-4 ">
-                  <GoDotFill color="#4169E1" size={40} />
-                  <p className="text-xl md:text-2xl text-secondary font-poppins ">
-                    Create a website for your business and stand unique and trusted brand
-                    in the market.
-                  </p>
+              <div className="w-full flex justify-center items-center">
+                <p className="text-subheading text-lg text-center md:text-2xl xl:text-3xl ">
+                  Empower Your Business with a Seamless Website and App Experience
+                </p>
+              </div>
+
+              <div className="flex w-full gap-10 flex-col  xl:flex-row  pt-16 justify-center ">
+                <div className=" w-full py-8 px-8  shadow-3xl rounded-[10px] bg-primary bg-opacity-30">
+                  <div className="w-full flex justify-between flex-col  md:flex-row">
+                    <div className="md:w-2/5 w-full items-center md:items-start  border-b pb-3 md:pb-0 md:border-b-0  md:border-r border-primary gap-4 flex flex-col justify-center">
+                      <h2 className="px-4 py-1 rounded-md bg-primary">APPLICATION</h2>
+                      <Image
+                        src={MobileApp}
+                        width={0}
+                        alt="Logo"
+                        height={0}
+                        className="w-28"
+                      />
+                    </div>
+                    <div className="w-full md:w-3/5 flex gap-3 md:pt-0 pt-3  md:pl-10   flex-col text-black justify-center items-center ">
+                      {Application.map((App, index) => {
+                        return (
+                          <div
+                            key={index}
+                            className="flex  items-center md:justify-start   w-full gap-3 ">
+                            <div className="pt-1">{App?.icon}</div>
+                            <p className="text-secondary font-poppins">{App?.title}</p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <div className="w-full pt-8">
+                    <button
+                      onClick={() => {
+                        router.push("/pricing/business");
+                      }}
+                      className="bg-primary py-2 text-lg  font-medium rounded-md w-full">
+                      Get a quote
+                    </button>
+                  </div>
                 </div>
-                <div className="flex items-center gap-4 ">
-                  <GoDotFill color="#A259FF" size={40} />
-                  <p className="text-xl md:text-2xl text-secondary font-poppins ">
-                    Create mobile application for selling your business hassle free and
-                    provide quick service.
-                  </p>
-                </div>
-                <div className="flex items-center gap-4 ">
-                  <GoDotFill color="#F24E1E" size={40} />
-                  <p className="text-xl md:text-2xl text-secondary font-poppins ">
-                    Cost for Website & App development depends on your requirments.
-                  </p>
+                <div className=" w-full py-8 px-8  shadow-3xl rounded-[10px] bg-[#AA57FB] bg-opacity-30">
+                  <div className="w-full flex justify-between flex-col  md:flex-row">
+                    <div className="md:w-2/5 w-full items-center md:items-start  border-b pb-3 md:pb-0 md:border-b-0  md:border-r border-[#AA57FB] gap-4 flex flex-col justify-center">
+                      <h2 className="px-4 py-1  rounded-md bg-[#AA57FB]">WEBSITE</h2>
+                      <Image
+                        src={ComputerApp}
+                        width={0}
+                        alt="Logo"
+                        height={0}
+                        className="w-28"
+                      />
+                    </div>
+                    <div className="w-full md:w-3/5 flex gap-3 md:pt-0 pt-3  md:pl-10  flex-col text-black justify-center items-center ">
+                      {Website.map((Web, index) => {
+                        return (
+                          <div
+                            key={index}
+                            className="flex  items-center md:justify-start   w-full gap-3 ">
+                            <div className="pt-1">{Web?.icon}</div>
+                            <p className="text-secondary font-poppins">{Web?.title}</p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <div className="w-full pt-8">
+                    <button
+                      onClick={() => {
+                        router.push("/pricing/business");
+                      }}
+                      className="bg-[#AA57FB] py-2 text-lg  font-medium rounded-md w-full">
+                      Get a quote
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
             {/* *********************************************** */}
             <div className="w-full">
-              <button
+              {/* <button
                 onClick={() => {
                   router.push("/pricing/business");
                 }}
@@ -409,7 +537,8 @@ export default function Pricing() {
                 <span className="z-50 text-lg text-white font-federo">
                   Contact for business
                 </span>
-              </button>
+              </button> */}
+              <Influencers />
             </div>
           </div>
         </div>

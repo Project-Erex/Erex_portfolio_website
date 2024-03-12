@@ -61,11 +61,12 @@ export default function Contribution() {
                 className="flex flex-col items-center justify-center w-full bg-lightwhite h-[275px] lg:h-full gap-2 transition-all duration-500 ease-in-out delay-75 border-2  border-watermark group hover:bg-bghover hover:border-bghover">
                 <Link
                   target="_blank"
+                  to="#"
                   href={"https://www.npmjs.com/~erexstudio"}
                   className="w-20 px-4 py-4 transition-all duration-500 bg-white rounded-full group-hover:bg-opacity-10">
                   <Image src={Arrow2} alt="Erex" />
                 </Link>
-                <Link href={"https://www.npmjs.com/~erexstudio"} target="_blank">
+                <Link to="#" href={"https://www.npmjs.com/~erexstudio"} target="_blank">
                   <button className="text-heading font-federo  transition-all duration-500 group-hover:text-white  font-normal text-[18px] lg:text-[24px] xl:text-[30px] text-start  leading-normal">
                     View All
                   </button>

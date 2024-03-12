@@ -24,15 +24,14 @@ import Image from "next/image";
 import {FaCheck} from "react-icons/fa6";
 
 import {LuIndianRupee} from "react-icons/lu";
-import {GoDotFill} from "react-icons/go";
 import {get, getDatabase, ref} from "firebase/database";
 import {initializeApp} from "firebase/app";
 import {firebaseConfig} from "../firebaseConfig";
-// import {motion} from "framer-motion";
 import {motion, useMotionValue, useTransform, animate} from "framer-motion";
 import {useRouter} from "next/navigation";
 import {FaRegEye} from "react-icons/fa";
 import RevealPriceModal from "../components/revealPrice/RevealPriceModal";
+import Influencers from "../components/Influencer/Influencers";
 
 export default function Pricing() {
   const router = useRouter();
@@ -41,9 +40,7 @@ export default function Pricing() {
   const [isMobileBanner, setIsMobileBanner] = useState();
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const [showLogin, setShowLogin] = useState(false);
+  const [isPrice, setIsPrice] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const count = useMotionValue(0);
@@ -64,6 +61,7 @@ export default function Pricing() {
   useEffect(() => {
     initializeApp(firebaseConfig);
     const database = getDatabase();
+    handlePrice();
 
     const dataRef = ref(database, "/");
 
@@ -82,29 +80,27 @@ export default function Pricing() {
       });
   }, []);
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Perform login authentication here
-  //   // For simplicity, let's assume authentication is successful
-  //   setIsLoggedIn(true);
-  //   setShowLogin(false); // Hide login form after successful login
-  // };
+  const handlePrice = async () => {
+    const price = await localStorage.getItem("isPrice");
+    if (price) {
+      console.log(price, "price");
+      setIsPrice(true);
+      priceAnimation();
+    } else {
+      setIsPrice(false);
+    }
+  };
 
   const handlePriceClick = () => {
-    setShowLogin(true); // Show login form when "Price" button is clicked
+    setShowModal(true); // Show login form when "Price" button is clicked
   };
 
-  const handleClose = () => {
-    setShowModal(false);
-    setShowLogin(false);
-  };
-
-  useEffect(() => {
+  const priceAnimation = () => {
     const controls = animate(count, 8990, {duration: 5});
     const control = animate(counts, 5990, {duration: 4});
 
     return controls.stop, control.stop;
-  }, [count, counts]);
+  };
 
   return (
     <section className="flex justify-center w-full pt-20 bg-background">
@@ -186,18 +182,21 @@ export default function Pricing() {
                       <div>
                         <text className="flex items-center gap-1 text-secondary">
                           <LuIndianRupee size={32} />
-                          <div>
-                            {!isLoggedIn && showLogin && (
+                          <div className="flex gap-1">
+                            {showModal && (
                               <RevealPriceModal
-                                handleClose={handleClose}
-                                setIsLoggedIn={() => setIsLoggedIn(true)}
+                                setShowModal={setShowModal}
+                                showModal={showModal}
+                                setIsPrice={setIsPrice}
+                                priceAnimation={priceAnimation}
                               />
                             )}
-                            {!isLoggedIn && !showLogin && (
+
+                            {!isPrice && (
                               <>
                                 <button
                                   onClick={handlePriceClick}
-                                  className=" text-background flex items-center gap-2 text-center bg-primary font-bold py-2 px-4 rounded-lg">
+                                  className=" text-background flex items-center gap-2 text-center bg-primary font-bold py-[6px] px-4 rounded-lg">
                                   Show price
                                   <span className="pt-1">
                                     <FaRegEye size={20} />
@@ -205,13 +204,15 @@ export default function Pricing() {
                                 </button>
                               </>
                             )}
-                            {isLoggedIn && (
-                              <motion.div className="text-4xl text-secondary font-bold ">
-                                {price}
-                              </motion.div>
+                            {isPrice && (
+                              <>
+                                <motion.div className="text-4xl text-secondary font-bold ">
+                                  {price}
+                                </motion.div>
+                                <p className="text-[#4169E1] pt-3">Month</p>
+                              </>
                             )}
                           </div>
-                          <span className="text-[#4169E1] pt-3">Month</span>
                         </text>
                       </div>
                     </div>
@@ -266,18 +267,12 @@ export default function Pricing() {
                       </div>
                       <text className="flex items-center gap-1 text-secondary">
                         <LuIndianRupee size={32} />
-                        <div>
-                          {!isLoggedIn && showLogin && (
-                            <RevealPriceModal
-                              handleClose={handleClose}
-                              setIsLoggedIn={() => setIsLoggedIn(true)}
-                            />
-                          )}
-                          {!isLoggedIn && !showLogin && (
+                        <div className="flex gap-1">
+                          {!isPrice && (
                             <>
                               <button
                                 onClick={handlePriceClick}
-                                className=" text-background flex items-center gap-2 text-center bg-[#A259FF] font-bold py-2 px-4 rounded-lg">
+                                className=" text-background flex items-center gap-2 text-center bg-[#A259FF] font-bold py-[6px] px-4 rounded-lg">
                                 Show price
                                 <span className="pt-1">
                                   <FaRegEye size={20} />
@@ -285,14 +280,15 @@ export default function Pricing() {
                               </button>
                             </>
                           )}
-                          {isLoggedIn && (
-                            <motion.div className="text-4xl text-secondary font-bold ">
-                              {rounded}
-                            </motion.div>
+                          {isPrice && (
+                            <>
+                              <motion.div className="text-4xl text-secondary font-bold ">
+                                {rounded}
+                              </motion.div>
+                              <p className="text-[#A259FF] pt-3">Month</p>
+                            </>
                           )}
                         </div>
-
-                        <span className="text-[#A259FF] pt-3">Month</span>
                       </text>
                     </div>
                     {/* ******************************** */}
@@ -532,8 +528,8 @@ export default function Pricing() {
               </div>
             </div>
             {/* *********************************************** */}
-            {/* <div className="w-full">
-              <button
+            <div className="w-full">
+              {/* <button
                 onClick={() => {
                   router.push("/pricing/business");
                 }}
@@ -541,8 +537,9 @@ export default function Pricing() {
                 <span className="z-50 text-lg text-white font-federo">
                   Contact for business
                 </span>
-              </button>
-            </div> */}
+              </button> */}
+              <Influencers />
+            </div>
           </div>
         </div>
       </div>

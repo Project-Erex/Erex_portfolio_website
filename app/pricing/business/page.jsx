@@ -170,7 +170,7 @@ export default function Business() {
             <div className="w-full">
               <label
                 className="font-normal md:text-base xl:text-xl font-public text-secondary"
-                for="BusinessAddress">
+                htmlFor="BusinessAddress">
                 Business address <span className="text-red-500">*</span>
               </label>
 
@@ -227,7 +227,7 @@ export default function Business() {
             <div>
               <label
                 className="font-normal md:text-base xl:text-xl font-public text-secondary"
-                for="address">
+                htmlFor="address">
                 What’s your USP (Unique Selling Point){" "}
                 <span className="text-red-500">*</span>
               </label>
@@ -244,7 +244,7 @@ export default function Business() {
             </div>
             {/* *********************************************************** */}
             <div className="flex gap-2 py-5 md:py-10">
-              <div class="checkbox-wrapper-40">
+              <div className="checkbox-wrapper-40">
                 <div className="flex items-center gap-1">
                   <input
                     type="checkbox"
@@ -252,17 +252,17 @@ export default function Business() {
                     onClick={() => handleCheckboxChange("Facebook")}
                     {...register("Facebook", {required: true})}
                   />
-                  <span class="checkbox"></span>
+                  <span className="checkbox"></span>
                   <label
                     className="font-normal md:text-base xl:text-xl font-public text-secondary"
-                    for="myCheckbox">
+                    htmlFor="myCheckbox">
                     Facebook page
                   </label>
                 </div>
               </div>
             </div>
             <div className="flex gap-2">
-              <div class="checkbox-wrapper-40">
+              <div className="checkbox-wrapper-40">
                 <div className="flex items-center gap-1">
                   <input
                     type="checkbox"
@@ -270,17 +270,17 @@ export default function Business() {
                     onClick={() => handleCheckboxChange("Instagram")}
                     {...register("Instagram", {required: true})}
                   />
-                  <span class="checkbox"></span>
+                  <span className="checkbox"></span>
                   <label
                     className="font-normal md:text-base xl:text-xl font-public text-secondary"
-                    for="myCheckbox">
+                    htmlFor="myCheckbox">
                     Instagram profile
                   </label>
                 </div>
               </div>
             </div>
             <div className="flex gap-2 py-5 md:py-10">
-              <div class="checkbox-wrapper-40">
+              <div className="checkbox-wrapper-40">
                 <div className="flex items-center gap-1">
                   <input
                     type="checkbox"
@@ -288,10 +288,10 @@ export default function Business() {
                     onClick={() => handleCheckboxChange("Youtube")}
                     {...register("Youtube", {required: true})}
                   />
-                  <span class="checkbox"></span>
+                  <span className="checkbox"></span>
                   <label
                     className="font-normal md:text-base xl:text-xl font-public text-secondary"
-                    for="myCheckbox">
+                    htmlFor="myCheckbox">
                     Youtube page
                   </label>
                 </div>
@@ -302,7 +302,7 @@ export default function Business() {
               <div className="w-full ">
                 <label
                   className="font-normal md:text-base xl:text-xl font-public text-secondary"
-                  for="Url">
+                  htmlFor="Url">
                   Website and social media URLs
                 </label>
 

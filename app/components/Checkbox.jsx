@@ -10,7 +10,7 @@ const Checkbox = ({label, value, onChange}) => {
   };
 
   return (
-    <label>
+    <label htmlFor="checkbox">
       <input type="checkbox" checked={isChecked} onChange={handleChange} />
       {label}
     </label>

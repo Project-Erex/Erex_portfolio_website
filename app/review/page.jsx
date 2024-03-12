@@ -20,9 +20,9 @@ export default function page() {
                 Review your project
               </text>
               <p className="text-subheading text-2xl px-5 text-center">
-                Help improve Acme Co's project creation process by giving feedback on the
+                {`Help improve Acme Co's project creation process by giving feedback on the
                 project you just created. You can also leave feedback on your project's
-                code and environment.
+                code and environment.`}
               </p>
             </div>
             <div className=" w-full flex-col flex   py-5  gap-10  ">
@@ -36,7 +36,7 @@ export default function page() {
                 />
                 <div>
                   <p className="text-secondary font-medium  text-[16px] md:text-[20px] lg:text-[25px] xl:text-[20px]">
-                    Project Name: Python ML Image Classifier{" "}
+                    Project Name: Python ML Image classifier{" "}
                   </p>
                   <h6 className="text-subheading  text-lg ">Created 2 minutes ago</h6>
                 </div>
@@ -49,7 +49,7 @@ export default function page() {
                 </div>
                 <div>
                   <p className="text-secondary font-medium  text-[16px] md:text-[20px] lg:text-[25px] xl:text-[20px]">
-                    Project Name: Python ML Image Classifier{" "}
+                    Project Name: Python ML Image classifier{" "}
                   </p>
                   <h6 className="text-subheading  text-lg ">Created 2 minutes ago</h6>
                 </div>
@@ -85,7 +85,7 @@ export default function page() {
                 <div className="flex w-full gap-4 py-4 justify-end">
                   <button
                     type="Cancel"
-                    class="relative flex h-[44px] w-32 items-center justify-center overflow-hidden text-secondary transition-all rounded-[10px] bg-[#F0F2F5]  ">
+                    className="relative flex h-[44px] w-32 items-center justify-center overflow-hidden text-secondary transition-all rounded-[10px] bg-[#F0F2F5]  ">
                     <span className="relative z-10 font-federo  font-medium text-[16px]">
                       Cancel
                     </span>
@@ -94,7 +94,7 @@ export default function page() {
                     type="submit"
                     value="Send"
                     // disabled={isloading}
-                    class="relative flex h-[44px] w-32 items-center justify-center overflow-hidden bg-gray-800 rounded-[10px] text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
+                    className="relative flex h-[44px] w-32 items-center justify-center overflow-hidden bg-gray-800 rounded-[10px] text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
                     <span className="relative z-10 font-federo text-[16px]">
                       {" "}
                       {/* {isloading ? (

@@ -112,7 +112,7 @@ export default function Contact() {
                     },
                   }}
                   viewport={{once: true}}>
-                  <label className="mb-3 text-secondary" for="name">
+                  <label className="mb-3 text-secondary" htmlFor="name">
                     Name*
                   </label>
                   <input
@@ -137,7 +137,7 @@ export default function Contact() {
                     },
                   }}
                   viewport={{once: true}}>
-                  <label className="mb-3 text-secondary" for="email">
+                  <label className="mb-3 text-secondary" htmlFor="email">
                     Email*
                   </label>
                   <input
@@ -165,7 +165,7 @@ export default function Contact() {
                   },
                 }}
                 viewport={{once: true}}>
-                <label className="mb-3 text-secondary" for="message">
+                <label className="mb-3 text-secondary" htmlFor="message">
                   Message*
                 </label>
 

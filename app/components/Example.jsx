@@ -15,7 +15,7 @@ export const Example = () => {
         className="w-[150px] h-[150px] bg-white rounded-[inherit]"
         drag
         dragConstraints={constraintsRef}>
-        <Image src={Rocket} width={0} height={0} draggable="false" />
+        <Image src={Rocket} width={0} height={0} alt="Rocket" draggable="false" />
       </motion.div>
     </motion.div>
   );

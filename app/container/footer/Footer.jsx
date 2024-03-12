@@ -137,7 +137,7 @@ export default function Footer() {
               All Rights Reserved.
             </text>
           </div>
-          <div className="relative flex items-center justify-center w-full md:hidden ">
+          <div className="relative flex items-center -top-2 justify-center w-full md:hidden ">
             <div
               className=" w-12 h-12 md:w-14 md:h-14 2xl:w-16 2xl:h-16 rounded-full flex justify-center pt-[4px]  md:pt-[5px]    md:bottom-36 bottom-[6.5rem] 2xl:pt-[9px]  right-4 cursor-pointer  bg-primary absolute z-[999] "
               onClick={scrollUp}>

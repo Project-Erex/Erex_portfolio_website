@@ -17,6 +17,7 @@ export default function ContributionCard({logo, icon, description, title, url}) 
             </div>
             <Link
               href={url}
+              to="#"
               target="_blank"
               className="px-2 py-2 transition-all duration-500 bg-white group-hover:bg-opacity-10">
               <Image src={icon} alt={title} />

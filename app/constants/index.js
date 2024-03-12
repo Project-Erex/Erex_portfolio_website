@@ -33,6 +33,10 @@ import {
   Twitter,
   Instagram,
   SaleForceTroops,
+  Avatarify_logo,
+  PuruliaPBD,
+  Trimz_Logo,
+  Trinayoni_logo,
 } from "../assets";
 
 const Check = <FaCheck color="#4169E1" />;
@@ -123,24 +127,24 @@ const ourClient = [
     id: 2,
   },
   {
-    title: "DetectifyX",
-    icon: DetectifyX,
+    title: "Avatarify_logo",
+    icon: Avatarify_logo,
     id: 3,
   },
   {
-    title: "Food Comet",
-    icon: foodComet,
-    id: 1,
+    title: "PuruliaPBD",
+    icon: PuruliaPBD,
+    id: 4,
   },
   {
-    title: "SaleForceTroops",
-    icon: SaleForceTroops,
-    id: 2,
+    title: "Trimz_Logo",
+    icon: Trimz_Logo,
+    id: 5,
   },
   {
-    title: "DetectifyX",
-    icon: DetectifyX,
-    id: 3,
+    title: "Trinayoni_logo",
+    icon: Trinayoni_logo,
+    id: 6,
   },
 ];
 const ourProjects = [

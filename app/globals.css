@@ -1,0 +1,420 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+.nav-links::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2.5px;
+  background: #2639ed;
+  margin: auto;
+  transition: 0.5s;
+  border-radius: 16px;
+}
+
+body {
+  background-color: #ffffff;
+}
+.nav-links:hover::after {
+  width: 100%;
+}
+
+.content {
+  height: 135px;
+  overflow: hidden;
+  /* background-color: turquoise; */
+}
+
+.content__container {
+  font-weight: 500;
+  overflow: hidden;
+  font-size: 45px;
+  color: #000000;
+}
+
+.content__container__list {
+  margin-top: 0;
+  text-align: left;
+  list-style: none;
+}
+
+.content__container__list__item {
+  line-height: 55px;
+  margin: 0;
+}
+
+/* * Mobile devices media query * */
+
+/* ! for Small devices ! */
+
+@media only screen and (max-width: 375px) {
+  .content {
+    height: 120px;
+    overflow: hidden;
+    /* background-color: turquoise; */
+  }
+  .content__container {
+    font-weight: 500;
+    overflow: hidden;
+    font-size: 27px;
+    color: #000000;
+  }
+  .content__container__list {
+    margin-top: 0;
+    text-align: center;
+    list-style: none;
+  }
+
+  .content__container__list__item {
+    line-height: 35px;
+    margin: 0;
+  }
+}
+
+/* ! for medium devices ! */
+
+@media only screen and (min-width: 375px) and (max-width: 480px) {
+  .content {
+    height: 120px;
+    overflow: hidden;
+    /* background-color: turquoise; */
+  }
+  .content__container {
+    font-weight: 500;
+    overflow: hidden;
+    font-size: 32px;
+    color: #000000;
+  }
+  .content__container__list {
+    margin-top: 0;
+    text-align: center;
+    list-style: none;
+  }
+
+  .content__container__list__item {
+    line-height: 40px;
+    margin: 0;
+  }
+}
+/* ! for large devices ! */
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  .content {
+    height: 120px;
+    overflow: hidden;
+    /* background-color: turquoise; */
+  }
+  .content__container {
+    font-weight: 500;
+    overflow: hidden;
+    font-size: 40px;
+    color: #000000;
+  }
+  .content__container__list {
+    margin-top: 0;
+    text-align: center;
+    list-style: none;
+  }
+
+  .content__container__list__item {
+    line-height: 48px;
+    margin: 0;
+  }
+}
+
+/* * Tablet devices media query * */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .content {
+    height: 150px;
+    overflow: hidden;
+    /* background-color: turquoise; */
+  }
+  .content__container {
+    font-weight: 500;
+    overflow: hidden;
+    font-size: 36px;
+    color: #000000;
+  }
+  .content__container__list {
+    margin-top: 0;
+    text-align: left;
+    list-style: none;
+  }
+
+  .content__container__list__item {
+    line-height: 44px;
+    margin: 0;
+  }
+}
+
+/* * Laptop devices media query * */
+/* ! for medium devices ! */
+
+@media only screen and (min-width: 1024px) and (max-width: 1174px) {
+  .content {
+    height: 150px;
+    overflow: hidden;
+    /* background-color: turquoise; */
+  }
+  .content__container {
+    font-weight: 500;
+    overflow: hidden;
+    font-size: 40px;
+    color: #000000;
+  }
+  .content__container__list {
+    margin-top: 0;
+    text-align: left;
+    list-style: none;
+  }
+
+  .content__container__list__item {
+    line-height: 44px;
+    margin: 0;
+  }
+}
+
+/* ! for large devices ! */
+
+@media only screen and (min-width: 1174px) and (max-width: 1440px) {
+  .content {
+    height: 150px;
+    overflow: hidden;
+    /* background-color: turquoise; */
+  }
+  .content__container {
+    font-weight: 500;
+    overflow: hidden;
+    font-size: 42px;
+    color: #000000;
+  }
+  .content__container__list {
+    margin-top: 0;
+    text-align: left;
+    list-style: none;
+  }
+
+  .content__container__list__item {
+    line-height: 46px;
+    margin: 0;
+  }
+}
+
+@keyframes change {
+  0%,
+  12.66%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  16.66%,
+  29.32% {
+    transform: translate3d(0, -25%, 0);
+  }
+  33.32%,
+  45.98% {
+    transform: translate3d(0, -50%, 0);
+  }
+  49.98%,
+  62.64% {
+    transform: translate3d(0, -75%, 0);
+  }
+  66.64%,
+  79.3% {
+    transform: translate3d(0, -50%, 0);
+  }
+  83.3%,
+  95.96% {
+    transform: translate3d(0, -25%, 0);
+  }
+}
+
+.content__container__list {
+  animation-name: change;
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
+}
+
+.content__container__list__item {
+  animation-name: opacity;
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
+}
+
+.container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.container.expanded {
+  max-height: 400px; /* Set to your desired expanded height */
+}
+
+.custom-select::after {
+  content: url("/assets/icons/scroll.png"); /* Specify the path to your icon */
+  position: absolute;
+  top: 50%;
+  right: 20px; /* Adjust this value to position the icon */
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.custom-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  background-image: url("/assets/icons/scroll.png"); /* Specify the path to your icon */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px; /* Adjust the size of the icon */
+}
+
+/* Custom styling for checkbox */
+
+.checkbox-wrapper-40 {
+  --borderColor: #afafaf;
+  --arrow: #ffffff;
+  --borderWidth: 0.125em;
+  --backgroundUnchecked: #ffffff; /* Background color when checkbox is not selected */
+  --backgroundChecked: #000000; /* Background color when checkbox is selected */
+}
+
+.checkbox-wrapper-40 label {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.checkbox-wrapper-40 input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  vertical-align: middle;
+  background-color: var(--backgroundUnchecked); /* Set default background color */
+  font-size: 1.8em;
+  border-radius: 0.125em;
+  display: inline-block;
+  border: var(--borderWidth) solid var(--backgroundChecked);
+  width: 1em;
+  height: 1em;
+  position: relative;
+}
+
+.checkbox-wrapper-40 input[type="checkbox"]:checked {
+  background-color: var(--backgroundChecked); /* Change background color when checked */
+}
+
+.checkbox-wrapper-40 input[type="checkbox"]:before {
+  background: var(--arrow);
+}
+
+.checkbox-wrapper-40 input[type="checkbox"]:after {
+  background: var(--backgroundUnchecked); /* Set default background color */
+}
+
+.checkbox-wrapper-40 input[type="checkbox"]:before,
+.checkbox-wrapper-40 input[type="checkbox"]:after {
+  content: "";
+  position: absolute;
+  background: var(--arrow); /* Set background color for checked state */
+  width: calc(var(--borderWidth) * 3);
+  height: var(--borderWidth);
+  top: 50%;
+  left: 10%;
+  transform-origin: left center;
+}
+
+.checkbox-wrapper-40 input[type="checkbox"]:before {
+  transform: rotate(45deg)
+    translate(calc(var(--borderWidth) / -2), calc(var(--borderWidth) / -2)) scaleX(0);
+  transition: transform 200ms ease-in 200ms;
+}
+
+.checkbox-wrapper-40 input[type="checkbox"]:after {
+  width: calc(var(--borderWidth) * 5);
+  transform: rotate(-45deg) translateY(calc(var(--borderWidth) * 2)) scaleX(0);
+  transform-origin: left center;
+  transition: transform 200ms ease-in;
+}
+
+.checkbox-wrapper-40 input[type="checkbox"]:checked:before {
+  transform: rotate(45deg)
+    translate(calc(var(--borderWidth) / -2), calc(var(--borderWidth) / -2)) scaleX(1);
+  transition: transform 200ms ease-in;
+}
+
+.checkbox-wrapper-40 input[type="checkbox"]:checked:after {
+  width: calc(var(--borderWidth) * 5);
+  transform: rotate(-45deg) translateY(calc(var(--borderWidth) * 2)) scaleX(1);
+  transition: transform 200ms ease-out 200ms;
+}
+
+/* *********************************** */
+
+/* index.css */
+.rainbow {
+  position: relative;
+  z-index: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Make the button round */
+  overflow: hidden;
+  padding: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rainbow::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;  
+  background-image: linear-gradient(#f5f5f5, #f5f5f5), linear-gradient(#4169e1, #4169e1),
+    linear-gradient(#f5f5f5, #f5f5f5), linear-gradient(#4169e1, #4169e1);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.rainbow:hover::before {
+  opacity: 1;
+  animation: rotate 4s linear infinite;
+}
+
+.rainbow::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 6px;
+  top: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  background: white;
+  border-radius: 50%;
+}
+
+.rainbow:hover::after {
+  transform: rotate(1turn);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}

@@ -13,6 +13,7 @@ import Image from "next/image";
 import {motion} from "framer-motion";
 
 import React from "react";
+import Link from "next/link";
 
 export default function Influencers() {
   return (
@@ -29,11 +30,13 @@ export default function Influencers() {
           interaction
           <br /> and access to news and information, and decision making.
         </p>
-        <button
+        <Link
           type="button"
+          href={"/pricing/business"}
+          to="/pricing/business"
           className="relative z-10 font-federo text-lg rounded-full flex h-[48px] w-40 font-medium  sm:w-52 items-center justify-center overflow-hidden text-white bg-primary">
           Contact Us
-        </button>
+        </Link>
 
         <motion.div
           initial={{y: -10}}
@@ -120,7 +123,7 @@ export default function Influencers() {
             delay: 1.3,
             repeat: Infinity,
           }}
-          className="absolute bottom-32 left-0">
+          className="absolute  bottom-32 left-0">
           <Image
             src={Love}
             width={0}
@@ -158,7 +161,7 @@ export default function Influencers() {
             delay: 1.8,
             repeat: Infinity,
           }}
-          className="absolute -bottom-5">
+          className="absolute   bottom-0 md:-bottom-5">
           <Image
             src={Girl1}
             width={0}

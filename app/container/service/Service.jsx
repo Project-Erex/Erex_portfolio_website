@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import {services} from "@/app/constants";
+import {services} from "@/constants";
 import {styles} from "../../styles";
 import Heading from "@/app/components/heading/Heading";
 import ServiceCard from "./ServiceCard";

@@ -2,7 +2,7 @@ import React from "react";
 import {styles} from "../../styles";
 import Heading from "@/app/components/heading/Heading";
 import ProjectsCard from "./ProjectsCard";
-import {ourProjects} from "@/app/constants";
+import {ourProjects} from "@/constants";
 export default function Projects() {
   return (
     <section className="w-full border-b-2 border-watermark ">

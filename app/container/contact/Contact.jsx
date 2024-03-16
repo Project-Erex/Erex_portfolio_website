@@ -38,7 +38,6 @@ export default function Contact() {
   });
 
   const onSubmit = async (data) => {
-    console.log(data);
     reset();
     if (isloading) return; // Ignore if already loading
     setIsLoading(true);

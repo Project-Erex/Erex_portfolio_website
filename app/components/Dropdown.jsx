@@ -11,7 +11,6 @@ export default function Dropdown({dropdownItems, onSelect}) {
   };
 
   const onOptionClicked = (value) => {
-    console.log("Option clicked:", value);
     onSelect(value); // Call onSelect with the selected value
     setIsOpen(false);
     setSelectedItem(value);

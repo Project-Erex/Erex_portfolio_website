@@ -6,7 +6,7 @@ import {
   Website,
   mediumBusiness,
   smallBusiness,
-} from "@/app/constants";
+} from "@/constants";
 import {styles} from "@/app/styles";
 import React, {useEffect, useState} from "react";
 import {
@@ -27,7 +27,13 @@ import {LuIndianRupee} from "react-icons/lu";
 import {get, getDatabase, ref} from "firebase/database";
 import {initializeApp} from "firebase/app";
 import {firebaseConfig} from "../firebaseConfig";
-import {motion, useMotionValue, useTransform, animate} from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  animate,
+  AnimatePresence,
+} from "framer-motion";
 import {useRouter} from "next/navigation";
 import {FaRegEye} from "react-icons/fa";
 import RevealPriceModal from "../components/revealPrice/RevealPriceModal";
@@ -83,7 +89,6 @@ export default function Pricing() {
   const handlePrice = async () => {
     const price = await localStorage.getItem("isPrice");
     if (price) {
-      console.log(price, "price");
       setIsPrice(true);
       priceAnimation();
     } else {
@@ -455,74 +460,80 @@ export default function Pricing() {
               </div>
 
               <div className="flex w-full gap-10 flex-col  xl:flex-row  pt-16 justify-center ">
-                <div className=" w-full py-8 px-8  shadow-3xl rounded-[10px] bg-primary bg-opacity-30">
+                <div className=" w-full   shadow-3xl rounded-[15px] bg-background bg-opacity-30">
                   <div className="w-full flex justify-between flex-col  md:flex-row">
-                    <div className="md:w-2/5 w-full items-center md:items-start  border-b pb-3 md:pb-0 md:border-b-0  md:border-r border-primary gap-4 flex flex-col justify-center">
-                      <h2 className="px-4 py-1 rounded-md bg-primary">APPLICATION</h2>
-                      <Image
-                        src={MobileApp}
-                        width={0}
-                        alt="Logo"
-                        height={0}
-                        className="w-28"
-                      />
+                    <div className=" w-full items-center   pb-3 md:pb-0   gap-4 flex flex-col justify-center">
+                      <div className="flex justify-start pt-4 md:pt-8 pl-8   w-full">
+                        <h2 className="font-public font-semibold text-[#A259FF] text-4xl">
+                          Website Development
+                        </h2>
+                      </div>
+                      <div className="flex  flex-col  md:flex-row md:gap-0">
+                        <div className="flex flex-col gap-4 md:pt-6 pl-8  pr-4 md:pr-0 w-full  md:w-2/4">
+                          <p className="font-public font-normal tracking-tight text-start break-word text-secondary text-base md:text-lg xl:text-base leading-6">
+                            Expert website development: sleek design, seamless navigation,
+                            optimized performance, and tailored solutions for your online
+                            presence. Get started now!
+                          </p>
+                          <button
+                            onClick={() => {
+                              router.push("/pricing/business");
+                            }}
+                            className="relative flex h-[44px] w-32 rounded-full items-center justify-center overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-[#A259FF]  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
+                            <span className="relative z-10 font-federo text-[16px]">
+                              Get a quote
+                            </span>
+                          </button>
+                        </div>
+                        <div className="md:w-2/4 w-full pt-4 pb-2 px-8 flex justify-end md:pr-2 md:pb-2">
+                          <Image
+                            src={ComputerApp}
+                            width={0}
+                            alt="Logo"
+                            height={0}
+                            className="w-full"
+                          />
+                        </div>
+                      </div>
                     </div>
-                    <div className="w-full md:w-3/5 flex gap-3 md:pt-0 pt-3  md:pl-10   flex-col text-black justify-center items-center ">
-                      {Application.map((App, index) => {
-                        return (
-                          <div
-                            key={index}
-                            className="flex  items-center md:justify-start   w-full gap-3 ">
-                            <div className="pt-1">{App?.icon}</div>
-                            <p className="text-secondary font-poppins">{App?.title}</p>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                  <div className="w-full pt-8">
-                    <button
-                      onClick={() => {
-                        router.push("/pricing/business");
-                      }}
-                      className="bg-primary py-2 text-lg  font-medium rounded-md w-full">
-                      Get a quote
-                    </button>
                   </div>
                 </div>
-                <div className=" w-full py-8 px-8  shadow-3xl rounded-[10px] bg-[#AA57FB] bg-opacity-30">
+                <div className=" w-full   shadow-3xl rounded-[15px] bg-background bg-opacity-30">
                   <div className="w-full flex justify-between flex-col  md:flex-row">
-                    <div className="md:w-2/5 w-full items-center md:items-start  border-b pb-3 md:pb-0 md:border-b-0  md:border-r border-[#AA57FB] gap-4 flex flex-col justify-center">
-                      <h2 className="px-4 py-1  rounded-md bg-[#AA57FB]">WEBSITE</h2>
-                      <Image
-                        src={ComputerApp}
-                        width={0}
-                        alt="Logo"
-                        height={0}
-                        className="w-28"
-                      />
+                    <div className=" w-full items-center   pb-3 md:pb-0   gap-4 flex flex-col justify-center">
+                      <div className="flex justify-start pt-4 md:pt-8 pl-8     w-full">
+                        <h2 className="font-public font-semibold text-[#4169E1] text-4xl">
+                          Application Development
+                        </h2>
+                      </div>
+                      <div className="flex  flex-col  md:flex-row md:gap-0">
+                        <div className="flex flex-col gap-4 md:pt-6 pl-8 pr-4 md:pr-0  w-full  md:w-2/4">
+                          <p className="font-public font-normal tracking-tight text-start break-word text-secondary text-base md:text-lg xl:text-base leading-6">
+                            Transform ideas into feature-rich mobile apps with sleek
+                            design, seamless performance, scalable architecture, and
+                            user-centric functionalities for diverse audiences.
+                          </p>
+                          <button
+                            onClick={() => {
+                              router.push("/pricing/business");
+                            }}
+                            className="relative flex h-[44px] w-32 rounded-full items-center justify-center overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-[#4169E1]  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
+                            <span className="relative z-10 font-federo text-[16px]">
+                              Get a quote
+                            </span>
+                          </button>
+                        </div>
+                        <div className="md:w-2/4 w-full pt-4 pb-2 px-8 flex justify-end md:pr-2 md:pb-2">
+                          <Image
+                            src={MobileApp}
+                            width={0}
+                            alt="Logo"
+                            height={0}
+                            className="w-full"
+                          />
+                        </div>
+                      </div>
                     </div>
-                    <div className="w-full md:w-3/5 flex gap-3 md:pt-0 pt-3  md:pl-10  flex-col text-black justify-center items-center ">
-                      {Website.map((Web, index) => {
-                        return (
-                          <div
-                            key={index}
-                            className="flex  items-center md:justify-start   w-full gap-3 ">
-                            <div className="pt-1">{Web?.icon}</div>
-                            <p className="text-secondary font-poppins">{Web?.title}</p>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                  <div className="w-full pt-8">
-                    <button
-                      onClick={() => {
-                        router.push("/pricing/business");
-                      }}
-                      className="bg-[#AA57FB] py-2 text-lg  font-medium rounded-md w-full">
-                      Get a quote
-                    </button>
                   </div>
                 </div>
               </div>

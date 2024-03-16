@@ -23,13 +23,13 @@ export default function Footer() {
     repeatType: "loop",
   };
 
-  const Client = [
-    {label: "Privacy Policy"},
-    {label: "Terms Of Use"},
-    {label: "Sales And Refunds"},
-    {label: "Legal"},
-    {label: "Site Map"},
-  ];
+  // const Client = [
+  //   {label: "Privacy Policy"},
+  //   {label: "Terms Of Use"},
+  //   {label: "Sales And Refunds"},
+  //   {label: "Legal"},
+  //   {label: "Site Map"},
+  // ];
   const Services = [
     {label: "Software Development"},
     {label: "Creative Design"},
@@ -39,7 +39,7 @@ export default function Footer() {
     {label: "AI/ML"},
   ];
   return (
-    <div className="relative flex justify-center w-full z-[999] bg-lightwhite">
+    <div className="relative flex justify-center w-full z-[998] bg-lightwhite">
       {/* <div className="absolute w-full h-full">
         <Particles />
       </div> */}
@@ -72,7 +72,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex flex-row-reverse w-full md:flex-row">
-              <div className="w-full ">
+              {/* <div className="w-full ">
                 <div className="w-full mb-10 md:pt-8 lg:pt-0">
                   <h4 className="mb-6 text-xl font-normal font-federo text-secondary">
                     Our Pages
@@ -93,7 +93,7 @@ export default function Footer() {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </div> */}
               <div className="w-full ">
                 <div className="w-full mb-10 md:pt-8 lg:pt-0">
                   <h4 className="mb-6 text-xl font-normal font-federo text-secondary">

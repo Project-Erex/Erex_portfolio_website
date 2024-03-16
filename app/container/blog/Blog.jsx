@@ -1,7 +1,7 @@
 import React from "react";
 import {styles} from "../../styles";
 import Heading from "@/app/components/heading/Heading";
-import {ourBlog} from "@/app/constants";
+import {ourBlog} from "@/constants";
 import Blogcard from "./Blogcard";
 import Checkbox from "@/app/components/Checkbox";
 export default function Blog() {

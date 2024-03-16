@@ -6,6 +6,7 @@ import {initializeApp} from "firebase/app";
 import {firebaseConfig} from "../firebaseConfig";
 import {Rocket} from "../assets";
 import {motion} from "framer-motion";
+import {CardBody, CardContainer, CardItem} from "@/app/components/ui/3d-card";
 
 // new //
 export default function HeroImage() {
@@ -57,22 +58,36 @@ export default function HeroImage() {
     <>
       {error ? ( // If error, show default image with error message
         <motion.div
-          initial={{y: -20}}
-          animate={{y: 20}}
-          transition={{
-            type: "smooth",
-            repeatType: "mirror",
-            duration: 2,
-            repeat: Infinity,
-          }}>
-          <Image
-            className="w-[371px]  md:w-[500px]"
-            height={0}
-            width={0}
-            src={defaultImage}
-            alt="Erex"
-            draggable="false"
-          />
+        // initial={{y: -20}}
+        // animate={{y: 20}}
+        // transition={{
+        //   type: "smooth",
+        //   repeatType: "mirror",
+        //   duration: 2,
+        //   repeat: Infinity,
+        // }}
+        >
+          <CardContainer className="inter-var">
+            <CardBody className=" relative group/card   w-full   h-auto rounded-xl p-6   ">
+              <CardItem translateZ="100" className="w-full ">
+                {/* <Image
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            height="1000"
+            width="1000"
+            className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+            alt="thumbnail"
+          /> */}
+                <Image
+                  className="w-[371px]  md:w-[400px] "
+                  height={0}
+                  width={0}
+                  src={Rocket}
+                  alt="Erex"
+                  draggable="false"
+                />
+              </CardItem>
+            </CardBody>
+          </CardContainer>
         </motion.div>
       ) : (
         // If no error and imageData is available, show Firebase image

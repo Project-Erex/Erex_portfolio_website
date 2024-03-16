@@ -2,14 +2,14 @@
 import React, {useEffect, useState} from "react";
 import {styles} from "../../styles";
 import {erexLogo, menu, close} from "@/app/assets";
-import {navLinks} from "@/app/constants";
+import {navLinks} from "@/constants";
 import {AnimatePresence, delay, motion} from "framer-motion";
 import {Link, Link as ScrollLink} from "react-scroll";
 import {RxCross2} from "react-icons/rx";
 import {CgMenuRightAlt} from "react-icons/cg";
 
 import Image from "next/image";
-import {menuSilde} from "@/app/constants/framer_motion";
+import {menuSilde} from "@/constants/framer_motion";
 import ErexLogo from "@/app/components/ErexLogo";
 import {useRouter} from "next/navigation";
 
@@ -55,7 +55,6 @@ const OtherPageNavbar = () => {
         </Link>
         <div className="flex-row hidden gap-4 list-none lg:gap-6 xl:gap-10 md:flex">
           {navLinks.map((nav, index) => {
-            console.log("nav", nav.id);
             return (
               <ScrollLink
                 key={index}

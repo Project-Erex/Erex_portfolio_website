@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "./container/navbar/Index";
 import Footer from "./container/footer/Footer";
 import Head from "next/head";
-import NextTopLoader from "nextjs-toploader";
+// import NextTopLoader from "nextjs-toploader";
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
@@ -31,27 +31,28 @@ const public_Sans = Public_Sans({
   variable: "--font-public",
 });
 
+export const metadata = {
+  title: "Erex Studio | Transforming Ideas into Digital Triumphs",
+  description:
+    "Erex Studio pioneers digital transformation, delivering cutting-edge software, captivating designs, and strategic digital marketing. Elevate your brand with our innovative solutions and expert guidance in the field of Wordpress, React, JavaScript, Digital Marketing, UI/UX.",
+};
+
 export default function RootLayout({children}) {
   return (
     <html
       lang="en"
       className={`${poppins.variable} ${federo.variable} ${rubik.variable} ${public_Sans.variable}`}>
       <Head>
-        <script type="text/javascript">
-          {typeof window !== "undefined" &&
-            (function (c, l, a, r, i, t, y) {
-              c[a] =
-                c[a] ||
-                function () {
-                  (c[a].q = c[a].q || []).push(arguments);
-                };
-              t = l.createElement(r);
-              t.async = 1;
-              t.src = "https://www.clarity.ms/tag/" + i;
-              y = l.getElementsByTagName(r)[0];
-              y.parentNode.insertBefore(t, y);
-            })(window, document, "clarity", "script", "kxw8ygvvz7")}
-        </script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "kxidyxssid");
+          `,
+          }}></script>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -89,12 +90,13 @@ export default function RootLayout({children}) {
         <meta property="og:url" content="http://erex.in/" />
         <meta
           property="og:description"
-          content="Erex Studio pioneers digital transformation, delivering cutting-edge software, captivating designs, and strategic digital marketing. Elevate your brand with our innovative solutions and expert guidance in the field of Wordpress,React,Javascript,Digital Marketing,UI/UX, "
+          content="Erex Studio pioneers digital transformation, delivering cutting-edge software, captivating designs, and strategic digital marketing. Elevate your brand with our innovative solutions and expert guidance in the field of Wordpress, React, JavaScript, Digital Marketing, UI/UX."
         />
         <meta property="og:site_name" content="Erex Studio" />
       </Head>
+
       <body>
-        <NextTopLoader
+        {/* <NextTopLoader
           color="#4169E1"
           initialPosition={0.03}
           crawlSpeed={200}
@@ -104,7 +106,7 @@ export default function RootLayout({children}) {
           easing="ease"
           speed={200}
           shadow="0 0 10px #4169E1,0 0 5px #4169E1"
-        />
+        /> */}
         <Navbar />
         <main>{children}</main>
         <Footer />

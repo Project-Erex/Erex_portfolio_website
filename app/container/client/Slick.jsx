@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 // import {GrNext} from "react-icons/gr";
 // import {GrPrevious} from "react-icons/gr";
 import {motion} from "framer-motion";
-import {ourClient} from "@/app/constants";
+import {ourClient} from "@/constants";
 import Image from "next/image";
 
 export default function Slick({}) {

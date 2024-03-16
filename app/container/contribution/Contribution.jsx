@@ -6,7 +6,7 @@ import {styles} from "@/app/styles";
 import {motion} from "framer-motion";
 import React from "react";
 import ContributionCard from "./ContributionCard";
-import {OurContribution} from "@/app/constants";
+import {OurContribution} from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 

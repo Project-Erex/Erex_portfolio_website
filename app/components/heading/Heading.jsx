@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import {motion} from "framer-motion";
-import {fadeInTopVariant} from "@/app/constants/framer_motion";
+import {fadeInTopVariant} from "@/constants/framer_motion";
 export default function Heading({text, text2, img}) {
   return (
     <div className="z-50 flex flex-col items-center justify-center w-full gap-6 md:gap-4 xl:gap-6">

@@ -50,8 +50,8 @@ import Reveal from "./background/reveal.png";
 import Vector from "./icons/Vector-0.png";
 import Clock from "./icons/Clock0.png";
 import SaleForceTroops from "./logo/SaleForceTroops_logo.png";
-import ComputerApp from "./logo/computerApp.png";
-import MobileApp from "./logo/mobileApp.png";
+import ComputerApp from "./svg/app.svg";
+import MobileApp from "./svg/MobileNew.svg";
 import Girl1 from "./icons/Influencer/girl1.png";
 import Girl2 from "./icons/Influencer/girl2.png";
 import Girl3 from "./icons/Influencer/girl3.png";
@@ -65,13 +65,6 @@ import Avatarify_logo from "./client/Avatarify_logo.png";
 import PuruliaPBD from "./client/PuruliaPBD.png";
 import Trimz_Logo from "./client/Trimz_Logo.png";
 import Trinayoni_logo from "./client/Trinayoni_logo.png";
-
-
-
-
-
-
-
 
 export {
   erexLogo,

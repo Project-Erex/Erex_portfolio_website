@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // import {GrNext} from "react-icons/gr";
 // import {GrPrevious} from "react-icons/gr";
-import {testiMonial} from "@/app/constants";
+import {testiMonial} from "@/constants";
 // import {BsDashLg} from "react-icons/bs";
 import {TfiLineDashed} from "react-icons/tfi";
 import {motion} from "framer-motion";

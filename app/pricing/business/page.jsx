@@ -5,7 +5,7 @@ import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import React, {useEffect, useRef} from "react";
 import {Schema} from "./FormHelper";
-import Dropdown from "../../components/Dropdown";
+import Dropdown from "../../../components/Dropdown";
 import {useState} from "react";
 import Image from "next/image";
 import {erexLogo} from "../../assets";
@@ -18,11 +18,29 @@ export default function Business() {
   const [isChecked, setIsChecked] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
   const [isChecked3, setIsChecked3] = useState(false);
+  const [data, setdata] = useState({
+    BusinessName: "",
+    OwnerName: "",
+    PhoneNo: "",
+    AltPhoneNo: "",
+    BusinessAddress: "",
+    OwnerPhoneNo: "",
+    BusinessType: "",
+    SellingPoint: "",
+    Facebook: false,
+    Instagram: false,
+    Youtube: false,
+    Url: "",
+    Audience: "",
+    Demographic: "",
+    BusinessAge: "",
+    BusinessSize: "",
+  });
 
   const {
     register,
     handleSubmit,
-    reset,
+    // reset,
     formState: {errors},
   } = useForm({
     resolver: yupResolver(Schema),
@@ -36,17 +54,17 @@ export default function Business() {
     toast.error("Something Went Wrong!");
   };
   const onSubmit = async (data) => {
+    console.log(data);
     setIsLoading(true);
-    // reset();
     try {
       const response = await fetch(
-        "https://api.sheetmonkey.io/form/qXWPsLbQhxgJFcUBR11XAs", //https://api.sheetmonkey.io/form/rTo9eUH7VqedNCJF14zJiJ   // uday https://api.sheetmonkey.io/form/qXWPsLbQhxgJFcUBR11XAs
+        "https://script.google.com/macros/s/AKfycby6rgki6Af7dcrzQLjKy-jbpf3JBn5X4yVwcmHJDwkwZLV9o9ozScpKNO2FBgMfr72DRA/exec",
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded",
           },
-          body: JSON.stringify(data),
+          body: new URLSearchParams(data).toString(), // Use data state
         },
       );
 
@@ -55,7 +73,8 @@ export default function Business() {
       }
       setIsLoading(false);
       showToastMessage();
-      console.log("Form data sent successfully");
+      // console.log("Form data sent successfully");
+      // reset();
     } catch (error) {
       console.error("Error sending form data:", error);
       setIsLoading(false);
@@ -67,12 +86,15 @@ export default function Business() {
     switch (checkbox) {
       case "Facebook":
         setIsChecked(!isChecked);
+        setdata({...data, Facebook: !isChecked}); // Update data state
         break;
       case "Instagram":
         setIsChecked2(!isChecked2);
+        setdata({...data, Instagram: !isChecked2}); // Update data state
         break;
       case "Youtube":
         setIsChecked3(!isChecked3);
+        setdata({...data, Youtube: !isChecked3}); // Update data state
         break;
       default:
         break;
@@ -110,6 +132,7 @@ export default function Business() {
                   placeholder="Your business name"
                   type="text"
                   id="businessName"
+                  defaultValue={data?.BusinessName}
                   {...register("BusinessName")} // Pass field name to register directly
                 />
                 <p className="mt-2 text-red-500">{errors.BusinessName?.message}</p>
@@ -125,6 +148,7 @@ export default function Business() {
                   placeholder="Your name"
                   type="text"
                   id="ownerName"
+                  defaultValue={data?.OwnerName}
                   {...register("OwnerName")} // Pass field name to register directly
                 />
                 <p className="mt-1 text-red-500">{errors.OwnerName?.message}</p>
@@ -145,6 +169,7 @@ export default function Business() {
                   type="text"
                   maxLength="10"
                   id="phoneNo"
+                  defaultValue={data?.PhoneNo}
                   {...register("PhoneNo")}
                 />
                 <p className="mt-1 text-red-500">{errors.PhoneNo?.message}</p>
@@ -162,6 +187,8 @@ export default function Business() {
                   maxLength="10"
                   id="altPhoneNo"
                   max={10}
+                  defaultValue={data?.AltPhoneNo}
+                  {...register("AltPhoneNo")}
                   // Pass field name to register directly
                 />
               </div>
@@ -180,7 +207,8 @@ export default function Business() {
                 placeholder="Example, 713324, Purulia, West Bengal"
                 rows="6"
                 id="BusinessAddress"
-                name="BusinessAddress"></textarea>
+                name="BusinessAddress"
+                defaultValue={data?.BusinessAddress}></textarea>
               <p className="mt-1 text-red-500">{errors.BusinessAddress?.message}</p>
             </div>
             {/* *********************************************************** */}
@@ -197,6 +225,7 @@ export default function Business() {
                   type="text"
                   maxLength="10"
                   id="ownerPhoneNo"
+                  defaultValue={data?.OwnerPhoneNo}
                   {...register("OwnerPhoneNo")} // Pass field name to register directly
                 />
                 <p className="mt-1 text-red-500">{errors.OwnerPhoneNo?.message}</p>
@@ -210,6 +239,7 @@ export default function Business() {
 
                 <select
                   className="w-full p-3 mt-2 text-sm font-normal rounded-[10px] border-2 custom-select focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background "
+                  defaultValue={data?.BusinessType}
                   {...register("BusinessType")}>
                   <option value="">Select business type</option>
                   <option value="restaurant">Restaurant</option>
@@ -233,6 +263,7 @@ export default function Business() {
               </label>
 
               <textarea
+                defaultValue={data?.SellingPoint}
                 {...register("SellingPoint")}
                 className="w-full p-3 mt-2 text-sm font-normal rounded-[10px] border-2 focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background"
                 placeholder="Explain what makes your product or service unique. (500 characters max)
@@ -249,6 +280,7 @@ export default function Business() {
                   <input
                     type="checkbox"
                     checked={isChecked}
+                    defaultValue={data?.Facebook}
                     onClick={() => handleCheckboxChange("Facebook")}
                     {...register("Facebook", {required: true})}
                   />
@@ -267,6 +299,7 @@ export default function Business() {
                   <input
                     type="checkbox"
                     checked={isChecked2}
+                    defaultValue={data?.Instagram}
                     onClick={() => handleCheckboxChange("Instagram")}
                     {...register("Instagram", {required: true})}
                   />
@@ -285,6 +318,7 @@ export default function Business() {
                   <input
                     type="checkbox"
                     checked={isChecked3}
+                    defaultValue={data?.Youtube}
                     onClick={() => handleCheckboxChange("Youtube")}
                     {...register("Youtube", {required: true})}
                   />
@@ -308,6 +342,7 @@ export default function Business() {
 
                 <textarea
                   {...register("Url")}
+                  defaultValue={data?.Url}
                   className="w-full p-3 mt-2 rounded-[10px] overflow-y-hidden text-sm font-normal border-2 resize-none focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background"
                   placeholder="www.example.com, www.instagram.com/example, etc. "
                   rows="4"
@@ -328,6 +363,7 @@ export default function Business() {
 
                 <select
                   className="w-full p-3 mt-2 rounded-[10px] text-sm font-normal border-2 custom-select focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background "
+                  defaultValue={data?.Audience}
                   {...register("Audience")}>
                   <option value="">Select business audience</option>
 
@@ -355,6 +391,7 @@ export default function Business() {
 
                 <select
                   className="w-full p-3 mt-2 rounded-[10px] text-sm font-normal border-2 custom-select focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background "
+                  defaultValue={data?.Demographic}
                   {...register("Demographic")}>
                   <option value="">Select business demographic</option>
                   <option value="generic_local_customers">Generic Local Customers</option>
@@ -378,6 +415,7 @@ export default function Business() {
 
                 <select
                   className="w-full p-3 mt-2 rounded-[10px] text-sm font-normal border-2 custom-select focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background "
+                  defaultValue={data?.BusinessAge}
                   {...register("BusinessAge")}>
                   <option value="">Select business age</option>
                   <option value="0-2">0 - 2 Years</option>
@@ -397,6 +435,7 @@ export default function Business() {
 
                 <select
                   className="w-full p-3 mt-2 rounded-[10px] text-sm font-normal border-2 custom-select focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background "
+                  defaultValue={data?.BusinessSize}
                   {...register("BusinessSize")}>
                   <option value="">Select business size</option>
                   <option value="small">Small</option>

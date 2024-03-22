@@ -1,7 +1,7 @@
 import * as React from "react";
 import {useRef} from "react";
 import {motion} from "framer-motion";
-import {Rocket} from "../assets";
+import {Rocket} from "../app/assets";
 import Image from "next/image";
 
 export const Example = () => {

@@ -11,11 +11,11 @@ import {
   fadeInTopVariant,
   fadeInVariant,
 } from "@/constants/framer_motion";
-import TextAnimation from "@/app/components/heading/TextAnimation";
-import HeroImage from "@/app/components/HeroImage";
+import TextAnimation from "@/components/heading/TextAnimation";
+import HeroImage from "@/components/HeroImage";
 import {useRef} from "react";
 import {Link, ScrollLink} from "react-scroll";
-import {ThreeDCardDemo} from "@/app/components/card/Rocket";
+import {ThreeDCardDemo} from "@/components/card/Rocket";
 
 const Hero = () => {
   const constraintsRef = useRef(null);

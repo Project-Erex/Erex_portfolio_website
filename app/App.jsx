@@ -8,7 +8,7 @@ import Ourteam from "./container/ourteam/Ourteam";
 import Footer from "./container/footer/Footer";
 import Contact from "./container/contact/Contact";
 import Contribution from "./container/contribution/Contribution";
-import GoToTop from "./components/heading/GoToTop";
+import GoToTop from "../components/heading/GoToTop";
 import BenarImage from "./container/banner/Banner";
 
 export default function App() {

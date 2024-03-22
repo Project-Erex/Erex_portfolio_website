@@ -9,8 +9,12 @@ import {HiArrowUp} from "react-icons/hi";
 import {motion} from "framer-motion";
 // import Particles from "@/app/components/heading/Particles";
 import {Link, Link as ScrollLink} from "react-scroll";
+// import {usePathname} from "next/";
+import {useRouter} from "next/navigation";
 
 export default function Footer() {
+  const Router = useRouter();
+
   const scrollUp = () => {
     window.scrollTo({
       top: 0,
@@ -23,13 +27,13 @@ export default function Footer() {
     repeatType: "loop",
   };
 
-  // const Client = [
-  //   {label: "Privacy Policy"},
-  //   {label: "Terms Of Use"},
-  //   {label: "Sales And Refunds"},
-  //   {label: "Legal"},
-  //   {label: "Site Map"},
-  // ];
+  const Client = [
+    {label: "Privacy Policy", destination: "/privacy_policy"},
+    // {label: "Terms Of Use", destination: "/terms"},
+    // {label: "Sales And Refunds", destination: "/sales"},
+    // {label: "Legal", destination: "/legal"},
+    // {label: "Site Map", destination: "/sitemap"},
+  ];
   const Services = [
     {label: "Software Development"},
     {label: "Creative Design"},
@@ -72,7 +76,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex flex-row-reverse w-full md:flex-row">
-              {/* <div className="w-full ">
+              <div className="w-full ">
                 <div className="w-full mb-10 md:pt-8 lg:pt-0">
                   <h4 className="mb-6 text-xl font-normal font-federo text-secondary">
                     Our Pages
@@ -80,20 +84,18 @@ export default function Footer() {
                   <ul className="space-y-3">
                     {Client.map((client, index) => (
                       <li key={index}>
-                        <ScrollLink
-                          to="ourClient"
-                          spy={true}
-                          smooth={true}
-                          offset={-70}
-                          duration={500}
+                        <button
+                          onClick={() => {
+                            Router.push(client?.destination);
+                          }}
                           className="inline-block text-base leading-normal cursor-pointer text-body-color hover:text-primary text-gray">
                           {client.label}
-                        </ScrollLink>
+                        </button>
                       </li>
                     ))}
                   </ul>
                 </div>
-              </div> */}
+              </div>
               <div className="w-full ">
                 <div className="w-full mb-10 md:pt-8 lg:pt-0">
                   <h4 className="mb-6 text-xl font-normal font-federo text-secondary">

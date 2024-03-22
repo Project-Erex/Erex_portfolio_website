@@ -10,7 +10,7 @@ import {CgMenuRightAlt} from "react-icons/cg";
 
 import Image from "next/image";
 import {menuSilde} from "@/constants/framer_motion";
-import ErexLogo from "@/app/components/ErexLogo";
+import ErexLogo from "@/components/ErexLogo";
 import {usePathname} from "next/navigation";
 
 const MainNavbar = () => {

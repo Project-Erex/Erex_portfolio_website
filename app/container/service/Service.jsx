@@ -2,10 +2,11 @@
 import React from "react";
 import {services} from "@/constants";
 import {styles} from "../../styles";
-import Heading from "@/app/components/heading/Heading";
+import Heading from "@/components/heading/Heading";
 import ServiceCard from "./ServiceCard";
 import {SERVICES} from "@/app/assets";
 import {motion} from "framer-motion";
+import {HoverEffect} from "@/components/ui/card-hover-effect";
 // import Image from "next/image";
 const Service = () => {
   return (
@@ -22,7 +23,7 @@ const Service = () => {
             width={100}
           />
           <div className="flex items-center justify-center w-full">
-            <div className="grid grid-cols-1 mt-10 md:grid-cols-2 lg:grid-cols-3 ">
+            {/* <div className="grid grid-cols-1 mt-10 md:grid-cols-2 lg:grid-cols-3 ">
               {services.map((service, index) => (
                 <motion.div
                   key={index}
@@ -40,7 +41,8 @@ const Service = () => {
                   <ServiceCard key={service.title} index={index} {...service} />
                 </motion.div>
               ))}
-            </div>
+            </div> */}
+            <HoverEffect items={services} />
           </div>
         </div>
       </div>

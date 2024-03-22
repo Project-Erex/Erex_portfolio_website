@@ -1,9 +1,9 @@
 import React from "react";
 import {styles} from "../../styles";
-import Heading from "@/app/components/heading/Heading";
+import Heading from "@/components/heading/Heading";
 import {ourBlog} from "@/constants";
 import Blogcard from "./Blogcard";
-import Checkbox from "@/app/components/Checkbox";
+import Checkbox from "@/components/Checkbox";
 export default function Blog() {
   return (
     <section className="w-full border-b-2 border-watermark ">

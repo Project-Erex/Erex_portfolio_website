@@ -8,7 +8,7 @@ export default function SocialLink() {
   return (
     <>
       {ourSocialLink.map((item, index) => (
-        <div key={index} className=" rainbow">
+        <div key={index} className="w-full">
           <div className="absolute z-50 px-3 py-3 transition-all duration-500 ease-in-out rounded-full bg-background ">
             <a href={item.url} target="_blank" rel="noopener noreferrer">
               <Image src={item.icon} alt={item.title} />
@@ -19,3 +19,4 @@ export default function SocialLink() {
     </>
   );
 }
+// rainbow

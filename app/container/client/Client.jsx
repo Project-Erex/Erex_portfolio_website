@@ -4,7 +4,7 @@ import {styles} from "../../styles";
 
 import Slick from "./Slick";
 import {motion} from "framer-motion";
-import Heading from "@/app/components/heading/Heading";
+import Heading from "@/components/heading/Heading";
 import {CLIENTS} from "@/app/assets";
 import {ourClient} from "@/constants";
 import Image from "next/image";
@@ -18,7 +18,7 @@ const Client = () => {
         <div
           className={` ${styles.yPadding}   ${styles.xMargin} ${styles.xdivPadding} bg-background 2xl:border-y-4  md:border-x-2 border-watermark  h-full  relative  bg-backgroundGray `}>
           <Heading text={"Our Client"} text2={"Discover Our Clients"} img={CLIENTS} />
-          <div className="z-30  grid md:grid-cols-2 grid-cols-2 lg:grid-cols-3 gap-2  md:gap-3 w-full mt-10 overflow-hidden md:mt-8 lg:mt-10 bg-background ">
+          <div className="z-30  grid md:grid-cols-2 grid-cols-2 lg:grid-cols-3 gap-2  md:gap-4 w-full mt-10 overflow-hidden md:mt-8 lg:mt-10 bg-background ">
             {/* <Slick /> */}
             {ourClient.map((client, index) => (
               <motion.div

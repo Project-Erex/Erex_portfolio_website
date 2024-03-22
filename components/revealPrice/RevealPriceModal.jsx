@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import {RxCross2} from "react-icons/rx";
 import Image from "next/image";
-import {Reveal} from "../../assets";
+import {Reveal} from "../../app/assets";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {Schema} from "./FormHelper";
 import {useForm} from "react-hook-form";
@@ -17,6 +17,10 @@ export default function RevealPriceModal({
   priceAnimation,
 }) {
   const [isLoading, setIsLoading] = useState(false);
+  const [data, setdata] = useState({
+    BusinessName: "",
+    PhoneNo: "",
+  });
 
   const {
     register,
@@ -39,13 +43,13 @@ export default function RevealPriceModal({
     reset();
     try {
       const response = await fetch(
-        "https://api.sheetmonkey.io/form/babZ7HhKD5PSsCgnPAXzQ6",
+        "https://script.google.com/macros/s/AKfycbyK8mQbxLi7KvJfrFULeeO2R82JCqGyaMLGc7Vz_MF2_Qc4f1EoDN2QXEV5_5k2MDwpWA/exec",
         {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/x-www-form-urlencoded",
           },
-          body: JSON.stringify(data),
+          body: new URLSearchParams(data).toString(),
         },
       );
 
@@ -124,6 +128,7 @@ export default function RevealPriceModal({
                       placeholder="Your business name"
                       type="text"
                       id="businessName"
+                      defaultValue={data?.BusinessName}
                       {...register("BusinessName")} // Pass field name to register directly
                     />
                     <p className="mt-2 text-red-500">{errors.BusinessName?.message}</p>
@@ -140,6 +145,7 @@ export default function RevealPriceModal({
                         placeholder="+91 123456789"
                         type="text"
                         id="MobileNuber"
+                        defaultValue={data?.PhoneNo}
                         {...register("PhoneNo")}
                       />
                       <p className="mt-2 text-red-500">{errors.PhoneNo?.message}</p>

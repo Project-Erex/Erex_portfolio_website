@@ -117,31 +117,26 @@ const BenarImage = () => {
                 {url && ImageLoad && (
                   <div className={` flex  items-center justify-center w-full `}>
                     {/*for laptop screen*/}
-                    <button
+                    <Link
                       style={{
                         position: `${position}`,
                         ...getPositionStyle(),
                         bottom: `${bottom}`,
                       }}
-                      // href="/pricing"
-                      onClick={() => {
-                        router.push("/pricing");
-                      }}
-                      // onClick={() => router.push("/pricing")}
+                      href="/pricing"
+                      to="/pricing"
                       className=" lg:flex hidden   items-center  max-w-screen-2xl justify-center text-[10px] md:text-sm px-2 py-1  hover:before:h-64 hover:before:w-64  bg-primary sm:px-5 sm:py-2  md:px-8 md:py-2 lg:px-10 lg:py-3 lg:text-[18px] xl:text-[20px] xl:py-[15px] xl:px-12   overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full hover:text-white  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover">
                       <span className="relative z-10 font-federo ">{ButtonText}</span>
-                    </button>
+                    </Link>
 
                     {/*for mobile screen */}
 
-                    <button
-                      // href="/pricing"
-                      onClick={() => {
-                        router.push("/pricing");
-                      }}
+                    <Link
+                      href="/pricing"
+                      to="/pricing"
                       className=" lg:hidden flex bottom-10 md:bottom-2 absolute  items-center  max-w-screen-2xl justify-center text-[16px] md:text-sm px-10 py-3   hover:before:h-64 hover:before:w-64  bg-primary sm:px-12    sm:py-3 sm:text-[22px]  md:px-8 md:py-2 lg:px-10 lg:py-3 lg:text-[18px] xl:text-[20px] xl:py-[15px] xl:px-12   overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full hover:text-white  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover">
                       <span className="relative z-10 font-federo ">{ButtonText}</span>
-                    </button>
+                    </Link>
                   </div>
                 )}
               </div>

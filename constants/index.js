@@ -37,6 +37,7 @@ import {
   PuruliaPBD,
   Trimz_Logo,
   Trinayoni_logo,
+  Arrow2,
 } from "../app/assets";
 
 const Check = <FaCheck color="#4169E1" />;
@@ -302,6 +303,21 @@ const OurContribution = [
     logo: NpmLogo,
     icon: Frame,
     id: 2,
+    url: "https://www.npmjs.com/package/@erexstudio/geo-span-measure",
+  },
+  // {
+  //   title: "@erexstudio/geo-span-measure",
+  //   description:
+  //     "A simple npm package for calculating distance between two coordinates using the Haversine formula.",
+  //   logo: NpmLogo,
+  //   icon: Frame,
+  //   id: 3,
+  //   url: "https://www.npmjs.com/package/@erexstudio/geo-span-measure",
+  // },
+  {
+    logo: Arrow2,
+    icon: Frame,
+    id: 3,
     url: "https://www.npmjs.com/package/@erexstudio/geo-span-measure",
   },
 ];

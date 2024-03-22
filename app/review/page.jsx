@@ -5,7 +5,7 @@ import {Clock, Depth, Vector} from "../assets";
 import Image from "next/image";
 import {CgProfile} from "react-icons/cg";
 import {FaRegClock} from "react-icons/fa6";
-import Rating from "../components/Rating";
+import Rating from "../../components/Rating";
 import {ThreeDots} from "react-loader-spinner";
 
 export default function page() {

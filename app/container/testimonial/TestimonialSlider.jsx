@@ -81,7 +81,7 @@ export default function Slick({}) {
               <div key={index}>
                 <div className="flex flex-col items-center justify-center px-3">
                   <div className="px-4 py-4 bg-lightwhite min-h-[200px] md:min-h-[180px] flex flex-col  justify-center">
-                    <p className="italic font-medium leading-5 md:leading-6 text-heading text-left text-[12px] lg:text-[12px] xl:text-[14px] font-poppins">
+                    <p className="italic font-medium leading-5 md:leading-6 bg-pink-900 text-heading text-left text-[12px] lg:text-[12px] xl:text-[14px] font-poppins">
                       {item.description}
                     </p>
                     <div className="flex items-center justify-between w-full mt-3">

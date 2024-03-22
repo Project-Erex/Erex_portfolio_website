@@ -1,6 +1,6 @@
 import React from "react";
 import {styles} from "../../styles";
-import Heading from "@/app/components/heading/Heading";
+import Heading from "@/components/heading/Heading";
 import ProjectsCard from "./ProjectsCard";
 import {ourProjects} from "@/constants";
 export default function Projects() {

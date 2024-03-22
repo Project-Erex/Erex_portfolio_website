@@ -2,7 +2,7 @@
 
 import React from "react";
 import {styles} from "../../styles";
-import Heading from "@/app/components/heading/Heading";
+import Heading from "@/components/heading/Heading";
 import {ourTeam} from "@/constants";
 import OurteamCard from "./OurteamCard";
 import Slider from "react-slick";

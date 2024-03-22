@@ -36,8 +36,8 @@ import {
 } from "framer-motion";
 import {useRouter} from "next/navigation";
 import {FaRegEye} from "react-icons/fa";
-import RevealPriceModal from "../components/revealPrice/RevealPriceModal";
-import Influencers from "../components/Influencer/Influencers";
+import RevealPriceModal from "../../components/revealPrice/RevealPriceModal";
+import Influencers from "../../components/Influencer/Influencers";
 
 export default function Pricing() {
   const router = useRouter();
@@ -102,7 +102,7 @@ export default function Pricing() {
 
   const priceAnimation = () => {
     const controls = animate(count, 8990, {duration: 5});
-    const control = animate(counts, 5990, {duration: 4});
+    const control = animate(counts, 4990, {duration: 4});
 
     return controls.stop, control.stop;
   };
@@ -186,7 +186,7 @@ export default function Pricing() {
                       </div>
                       <div>
                         <text className="flex items-center gap-1 text-secondary">
-                          <LuIndianRupee size={32} />
+                          <LuIndianRupee size={29} />
                           <div className="flex gap-1">
                             {showModal && (
                               <RevealPriceModal
@@ -214,7 +214,9 @@ export default function Pricing() {
                                 <motion.div className="text-4xl text-secondary font-bold ">
                                   {price}
                                 </motion.div>
-                                <p className="text-[#4169E1] pt-3">Month</p>
+                                <p className="text-[#4169E1] pt-[6px] ">
+                                  <span className="text-2xl">/</span>Month
+                                </p>
                               </>
                             )}
                           </div>
@@ -271,7 +273,7 @@ export default function Pricing() {
                         </div>
                       </div>
                       <text className="flex items-center gap-1 text-secondary">
-                        <LuIndianRupee size={32} />
+                        <LuIndianRupee size={29} />
                         <div className="flex gap-1">
                           {!isPrice && (
                             <>
@@ -290,7 +292,9 @@ export default function Pricing() {
                               <motion.div className="text-4xl text-secondary font-bold ">
                                 {rounded}
                               </motion.div>
-                              <p className="text-[#A259FF] pt-3">Month</p>
+                              <p className="text-[#A259FF] pt-[6px] ">
+                                <span className="text-2xl">/</span>Month
+                              </p>
                             </>
                           )}
                         </div>

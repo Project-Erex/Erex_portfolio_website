@@ -240,10 +240,10 @@ export default function PrivacyPolicy() {
                 Usage Data is collected automatically when using the Service.
               </p>
               <p className="font-poppins font-normal text-base  text-[#171717]">
-                Usage Data may include information such as Your Device's Internet Protocol
+                {`Usage Data may include information such as Your Device's Internet Protocol
                 address (e.g. IP address), browser type, browser version, the pages of our
                 Service that You visit, the time and date of Your visit, the time spent on
-                those pages, unique device identifiers and other diagnostic data.
+                those pages, unique device identifiers and other diagnostic data.`}
               </p>
               <p className="font-poppins font-normal text-base  text-[#171717]">
                 When You access the Service by or through a mobile device, We may collect
@@ -276,18 +276,22 @@ export default function PrivacyPolicy() {
               <li>LinkedIn</li>
             </ul>
             <p className="font-poppins font-normal text-base  text-[#171717]">
+              {`
               If You decide to register through or otherwise grant us access to a
               Third-Party Social Media Service, We may collect Personal data that is
               already associated with Your Third-Party Social Media Service's account,
               such as Your name, Your email address, Your activities or Your contact list
               associated with that account.
+             `}
             </p>
             <p className="font-poppins font-normal text-base  text-[#171717]">
-              You may also have the option of sharing additional information with the
-              Company through Your Third-Party Social Media Service's account. If You
-              choose to provide such information and Personal Data, during registration or
-              otherwise, You are giving the Company permission to use, share, and store it
-              in a manner consistent with this Privacy Policy.
+              {`
+               You may also have the option of sharing additional information with the
+               Company through Your Third-Party Social Media Service's account. If You
+               choose to provide such information and Personal Data, during registration or
+               otherwise, You are giving the Company permission to use, share, and store it
+               in a manner consistent with this Privacy Policy.
+             `}
             </p>
           </div>
           {/* ********************************************************************************* */}
@@ -467,11 +471,13 @@ export default function PrivacyPolicy() {
                   <strong className="text-secondary text-base font-semibold">
                     To contact You:
                   </strong>{" "}
-                  To contact You by email, telephone calls, SMS, or other equivalent forms
-                  of electronic communication, such as a mobile application's push
-                  notifications regarding updates or informative communications related to
-                  the functionalities, products or contracted services, including the
-                  security updates, when necessary or reasonable for their implementation.
+                  {`
+                To contact You by email, telephone calls, SMS, or other equivalent forms
+                of electronic communication, such as a mobile application's push
+                notifications regarding updates or informative communications related to
+                the functionalities, products or contracted services, including the
+                security updates, when necessary or reasonable for their implementation.
+                `}
                 </p>
               </li>
               <li>
@@ -602,12 +608,12 @@ export default function PrivacyPolicy() {
               Transfer of Your Personal Data
             </h3>
             <p className="font-poppins font-normal text-base  text-[#171717]">
-              Your information, including Personal Data, is processed at the Company's
+              {`Your information, including Personal Data, is processed at the Company's
               operating offices and in any other places where the parties involved in the
               processing are located. It means that this information may be transferred to
               — and maintained on — computers located outside of Your state, province,
               country or other governmental jurisdiction where the data protection laws
-              may differ than those from Your jurisdiction.
+              may differ than those from Your jurisdiction.`}
             </p>
             <p className="font-poppins font-normal text-base  text-[#171717]">
               Your consent to this Privacy Policy followed by Your submission of such
@@ -698,21 +704,23 @@ export default function PrivacyPolicy() {
           </div>
           <div className="flex flex-col gap-4 py-6">
             <h2 className="text-4xl text-secondary font-federo font-medium">
-              Children's Privacy
+              {`Children's Privacy`}
             </h2>
             <p className="font-poppins font-normal text-base  text-[#171717]">
-              Our Service does not address anyone under the age of 13. We do not knowingly
+              {`Our Service does not address anyone under the age of 13. We do not knowingly
               collect personally identifiable information from anyone under the age of 13.
               If You are a parent or guardian and You are aware that Your child has
               provided Us with Personal Data, please contact Us. If We become aware that
               We have collected Personal Data from anyone under the age of 13 without
               verification of parental consent, We take steps to remove that information
-              from Our servers.
+              from Our servers.`}
             </p>
             <p className="font-poppins font-normal text-base  text-[#171717]">
-              If We need to rely on consent as a legal basis for processing Your
-              information and Your country requires consent from a parent, We may require
-              Your parent's consent before We collect and use that information.
+              {`
+             If We need to rely on consent as a legal basis for processing Your
+             information and Your country requires consent from a parent, We may require
+             Your parent's consent before We collect and use that information.
+             `}
             </p>
           </div>
           <div className="flex flex-col gap-4 ">
@@ -720,10 +728,10 @@ export default function PrivacyPolicy() {
               Links to Other Websites
             </h2>
             <p className="font-poppins font-normal text-base  text-[#171717]">
-              Our Service may contain links to other websites that are not operated by Us.
+              {`Our Service may contain links to other websites that are not operated by Us.
               If You click on a third party link, You will be directed to that third
               party's site. We strongly advise You to review the Privacy Policy of every
-              site You visit.
+              site You visit.`}
             </p>
             <p className="font-poppins font-normal text-base  text-[#171717]">
               We have no control over and assume no responsibility for the content,

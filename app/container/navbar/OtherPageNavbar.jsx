@@ -10,8 +10,8 @@ import {CgMenuRightAlt} from "react-icons/cg";
 
 import Image from "next/image";
 import {menuSilde} from "@/constants/framer_motion";
-import ErexLogo from "@/components/ErexLogo";
 import {useRouter} from "next/navigation";
+import ErexLogo from "@/components/firebase/ErexLogo";
 
 const OtherPageNavbar = () => {
   const router = useRouter();

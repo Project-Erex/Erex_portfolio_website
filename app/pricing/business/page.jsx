@@ -3,12 +3,9 @@
 import {styles} from "../../styles";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
-import React, {useEffect, useRef} from "react";
+import React, {useRef} from "react";
 import {Schema} from "./FormHelper";
-import Dropdown from "../../../components/Dropdown";
 import {useState} from "react";
-import Image from "next/image";
-import {erexLogo} from "../../assets";
 import {ThreeDots} from "react-loader-spinner";
 import {ToastContainer, toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

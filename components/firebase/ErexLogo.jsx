@@ -2,9 +2,9 @@ import React, {useEffect, useState} from "react";
 
 import {get, getDatabase, ref} from "firebase/database";
 import Image from "next/image";
-import {erexLogo} from "../app/assets";
+import {erexLogo} from "../../app/assets";
 import {initializeApp} from "firebase/app";
-import {firebaseConfig} from "../app/firebaseConfig";
+import {firebaseConfig} from "../../app/firebaseConfig";
 
 export default function ErexLogo() {
   const [isLogo, setIsLogo] = useState(erexLogo);

@@ -3,10 +3,10 @@ import React, {useEffect, useState} from "react";
 import {get, getDatabase, ref} from "firebase/database";
 import Image from "next/image";
 import {initializeApp} from "firebase/app";
-import {firebaseConfig} from "../app/firebaseConfig";
-import {Rocket} from "../app/assets";
+import {firebaseConfig} from "../../app/firebaseConfig";
+import {HeroBanner, Rocket} from "../../app/assets";
 import {motion} from "framer-motion";
-import {CardBody, CardContainer, CardItem} from "@/components/ui/3d-card";
+import {CardBody, CardContainer, CardItem} from "../ui/3d-card";
 
 // new //
 export default function HeroImage() {
@@ -78,7 +78,7 @@ export default function HeroImage() {
             alt="thumbnail"
           /> */}
                 <Image
-                  className="w-[371px]  md:w-[400px] "
+                  className="w-[371px]  md:w-[450px] "
                   height={0}
                   width={0}
                   src={Rocket}

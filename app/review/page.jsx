@@ -1,13 +1,12 @@
 "use client";
 import React from "react";
 import {styles} from "../styles";
-import {Clock, Depth, Vector} from "../assets";
+import {BlogImage, Clock, Depth, Developer, Representations, Vector} from "../assets";
 import Image from "next/image";
 import {CgProfile} from "react-icons/cg";
 import {FaRegClock} from "react-icons/fa6";
-import Rating from "../../components/Rating";
-import {ThreeDots} from "react-loader-spinner";
-
+import Rating from "../../components/rating/Rating";
+// import {ThreeDots} from "react-loader-spinner";
 export default function page() {
   return (
     <section className="flex justify-center w-full pt-20 bg-background">

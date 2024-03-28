@@ -3,9 +3,7 @@ import {styles} from "../styles";
 
 export default function PrivacyPolicy() {
   return (
-    <section
-      id="ourClient"
-      className="flex justify-center w-full border-y-2 2xl:border-y-0 bg-background border-watermark ">
+    <section className="flex justify-center w-full border-y-2 2xl:border-y-0 bg-background border-watermark ">
       <div className="w-full max-w-screen-2xl ">
         <div
           className={` ${styles.yPadding}   ${styles.xMargin} ${styles.xdivPadding} bg-background 2xl:border-y-4  md:border-x-2 border-watermark  mt-20 h-full  relative  bg-backgroundGray `}>

@@ -33,6 +33,7 @@ export default function Footer() {
     // {label: "Sales And Refunds", destination: "/sales"},
     // {label: "Legal", destination: "/legal"},
     // {label: "Site Map", destination: "/sitemap"},
+    {label: "About Us", destination: "/about"},
   ];
   const Services = [
     {label: "Software Development"},

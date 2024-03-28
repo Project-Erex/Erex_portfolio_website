@@ -12,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
 import {motion} from "framer-motion";
 import Link from "next/link";
+import {Button} from "@/components/ui/moving-border";
 export default function Contact() {
   const [isloading, setIsLoading] = useState(false);
   const form = useRef();
@@ -191,16 +192,17 @@ export default function Contact() {
                   },
                 }}
                 className="flex justify-between mt-4">
-                <button
+                <Button
                   type="submit"
                   value="Send"
                   disabled={isloading}
-                  className="relative flex h-[44px] w-32 items-center justify-center overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
+                  borderRadius="1.75rem"
+                  className="bg-white  text-black  border-neutral-200 ">
                   <span className="relative z-10 font-federo text-[16px]">
                     {" "}
                     {isloading ? <ThreeDots width="50" color="#FFFFFF" /> : "Submit Now"}
                   </span>
-                </button>
+                </Button>
 
                 <ToastContainer />
               </motion.div>
@@ -211,3 +213,9 @@ export default function Contact() {
     </section>
   );
 }
+
+// className="relative flex h-[44px] w-32 items-center justify-center
+// overflow-hidden bg-gray-800 text-white transition-all before:absolute
+// before:h-0 before:w-0 before:rounded-full bg-primary before:bg-bghover
+// before:duration-500 before:ease-out hover:shadow-bghover
+// hover:before:h-56 hover:before:w-56">

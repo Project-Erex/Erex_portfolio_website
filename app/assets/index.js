@@ -65,6 +65,10 @@ import Avatarify_logo from "./client/Avatarify_logo.png";
 import PuruliaPBD from "./client/PuruliaPBD.png";
 import Trimz_Logo from "./client/Trimz_Logo.png";
 import Trinayoni_logo from "./client/Trinayoni_logo.png";
+import Office from "./background/office.jpg";
+import Teamwork from "./background/Teamwork.jpg";
+import OurGoal from "./background/OurGoal.jpg";
+import HeroBanner from "./background/hero-banner.png";
 
 export {
   erexLogo,
@@ -134,4 +138,8 @@ export {
   PuruliaPBD,
   Trimz_Logo,
   Trinayoni_logo,
+  Office,
+  Teamwork,
+  OurGoal,
+  HeroBanner,
 };

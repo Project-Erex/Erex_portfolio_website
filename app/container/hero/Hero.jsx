@@ -12,10 +12,9 @@ import {
   fadeInVariant,
 } from "@/constants/framer_motion";
 import TextAnimation from "@/components/heading/TextAnimation";
-import HeroImage from "@/components/HeroImage";
+import HeroImage from "@/components/firebase/HeroImage";
 import {useRef} from "react";
 import {Link, ScrollLink} from "react-scroll";
-import {ThreeDCardDemo} from "@/components/card/Rocket";
 
 const Hero = () => {
   const constraintsRef = useRef(null);

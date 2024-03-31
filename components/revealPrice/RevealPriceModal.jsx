@@ -83,13 +83,13 @@ export default function RevealPriceModal({
             animate={{opacity: 1}}
             exit={{opacity: 0}}
             transition={{duration: 0.3}}
-            className="fixed top-0 left-0 right-0 bottom-0 w-full h-full  z-50  bg-black/50  overflow-hidden flex justify-center   items-center">
+            className="fixed top-0 left-0 right-0 bottom-0 w-full h-full  z-[999]  bg-black/50  overflow-hidden flex justify-center   items-center">
             <motion.div
               initial={{scale: 0}}
               animate={{scale: 1}}
               exit={{scale: 0}}
               transition={{duration: 0.3}}
-              className="bg-background w-[400px] px-6 py-6  h-auto mt-24   relative rounded-md shadow-lg">
+              className="bg-background md:w-[400px] w-[350px] px-6 py-6 h-auto mt-24   relative rounded-md shadow-lg">
               <div className="w-full justify-end items-center flex">
                 <button
                   onClick={handleClose}
@@ -103,28 +103,28 @@ export default function RevealPriceModal({
                   height={0}
                   alt="image"
                   src={Reveal}
-                  className="w-40 h-auto "
+                  className="md:w-40 w-28 h-auto "
                 />
               </div>
               <div className="w-full flex flex-col gap-1">
-                <h2 className="text-secondary font-federo text-center font-medium text-3xl">
+                <h2 className="text-secondary font-federo text-center font-medium text-2xl md:text-3xl">
                   Reveal Our Price
                 </h2>
-                <p className="text-subheading font-poppins text-center font-normal text-base">
+                <p className="text-subheading font-poppins text-center font-normal text-sm md:text-base">
                   Access Exclusive Pricing by Simply Entering Your Mobile Number
                 </p>
                 <form
                   ref={form}
                   onSubmit={handleSubmit(onSubmit)}
                   className="flex flex-col px-6 items-center">
-                  <div className="w-full mb-4 ">
+                  <div className="w-full lg:mb-4 ">
                     <label
                       className="font-medium md:text-sm xl:text-base font-public text-secondary"
                       htmlFor="businessName">
                       Business name <span className="text-red-500">*</span>
                     </label>
                     <input
-                      className="w-full p-3 mt-2 text-sm font-normal border-2 rounded-[10px] bgpt focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background"
+                      className="w-full p-3 md:mt-2 text-sm font-normal border-2 rounded-[10px] bgpt focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background"
                       placeholder="Your business name"
                       type="text"
                       id="businessName"
@@ -141,7 +141,7 @@ export default function RevealPriceModal({
                         Mobile number <span className="text-red-500">*</span>
                       </label>
                       <input
-                        className="w-full p-3 mt-2 text-sm font-normal border-2 rounded-[10px] bgpt focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background"
+                        className="w-full p-3 md:mt-2 text-sm font-normal border-2 rounded-[10px] bgpt focus:outline-none focus:border-2 focus:border-primary text-secondary font-public border-bordercolor bg-background"
                         placeholder="+91 123456789"
                         type="text"
                         id="MobileNuber"

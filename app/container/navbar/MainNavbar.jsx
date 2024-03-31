@@ -12,6 +12,7 @@ import Image from "next/image";
 import {menuSilde} from "@/constants/framer_motion";
 import {usePathname} from "next/navigation";
 import ErexLogo from "@/components/firebase/ErexLogo";
+import {Button} from "@/components/ui/moving-border";
 
 const MainNavbar = () => {
   const pathname = usePathname();
@@ -73,16 +74,23 @@ const MainNavbar = () => {
             );
           })}
           <ScrollLink
-            className="pt-2 leading-loose"
             to="contact"
             spy={true}
             offset={-90}
             smooth={true}
             duration={300}
             onClick={() => handleNavLinkClick("contact")}>
-            <button className="relative flex h-[44px] w-32 items-center justify-center overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
+            {/* <button className="relative flex h-[44px] w-32 items-center justify-center overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
               <span className="relative z-10 font-federo text-[16px]">Contact Us</span>
-            </button>
+            </button> */}
+            <Button
+              className="  relative flex border-none items-center  justify-center
+                  overflow-hidden bg-gray-800 text-white transition-all before:absolute
+                  before:h-0 before:w-0 before:rounded-full bg-primary before:bg-secondary
+                  before:duration-500 before:ease-out hover:shadow-bghover
+                 hover:before:h-56 hover:before:w-56">
+              <span className="relative z-10 font-federo text-[16px]">Contact Us</span>
+            </Button>
           </ScrollLink>
         </div>
 

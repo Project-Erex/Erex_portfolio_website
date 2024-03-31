@@ -52,16 +52,16 @@ export default function page() {
             </div>
           </div>
           <div
-            className={`w-full flex justify-center flex-col items-center  pt-16 pb-10  gap-8 ${styles.xdivPadding}`}>
-            <h1 className="text-secondary text-5xl font-federo font-medium">
+            className={`w-full flex justify-center flex-col items-center pt-6 md:pt-10  lg:pt-12 xl:pt-16 pb-4 md:pb-10 gap-4 md:gap-8 ${styles.xdivPadding}`}>
+            <h1 className="text-secondary text-3xl md:text-5xl text-center font-federo font-medium">
               About our startup company.
             </h1>
-            <p className="text-subheading text-lg font-public text-center font-medium">
+            <p className="text-subheading text-base md:text-lg font-public text-center font-medium">
               Tech startup: Empowering industries, driving innovation, and shaping
               tomorrow's digital landscape with <br /> groundbreaking solutions that
               enhance user experiences.
             </p>
-            <div className="px-20 pt-5">
+            <div className="lg:px-20 md:px-5 pt-5">
               <Image
                 src={Teamwork}
                 alt="Teamwork"
@@ -73,16 +73,16 @@ export default function page() {
           </div>
           {/* ******************************************* */}
           <div
-            className={`w-full flex justify-center flex-col items-center  py-10  gap-8 ${styles.xdivPadding}`}>
-            <h1 className="text-secondary text-5xl font-federo font-medium">
+            className={`w-full flex justify-center flex-col items-center  py-10 gap-6  md:gap-8 ${styles.xdivPadding}`}>
+            <h1 className="text-secondary text-3xl md:text-5xl text-center font-federo font-medium">
               Grow Up Your Workflow Speed.
             </h1>
-            <p className="text-subheading text-lg font-public text-center font-medium">
+            <p className="text-subheading text-base md:text-lg font-public text-center font-medium">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sagittis eget
               est ante, sed <br />
               viverra nunc tincidunt nec eleifend et turpis.
             </p>
-            <div className="grid grid-cols-4 gap-8 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 w-full">
               {data.map((item, index) => (
                 <motion.div
                   key={index}
@@ -121,7 +121,8 @@ export default function page() {
           </div>
           {/* ********************************************************* */}
 
-          <div className={`w-full flex gap-10 pt-1 ${styles.xdivPadding}`}>
+          <div
+            className={`w-full flex flex-col-reverse lg:flex-row gap-10 py-10  ${styles.xdivPadding}`}>
             <div className="w-full">
               <Image
                 src={OurGoal}
@@ -131,11 +132,11 @@ export default function page() {
                 className="w-full h-full shadow-3xl rounded-xl"
               />
             </div>
-            <div className="w-full  flex flex-col justify-evenly">
-              <h1 className="text-secondary text-5xl font-federo font-medium">
+            <div className="w-full  flex flex-col gap-4  justify-evenly">
+              <h1 className="text-secondary  text-5xl font-federo font-medium">
                 Our Goal
               </h1>
-              <p className="text-subheading text-lg font-public text-clip font-medium">
+              <p className="text-subheading text-base   md:text-lg font-public md:text-clip font-medium">
                 Lorem ipsum dolor sit amet, con se ctetur adipiscing elit. In sagittis eg
                 esta ante, sed viverra nunc tinci dunt nec elei fend et tiram., con se
                 ctetur adipiscing elit. In sagittis eg esta ante, sed viverra nunc tinci
@@ -149,6 +150,7 @@ export default function page() {
               </button>
             </div>
           </div>
+          {/* ************************************** */}
         </div>
       </div>
     </section>

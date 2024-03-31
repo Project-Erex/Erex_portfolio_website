@@ -33,7 +33,8 @@ export default function Footer() {
     // {label: "Sales And Refunds", destination: "/sales"},
     // {label: "Legal", destination: "/legal"},
     // {label: "Site Map", destination: "/sitemap"},
-    {label: "About Us", destination: "/about"},
+    // {label: "Our Team", destination: "/team"},
+    // {label: "About Us", destination: "/about"},
   ];
   const Services = [
     {label: "Software Development"},
@@ -111,7 +112,7 @@ export default function Footer() {
                           smooth={true}
                           offset={-70}
                           duration={500}
-                          className="inline-block text-base leading-normal cursor-pointer text-body-color hover:text-primary text-gray">
+                          className="inline-block text-base leading-normal cursor-pointer text-body-color  text-gray">
                           {services.label}
                         </ScrollLink>
                       </li>
@@ -125,9 +126,7 @@ export default function Footer() {
                 <h4 className="mb-6 text-xl font-normal font-federo text-secondary">
                   Get In Touch
                 </h4>
-                <p className="text-gray hover:text-primary ">
-                  We Are Always Ready For Your Solution
-                </p>
+                <p className="text-gray  ">We Are Always Ready For Your Solution</p>
                 <div className="flex justify-start w-full gap-4 py-5 ">
                   <SocialLink />
                 </div>

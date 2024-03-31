@@ -196,8 +196,11 @@ export default function Contact() {
                   type="submit"
                   value="Send"
                   disabled={isloading}
-                  borderRadius="1.75rem"
-                  className="bg-white  text-black  border-neutral-200 ">
+                  className="  relative flex   border-none items-center justify-center
+                  overflow-hidden bg-gray-800 text-white transition-all before:absolute
+                  before:h-0 before:w-0 before:rounded-full bg-primary before:bg-secondary
+                  before:duration-500 before:ease-out hover:shadow-bghover
+                 hover:before:h-56 hover:before:w-56">
                   <span className="relative z-10 font-federo text-[16px]">
                     {" "}
                     {isloading ? <ThreeDots width="50" color="#FFFFFF" /> : "Submit Now"}

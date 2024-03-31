@@ -86,7 +86,7 @@ export default function OurPackegs() {
                 </div>
               </div>
               <div>
-                <text className="flex items-center gap-1 text-secondary">
+                <text className="flex items-center gap-1  text-secondary">
                   <LuIndianRupee size={29} />
                   <div className="flex gap-1">
                     {showModal && (

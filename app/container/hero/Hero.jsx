@@ -15,6 +15,7 @@ import TextAnimation from "@/components/heading/TextAnimation";
 import HeroImage from "@/components/firebase/HeroImage";
 import {useRef} from "react";
 import {Link, ScrollLink} from "react-scroll";
+import {Button} from "@/components/ui/moving-border";
 
 const Hero = () => {
   const constraintsRef = useRef(null);
@@ -80,11 +81,21 @@ const Hero = () => {
                   animate="visible"
                   className="leading-loose">
                   <Link to="contact" spy={true} offset={-90} smooth={true} duration={300}>
-                    <button className="relative flex h-[50px] w-40 items-center justify-center overflow-hidden  text-white shadow-primary shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
+                    {/* <button className="relative flex h-[50px] w-40 items-center justify-center overflow-hidden  text-white shadow-primary shadow-2xl transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
                       <span className="relative z-10 font-federo text-[16px]">
                         Hire Us
                       </span>
-                    </button>
+                    </button> */}
+                    <Button
+                      className="  relative flex border-none items-center  justify-center
+                  overflow-hidden bg-gray-800 text-white transition-all before:absolute
+                  before:h-0 before:w-0 before:rounded-full bg-primary before:bg-secondary
+                  before:duration-500 before:ease-out hover:shadow-bghover
+                 hover:before:h-56 hover:before:w-56">
+                      <span className="relative z-10 font-federo text-[16px]">
+                        Hire Us
+                      </span>
+                    </Button>
                   </Link>
                 </motion.div>
               </div>

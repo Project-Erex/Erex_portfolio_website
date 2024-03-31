@@ -9,6 +9,7 @@ import {useState} from "react";
 import {ThreeDots} from "react-loader-spinner";
 import {ToastContainer, toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {Button} from "@/components/ui/moving-border";
 
 export default function Business() {
   const [isLoading, setIsLoading] = useState(false);
@@ -460,14 +461,28 @@ export default function Business() {
               </p>
             </div> */}
             <div>
-              <button
+              {/* <button
                 type="submit"
                 value="Send"
                 disabled={isLoading}
                 onClick={handleSubmit(onSubmit)}
                 className="relative z-10 font-federo text-[16px] flex h-[50px] w-full sm:w-40 items-center justify-center overflow-hidden text-white bg-primary">
                 {isLoading ? <ThreeDots width="50" color="#FFFFFF" /> : "Submit Now"}
-              </button>
+              </button> */}
+              <Button
+                type="submit"
+                value="Send"
+                disabled={isLoading}
+                className="  relative flex   border-none items-center justify-center
+                  overflow-hidden bg-gray-800 text-white transition-all before:absolute
+                  before:h-0 before:w-0 before:rounded-full bg-primary before:bg-secondary
+                  before:duration-500 before:ease-out hover:shadow-bghover
+                 hover:before:h-56 hover:before:w-56">
+                <span className="relative z-10 font-federo text-[16px]">
+                  {" "}
+                  {isLoading ? <ThreeDots width="50" color="#FFFFFF" /> : "Submit Now"}
+                </span>
+              </Button>
             </div>
           </form>
           <ToastContainer position="bottom-right" />

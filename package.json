@@ -21,7 +21,6 @@
     "framer-motion": "^10.18.0",
     "lottie-react": "^2.4.0",
     "next": "^14.2.0-canary.46",
-    "nextjs-toploader": "^1.6.6",
     "react": "^18.2.0",
     "react-dom": "^18",
     "react-hook-form": "^7.49.2",

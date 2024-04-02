@@ -60,6 +60,7 @@ const ClientSlideshow = ({slidesData}) => {
               </div>
               {sliderState === "" && index === 0 && (
                 <motion.div
+                  key={index}
                   className="z-[200] absolute left-14 top-1/2"
                   initial={{y: 100, opacity: 0}}
                   animate={{

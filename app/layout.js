@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./container/navbar/Index";
 import Footer from "./container/footer/Footer";
 import Head from "next/head";
+import Script from "next/script";
 // import NextTopLoader from "nextjs-toploader";
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
@@ -43,32 +44,26 @@ export default function RootLayout({children}) {
       lang="en"
       className={`${poppins.variable} ${federo.variable} ${rubik.variable} ${public_Sans.variable}`}>
       <Head>
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/faviconIcon/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/faviconIcon/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/faviconIcon/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/faviconIcon/site.webmanifest" />
-        <link rel="mask-icon" href="/faviconIcon/safari-pinned-tab.svg" color="#5bbad5" />
+        <Script
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "lq6bp5joht");
+          `,
+          }}></Script>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff"></meta>
+        <meta name="theme-color" content="#ffffff" />
 
-        <meta
-          property="og:image"
-          content="https://erex.in/_next/static/media/Erex_logo.334c0744.png"
-        />
+        <meta property="og:image" content="/android-chrome-192x192.png" />
         <meta
           property="og:title"
           content="Erex Studio | Transforming Ideas into Digital Triumphs"
@@ -81,8 +76,6 @@ export default function RootLayout({children}) {
         />
         <meta property="og:site_name" content="Erex Studio" />
       </Head>
-
-      {/* kxidyxssid */}
 
       <body>
         {/* <NextTopLoader

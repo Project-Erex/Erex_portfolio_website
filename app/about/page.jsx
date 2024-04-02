@@ -57,9 +57,9 @@ export default function page() {
               About our startup company.
             </h1>
             <p className="text-subheading text-base md:text-lg font-public text-center font-medium">
-              Tech startup: Empowering industries, driving innovation, and shaping
-              tomorrow's digital landscape with <br /> groundbreaking solutions that
-              enhance user experiences.
+              {` Tech startup: Empowering industries, driving innovation, and shaping
+              tomorrow's digital landscape with groundbreaking solutions that
+              enhance user experiences.`}
             </p>
             <div className="lg:px-20 md:px-5 pt-5">
               <Image
@@ -72,15 +72,15 @@ export default function page() {
             </div>
           </div>
           {/* ******************************************* */}
-          <div
+          {/* <div
             className={`w-full flex justify-center flex-col items-center  py-10 gap-6  md:gap-8 ${styles.xdivPadding}`}>
             <h1 className="text-secondary text-3xl md:text-5xl text-center font-federo font-medium">
               Grow Up Your Workflow Speed.
             </h1>
             <p className="text-subheading text-base md:text-lg font-public text-center font-medium">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sagittis eget
+              {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sagittis eget
               est ante, sed <br />
-              viverra nunc tincidunt nec eleifend et turpis.
+              viverra nunc tincidunt nec eleifend et turpis.`}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 w-full">
               {data.map((item, index) => (
@@ -118,7 +118,7 @@ export default function page() {
                 </motion.div>
               ))}
             </div>
-          </div>
+          </div> */}
           {/* ********************************************************* */}
 
           <div
@@ -137,10 +137,7 @@ export default function page() {
                 Our Goal
               </h1>
               <p className="text-subheading text-base   md:text-lg font-public md:text-clip font-medium">
-                Lorem ipsum dolor sit amet, con se ctetur adipiscing elit. In sagittis eg
-                esta ante, sed viverra nunc tinci dunt nec elei fend et tiram., con se
-                ctetur adipiscing elit. In sagittis eg esta ante, sed viverra nunc tinci
-                dunt nec elei fend et tiram.
+                {`At Erex Studio, our primary goal is to empower small and medium-sized businesses by offering comprehensive digital solutions tailored to their unique needs. We strive to be a leading agency in Digital Marketing, Software Development, UI/UX Design, and other IT services, ensuring our clients achieve sustainable growth and success in today's competitive landscape. Through innovative strategies, personalized services, and a commitment to excellence, we aim to drive measurable results and create lasting value for our clients.`}
               </p>
               <button className="text-secondary flex items-center ">
                 Contact Us{" "}

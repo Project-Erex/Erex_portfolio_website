@@ -3,7 +3,6 @@ import "./globals.css";
 import Navbar from "./container/navbar/Index";
 import Footer from "./container/footer/Footer";
 import Head from "next/head";
-import Script from "next/script";
 // import NextTopLoader from "nextjs-toploader";
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
@@ -44,7 +43,7 @@ export default function RootLayout({children}) {
       lang="en"
       className={`${poppins.variable} ${federo.variable} ${rubik.variable} ${public_Sans.variable}`}>
       <Head>
-        <Script
+        <script
           dangerouslySetInnerHTML={{
             __html: `
             (function(c,l,a,r,i,t,y){
@@ -53,7 +52,7 @@ export default function RootLayout({children}) {
               y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             })(window, document, "clarity", "script", "lq6bp5joht");
           `,
-          }}></Script>
+          }}></script>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

@@ -1,10 +1,15 @@
-"use client";
 import React from "react";
 import {styles} from "../styles";
 import Image from "next/image";
 import {MediumBusiness, Office, OurGoal, Teamwork} from "../assets";
 import {motion} from "framer-motion";
 import {IoIosArrowRoundForward} from "react-icons/io";
+export const metadata = {
+  title: "Erex Studio About | Transforming Ideas into Digital Triumphs,",
+  openGraph: {
+    title: "Erex Studio About | Transforming Ideas into Digital Triumphs,",
+  },
+};
 
 export default function page() {
   const data = [
@@ -61,7 +66,7 @@ export default function page() {
               tomorrow's digital landscape with groundbreaking solutions that
               enhance user experiences.`}
             </p>
-            <div className="lg:px-20 md:px-5 pt-5">
+            <div className="lg:px-32 md:px-5 pt-5">
               <Image
                 src={Teamwork}
                 alt="Teamwork"
@@ -136,7 +141,7 @@ export default function page() {
               <h1 className="text-secondary  text-5xl font-federo font-medium">
                 Our Goal
               </h1>
-              <p className="text-subheading text-base   md:text-lg font-public md:text-clip font-medium">
+              <p className="text-subheading text-base   font-public md:text-clip font-medium">
                 {`At Erex Studio, our primary goal is to empower small and medium-sized businesses by offering comprehensive digital solutions tailored to their unique needs. We strive to be a leading agency in Digital Marketing, Software Development, UI/UX Design, and other IT services, ensuring our clients achieve sustainable growth and success in today's competitive landscape. Through innovative strategies, personalized services, and a commitment to excellence, we aim to drive measurable results and create lasting value for our clients.`}
               </p>
               <button className="text-secondary flex items-center ">

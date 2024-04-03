@@ -1,6 +1,12 @@
 import React from "react";
 import {styles} from "../styles";
 
+export const metadata = {
+  title: "Erex Studio Privacy Policy | Transforming Ideas into Digital Triumphs,",
+  openGraph: {
+    title: "Erex Studio Privacy Policy | Transforming Ideas into Digital Triumphs,",
+  },
+};
 export default function PrivacyPolicy() {
   return (
     <section className="flex justify-center w-full border-y-2 2xl:border-y-0 bg-background border-watermark ">

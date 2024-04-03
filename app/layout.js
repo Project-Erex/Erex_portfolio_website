@@ -1,9 +1,8 @@
 import {Federo, Poppins, Rubik, Public_Sans} from "next/font/google";
 import "./globals.css";
-import Navbar from "./container/navbar/Index";
-import Footer from "./container/footer/Footer";
+import Navbar from "../container/navbar/Index";
+import Footer from "../container/footer/Footer";
 import Head from "next/head";
-// import NextTopLoader from "nextjs-toploader";
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
@@ -62,6 +61,9 @@ export default function RootLayout({children}) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <meta property="og:image" content="/android-chrome-192x192.png" />
         <meta
           property="og:title"
@@ -88,6 +90,7 @@ export default function RootLayout({children}) {
           speed={200}
           shadow="0 0 10px #4169E1,0 0 5px #4169E1"
         /> */}
+
         <Navbar />
         <main>{children}</main>
         <Footer />

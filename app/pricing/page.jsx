@@ -1,4 +1,4 @@
-import PricingPage from "@/container/pricingpage/PricingPage";
+import PricingPage from "@/container/pricing_page/PricingPage";
 import React from "react";
 
 export const metadata = {

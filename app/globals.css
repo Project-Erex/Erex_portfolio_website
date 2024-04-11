@@ -423,7 +423,6 @@ body {
 
 /* Slider */
 .slider {
-  /* height: 100vh; */
   height: 100vh;
   width: 100%;
   overflow: hidden;
@@ -458,7 +457,7 @@ body {
 
 .thumbnail .item {
   width: 150px;
-  height: 180px;
+  height: 150px;
   flex-shrink: 0;
   position: relative;
 }
@@ -466,7 +465,7 @@ body {
 .thumbnail .item img   {
   width: 100%;
   height: 100%;
-   border-radius: 20px;
+   /* border-radius: 20px; */
   object-fit: cover; 
   box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
 }
@@ -595,4 +594,6 @@ body {
     transform: translateX(-150px);
   }
 }
+
+
 

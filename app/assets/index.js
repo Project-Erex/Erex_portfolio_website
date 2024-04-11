@@ -66,9 +66,23 @@ import PuruliaPBD from "./client/PuruliaPBD.png";
 import Trimz_Logo from "./client/Trimz_Logo.png";
 import Trinayoni_logo from "./client/Trinayoni_logo.png";
 import Office from "./background/office.jpg";
-import Teamwork from "./background/Teamwork.jpg";
+import Teamwork from "./about/team.svg";
+import Vector5 from "./about/Vector5.svg";
+import Vector8 from "./about/Vector8.svg";
+import OurMembar7 from "./about/ourMembar7.svg";
+import Layer1 from "./about/Layer(1).svg";
+import Layer2 from "./about/Layer(2).svg";
+import Layer3 from "./about/Layer(3).svg";
+import Layer4 from "./about/Layer(4).svg";
+import AdminLogin from "./svg/AdminLogin.svg";
 import OurGoal from "./background/OurGoal.jpg";
 import HeroBanner from "./background/hero-banner.png";
+import Icon10 from "./digital_marketing/Icon10.svg";
+import Icon11 from "./digital_marketing/Icon11.svg";
+import Icon12 from "./digital_marketing/Icon12.svg";
+import Digital_marketing from "./digital_marketing/digital_marketing.svg";
+import Star2 from "./digital_marketing/Star-2.svg";
+import Pexels_steve from "./digital_marketing/Pexels_steve.svg";
 
 export {
   erexLogo,
@@ -140,6 +154,20 @@ export {
   Trinayoni_logo,
   Office,
   Teamwork,
+  OurMembar7,
   OurGoal,
   HeroBanner,
+  Vector5,
+  Vector8,
+  Layer1,
+  Layer2,
+  Layer3,
+  Layer4,
+  AdminLogin,
+  Icon10,
+  Icon11,
+  Icon12,
+  Digital_marketing,
+  Pexels_steve,
+  Star2,
 };

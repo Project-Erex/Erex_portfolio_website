@@ -146,6 +146,7 @@ module.exports = {
         watermark: "#EBEBEB",
         bghover: "#19181D",
         bordercolor: "#DBE0E5",
+        litesky: "#cdddff",
       },
       screens: {"2xl": "1636px"},
       boxShadow: {

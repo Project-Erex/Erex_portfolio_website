@@ -10,7 +10,7 @@ import Rating from "../../components/rating/Rating";
 export default function page() {
   return (
     <section className="flex justify-center w-full pt-20 bg-background">
-      <div className="w-full max-w-screen-2xl">
+      <div className="w-full ">
         <div
           className={`${styles.yPadding}  ${styles.xMargin} px-40 md:border-x-2 bg-background border-watermark   h-full  relative  bg-backgroundGray  `}>
           <div className="w-full flex  gap-10 flex-col justify-center items-center  ">

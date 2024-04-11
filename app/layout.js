@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "../container/navbar/Index";
 import Footer from "../container/footer/Footer";
 import Head from "next/head";
+import Script from "next/script";
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
@@ -42,7 +43,7 @@ export default function RootLayout({children}) {
       lang="en"
       className={`${poppins.variable} ${federo.variable} ${rubik.variable} ${public_Sans.variable}`}>
       <Head>
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
             (function(c,l,a,r,i,t,y){
@@ -51,7 +52,8 @@ export default function RootLayout({children}) {
               y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             })(window, document, "clarity", "script", "lq6bp5joht");
           `,
-          }}></script>
+          }}></Script>
+
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -79,18 +81,6 @@ export default function RootLayout({children}) {
       </Head>
 
       <body>
-        {/* <NextTopLoader
-          color="#4169E1"
-          initialPosition={0.03}
-          crawlSpeed={200}
-          height={4}
-          crawl={true}
-          showSpinner={true}
-          easing="ease"
-          speed={200}
-          shadow="0 0 10px #4169E1,0 0 5px #4169E1"
-        /> */}
-
         <Navbar />
         <main>{children}</main>
         <Footer />

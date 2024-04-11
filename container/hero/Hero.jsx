@@ -29,13 +29,13 @@ const Hero = () => {
         className="relative flex justify-center  w-full pt-20 bg-background">
         <div className="w-full border-b-2 2xl:border-b-0 border-watermark max-w-screen-2xl ">
           <div
-            className={`${styles.xMargin} relative 2xl:border-b-4 pb-16 bg-background  md:py-20 xl:pt-5 xl:pb-20 flex-col-reverse md:flex-row md:border-r-2 md:border-l-2 flex  border-watermark h-full md:min-h-full 2xl:min-h-full bg-green-60  bg-cover  `}>
+            className={`${styles.xMargin} relative 2xl:border-b-4 pb-16 bg-background  md:py-20 xl:pt-5 xl:pb-20 flex-col md:flex-row md:border-r-2 md:border-l-2 flex  border-watermark h-full md:min-h-full 2xl:min-h-full bg-green-60  bg-cover  `}>
             <motion.div
               variants={fadeInTopVariant}
               initial="hidden"
               whileInView="visible"
               viewport={{once: true}}
-              className="absolute items-center justify-center hidden w-full md:flex top-10 lg:pt-0 xl:pt-12 md:px-4 lg:px-6 xl:px-10">
+              className="md:absolute  items-center   w-full flex top-10 lg:pt-0 px-4 xl:pt-12 md:px-4 lg:px-6 xl:px-10">
               {/* <Image src={EREXSTUDIO} alt="EREXSTUDIO" /> */}
               <svg
                 width="1358"
@@ -102,7 +102,7 @@ const Hero = () => {
             </div>
             <motion.div
               ref={constraintsRef}
-              className="z-50 w-full relative h-auto md:h-full md:w-1/2">
+              className="z-50 w-full hidden md:flex relative h-auto md:h-full md:w-1/2">
               {/* <Spline
                 className="hidden md:block"
                 scene="https://prod.spline.design/6li3mjiZmpzR3QRo/scene.splinecode"

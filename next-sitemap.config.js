@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://erex.in",
+  siteUrl: "https://erexstudio.com/",
   generateRobotsTxt: true, // (optional)
   generateIndexSitemap: false,
   outDir: "./out",

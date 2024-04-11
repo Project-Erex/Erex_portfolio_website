@@ -96,7 +96,13 @@ const ClientSlideshow = ({slidesData}) => {
               key={index}
               className={`item
               ${index === 0 ? "active" : ""}`}>
-              <Image src={slide.image} className="w-32 " width={0} height={0} alt="" />
+              <Image
+                src={slide.image}
+                className="w-32 aspect-square rounded-full"
+                width={0}
+                height={0}
+                alt=""
+              />
               {/* <div className="bg-lightwhite aspect-square flex justify-center items-center flex-col gap-2"> */}
 
               {/* <div>

@@ -1,6 +1,6 @@
 import React from "react";
 import {styles} from "../../styles";
-import BusinessForm from "./BusinessForm";
+import BusinessForm from "../../../components/form/BusinessForm";
 export const metadata = {
   title: "Erex Studio Business | Transforming Ideas into Digital Triumphs,",
   openGraph: {

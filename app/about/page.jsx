@@ -1,92 +1,145 @@
+"use client";
 import React from "react";
 import {styles} from "../styles";
 import Image from "next/image";
-import {MediumBusiness, Office, OurGoal, Teamwork} from "../assets";
+import {
+  Layer,
+  Layer1,
+  Layer2,
+  Layer3,
+  Layer4,
+  MediumBusiness,
+  Office,
+  OurGoal,
+  OurMembar7,
+  Teamwork,
+  Vector5,
+  Vector8,
+} from "../assets";
 import {motion} from "framer-motion";
 import {IoIosArrowRoundForward} from "react-icons/io";
-export const metadata = {
-  title: "Erex Studio About | Transforming Ideas into Digital Triumphs,",
-  openGraph: {
-    title: "Erex Studio About | Transforming Ideas into Digital Triumphs,",
-  },
-};
+// export const metadata = {
+//   title: "Erex Studio About | Transforming Ideas into Digital Triumphs,",
+//   openGraph: {
+//     title: "Erex Studio About | Transforming Ideas into Digital Triumphs,",
+//   },
+// };
 
 export default function page() {
   const data = [
     {
-      icon: MediumBusiness,
-      title: "Satisfied Client",
-      point: 9652,
-      bgcolor: "#029e76",
+      icon: Layer1,
+      title: "Transparency",
+      description:
+        "No smoke and mirrors here. We believe in being genuine in dealing with all our clients. We’ll say what we’ll do, and then do what we say.",
     },
     {
-      icon: MediumBusiness,
-      title: "Project Completed",
-      point: 9752,
-      bgcolor: "#ffa808",
+      icon: Layer2,
+      title: "Integrity",
+      description:
+        "No smoke and mirrors here. We believe in being genuine in dealing with all our clients. We’ll say what we’ll do, and then do what we say.",
     },
     {
-      icon: MediumBusiness,
-      title: "Project Launched",
-      point: 8752,
-      bgcolor: "#5543d1",
+      icon: Layer3,
+      title: "Simplicity",
+      description:
+        "No smoke and mirrors here. We believe in being genuine in dealing with all our clients. We’ll say what we’ll do, and then do what we say.",
     },
     {
-      icon: MediumBusiness,
-      title: "Years Completed",
-      point: 2,
-      bgcolor: "#ff586e",
+      icon: Layer4,
+      title: "Performance",
+      description:
+        "No smoke and mirrors here. We believe in being genuine in dealing with all our clients. We’ll say what we’ll do, and then do what we say.",
     },
   ];
   return (
-    <section className="flex justify-center w-full border-y-2 2xl:border-y-0 bg-background border-watermark ">
-      <div className="w-full max-w-screen-2xl ">
+    <section className="flex justify-center w-full bg-background border-watermark ">
+      <div className="w-full h-full max-w-screen-2xl ">
         <div
-          className={` ${styles.yPadding}   ${styles.xMargin} ${styles.xdivPadding} bg-background 2xl:border-y-4 
-           md:border-x-2 border-watermark  mt-20 h-full  relative  bg-backgroundGray `}>
-          <div className="w-full h-auto relative">
-            <Image
-              src={Office}
-              alt="Office"
-              width={0}
-              height={0}
-              className="w-full h-full"
-            />
-            <div className="w-full absolute top-0  flex justify-center items-center  h-full bg-secondary/40">
-              <h1 className="text-white text-5xl font-federo font-medium">About Us</h1>
+          style={{
+            background: "rgb(64, 123, 255)",
+            background:
+              "linear-gradient(180deg, rgba(205,221,255,1) 30%, rgba(255,255,255,1) 100%)",
+          }}
+          className={` ${styles.yPadding}   ${styles.xPadding}  
+             mt-20 h-full  relative  bg-backgroundGray `}>
+          <div className="w-full h-auto gap-6  flex flex-col md:flex-row relative">
+            <div className="w-full flex flex-col  justify-center  gap-3 md:gap-5 h-full">
+              <h3 className=" text-secondary font-public text-base font-medium">
+                ABOUT US
+              </h3>
+              <p className="font-federo font-medium text-4xl  xl:text-6xl  lg:text-5xl text-justify leading-tight text-secondary">
+                Digital marketing <br />
+                solutions
+                <br /> designed to
+                <br /> generate revenue
+                <br /> for your business
+              </p>
             </div>
-          </div>
-          <div
-            className={`w-full flex justify-center flex-col items-center pt-6 md:pt-10  lg:pt-12 xl:pt-16 pb-4 md:pb-10 gap-4 md:gap-8 ${styles.xdivPadding}`}>
-            <h1 className="text-secondary text-3xl md:text-5xl text-center font-federo font-medium">
-              About our startup company.
-            </h1>
-            <p className="text-subheading text-base md:text-lg font-public text-center font-medium">
-              {` Tech startup: Empowering industries, driving innovation, and shaping
-              tomorrow's digital landscape with groundbreaking solutions that
-              enhance user experiences.`}
-            </p>
-            <div className="lg:px-32 md:px-5 pt-5">
+            <div className="w-full flex justify-end  h-full">
               <Image
                 src={Teamwork}
-                alt="Teamwork"
+                alt="TeamWork"
                 width={0}
                 height={0}
-                className="w-full h-full "
+                className="w-full md:w-[570px] h-full"
               />
             </div>
           </div>
-          {/* ******************************************* */}
-          {/* <div
-            className={`w-full flex justify-center flex-col items-center  py-10 gap-6  md:gap-8 ${styles.xdivPadding}`}>
-            <h1 className="text-secondary text-3xl md:text-5xl text-center font-federo font-medium">
-              Grow Up Your Workflow Speed.
-            </h1>
-            <p className="text-subheading text-base md:text-lg font-public text-center font-medium">
-              {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sagittis eget
-              est ante, sed <br />
-              viverra nunc tincidunt nec eleifend et turpis.`}
+        </div>
+        {/* ********************************************************* */}
+
+        <div>
+          <Image
+            src={Vector5}
+            alt="Vector5"
+            width={0}
+            height={0}
+            className="w-full  h-full"
+          />
+        </div>
+        <div
+          className={`$ ${styles.xPadding}  
+              h-full  relative  bg-background `}>
+          <div className="w-full h-full flex  justify-center items-center">
+            <p className="text-secondary font-public w-full text-base py-5 md:pt-8  md:text-xl   xl:text-2xl   lg:w-[65%] xl:w-[45%] font-medium text-clip">
+              Numerique was established 1 years ago with the belief that advertising could
+              drive significant business leverage for our clients. Initially, our focus
+              was on the entertainment industry, including live events and record labels.
+              Over time, we have expanded our services and successfully partnered with
+              both major and niche brands. Our client base spans globally, with a growing
+              roster of local clients.
             </p>
+          </div>
+        </div>
+        <div className="w-full h-full relative">
+          <div className=" w-full h-24 md:h-40 g:h-52 xl:h-72"></div>
+          <div className="bg-litesky w-full  h-24 md:h-40 lg:h-52 xl:h-72"></div>
+          <div className={` ${styles.xPadding} w-full h-full absolute z-[100]  top-0 `}>
+            <Image
+              src={OurMembar7}
+              alt="OurMembar7"
+              width={0}
+              height={0}
+              className="w-full  h-full"
+            />
+          </div>
+        </div>
+        {/* ********************************************************* */}
+
+        <div
+          style={{
+            background: "rgb(64, 123, 255)",
+            background:
+              "linear-gradient(180deg, rgba(205,221,255,1) 30%, rgba(255,255,255,1) 100%)",
+          }}
+          className={`  ${styles.yPadding}  ${styles.xPadding}  
+              h-full  relative  bg-backgroundGray `}>
+          <div className="w-full h-full flex flex-col gap-8 md:gap-10">
+            <h1 className="font-federo font-medium text-secondary text-4xl text-center">
+              Our Values
+            </h1>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 w-full">
               {data.map((item, index) => (
                 <motion.div
@@ -102,57 +155,117 @@ export default function page() {
                     },
                   }}
                   viewport={{once: true}}>
-                  <div className=" bg-white shadow-3xl px-5 py-6 gap-3 rounded-2xl w-full h-full flex items-center justify-center flex-col">
-                    <div
-                      style={{backgroundColor: item.bgcolor}}
-                      className={`py-4 px-4 rounded-full`}>
+                  <div className=" bg-white shadow-3xl px-5 py-6 gap-3 rounded-2xl w-full h-full flex  flex-col">
+                    <div className={` bg-lightwhite rounded-full w-12 h-12`}>
                       <Image
                         src={item.icon}
                         alt={item.title}
                         width={0}
                         height={0}
-                        className="w-10"
+                        className="w-full h-full px-3 py-3 "
                       />
                     </div>
 
-                    <h2 className="text-secondary font-public font-medium text-xl">
+                    <h2 className="text-secondary font-public font-medium text-2xl">
                       {item.title}
                     </h2>
-                    <h5 className="text-primary text-xl font-semibold  ">{item.point}</h5>
+                    <h5 className="text-secondary font-public font-medium text-base  ">
+                      {item.description}
+                    </h5>
                   </div>
                 </motion.div>
               ))}
             </div>
-          </div> */}
+          </div>
           {/* ********************************************************* */}
+        </div>
 
-          <div
-            className={`w-full flex flex-col-reverse lg:flex-row gap-10 py-10  ${styles.xdivPadding}`}>
-            <div className="w-full">
-              <Image
-                src={OurGoal}
-                alt="OurGoal"
-                width={0}
-                height={0}
-                className="w-full h-full shadow-3xl rounded-xl"
-              />
+        <div
+          className={`$ ${styles.xPadding} lg:pt-10  md:pt-5 py-2
+              h-full w-full  relative  bg-background `}>
+          <div className="w-full h-full flex flex-col gap-4">
+            <div>
+              <h2 className="font-public font-medium text-secondary text-base">
+                MARKETING SOLUTIONS PROVIDER
+              </h2>
             </div>
-            <div className="w-full  flex flex-col gap-4  justify-evenly">
-              <h1 className="text-secondary  text-5xl font-federo font-medium">
-                Our Goal
-              </h1>
-              <p className="text-subheading text-base   font-public md:text-clip font-medium">
-                {`At Erex Studio, our primary goal is to empower small and medium-sized businesses by offering comprehensive digital solutions tailored to their unique needs. We strive to be a leading agency in Digital Marketing, Software Development, UI/UX Design, and other IT services, ensuring our clients achieve sustainable growth and success in today's competitive landscape. Through innovative strategies, personalized services, and a commitment to excellence, we aim to drive measurable results and create lasting value for our clients.`}
-              </p>
-              <button className="text-secondary flex items-center ">
-                Contact Us{" "}
-                <span className="pt-[2px]">
-                  <IoIosArrowRoundForward size={25} />
-                </span>
-              </button>
+            <div className="w-full flex h-full flex-col md:flex-row gap-4 justify-between items-center">
+              <div className="w-full h-full">
+                <p className="font-federo font-medium text-secondary text-4xl">
+                  {`We’re a`} leader in digital
+                  <br />
+                  marketing solutions
+                </p>
+              </div>
+              <div className="w-full h-full">
+                <p className="font-public font-medium text-secondary text-[15px] md:text-[12px] lg:text-base">
+                  {`
+                 After years of experience, we have learned that each marketing channel
+                 has its own unique advantages, but they work best when strategically
+                 combined with other channels. Therefore, we provide our clients with
+                 full-service strategies that utilize a comprehensive mix of digital
+                 channels to enhance visibility, boost conversions, and drive revenue.
+                 `}
+                </p>
+              </div>
             </div>
           </div>
-          {/* ************************************** */}
+        </div>
+
+        {/* ********************************************************* */}
+        <div
+          className={` ${styles.xPadding}  ${styles.yPadding} 
+              h-full w-full  relative  bg-background `}>
+          <div className={`bg-litesky rounded-t-2xl`}>
+            <div className="w-full flex flex-col md:flex-row px-6 pt-6 pb-6 md:pb-10 gap-4 lg:pt-16 md:px-10 lg:px-16 md:pt-10 justify-between items-center">
+              <div className="w-full">
+                <h2 className="font-federo font-medium  text-secondary text-2xl md:text-3xl lg:text-4xl ">
+                  See how we can help <br /> your business grow with <br /> digital
+                  marketing
+                </h2>
+              </div>
+              <div className="w-full flex flex-col text-secondary font-public gap-3 md:justify-end md:items-end">
+                <h4 className="md:text-end">
+                  Ready to speak with a marketing
+                  <br />
+                  expert? Give us a ring
+                </h4>
+                <span>+91 8167861850</span>
+                <button className="bg-primary px-6 py-2 text-white rounded-xl">
+                  GET A FREE AUDIT
+                </button>
+              </div>
+            </div>
+
+            {/*  */}
+            <div>
+              <Image
+                src={Vector8}
+                alt="Vector8"
+                width={0}
+                height={0}
+                className="w-full  h-full"
+              />
+            </div>
+          </div>
+
+          <div
+            className="bg-litesky font-public rounded-b-2xl px-6 py-6 md:px-10 lg:px-16 md:py-10 lg:py-16 text-secondary  flex flex-col gap-3
+          ">
+            <div>
+              <h2 className="font-medium">SOLUTIONS</h2>
+            </div>
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+              <h3>Software Development</h3>
+              <h3>Creative Designs</h3>
+              <h3>Digital Marketing</h3>
+              <h3>ASO Expertise</h3>
+              <h3>UI/UX Design</h3>
+              <h3>AI/ML</h3>
+              <h3>Logo Designing</h3>
+              <h3>Social Media Handling</h3>
+            </div>
+          </div>
         </div>
       </div>
     </section>

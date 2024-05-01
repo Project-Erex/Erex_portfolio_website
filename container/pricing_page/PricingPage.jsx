@@ -29,7 +29,7 @@ export default function PricingPage() {
               <OurPackegs />
               {/* !********************************************************** */}
               <div className="flex items-center w-full py-4 md:py-6 lg:py-8">
-                <PriceHeading Heading="Explore Our Social Media Management Packages" />
+                <PriceHeading Heading="Explore Our Digital Marketing Packages" />
               </div>
               <OurDigitalMarketingPackages />
 

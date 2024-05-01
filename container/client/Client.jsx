@@ -17,9 +17,9 @@ const Client = () => {
       className="flex justify-center w-full border-y-2 2xl:border-y-0 bg-background border-watermark ">
       <div className="w-full max-w-screen-2xl ">
         <div
-          className={` ${styles.yPadding}   ${styles.xMargin} ${styles.xdivPadding} bg-background 2xl:border-y-4  md:border-x-2 border-watermark  h-full  relative  bg-backgroundGray `}>
+          className={` ${styles.yPadding}   ${styles.xMargin} ${styles.xdivPadding}  2xl:border-y-4  md:border-x-2 border-watermark  h-full  relative  bg-background `}>
           <Heading text={"Our Client"} text2={"Discover Our Clients"} img={CLIENTS} />
-          <div className="z-30  grid md:grid-cols-2 grid-cols-2 lg:grid-cols-3 gap-2  md:gap-4 w-full mt-10 overflow-hidden md:mt-8 lg:mt-10 bg-background ">
+          <div className="z-30 grid w-full grid-cols-2 gap-2 mt-10 overflow-hidden md:grid-cols-2 lg:grid-cols-3 md:gap-4 md:mt-8 lg:mt-10 bg-background ">
             {ourClient.map((client, index) => (
               <motion.div
                 key={index}
@@ -35,14 +35,14 @@ const Client = () => {
                 }}
                 viewport={{once: true}}>
                 <div key={index}>
-                  <div className=" w-full h-full  ">
-                    <div className="flex flex-col bg-lightwhite px-4 py-4  h-32 items-center justify-center  w-full ">
+                  <div className="w-full h-full ">
+                    <div className="flex flex-col items-center justify-center w-full h-32 px-4 py-4 bg-lightwhite ">
                       <Image
                         src={client.icon}
                         alt={client.title}
                         width={0}
                         height={0}
-                        className="w-60 h-auto"
+                        className="h-auto w-60"
                       />
                     </div>
                   </div>

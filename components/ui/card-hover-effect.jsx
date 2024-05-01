@@ -13,7 +13,7 @@ const HoverEffect = ({items, className}) => {
       className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-10", className)}>
       {items.map((item, idx) => (
         <div
-          className="relative group block p-2 h-full w-full"
+          className="relative block w-full h-full p-2 group"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
           key={idx} // Added a key prop to fix React warning
@@ -21,7 +21,7 @@ const HoverEffect = ({items, className}) => {
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-secondary block "
+                className="absolute inset-0 block w-full h-full bg-secondary "
                 layoutId="hoverBackground"
                 initial={{opacity: 0}}
                 animate={{
@@ -64,7 +64,7 @@ const CardIcon = ({src, alt, className}) => {
   return (
     <>
       <div className="p-4 bg-white rounded-[100px] bg-opacity-80 w-16 h-16 absolute left-6 top-6 transition-all duration-500 "></div>
-      <div className="z-50 relative">
+      <div className="relative z-50">
         <Image
           src={src}
           alt={alt}
@@ -93,7 +93,7 @@ const CardDescription = ({className, children}) => {
   return (
     <p
       className={cn(
-        "mt-8  text-gray font-poppins font-normal  text-ellipsis leading-normal text-base tracking-wide  ",
+        "mt-8  text-grey font-poppins font-normal  text-ellipsis leading-normal text-base tracking-wide  ",
         className,
       )}>
       {children}

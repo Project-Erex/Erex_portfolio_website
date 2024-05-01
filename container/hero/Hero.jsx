@@ -26,7 +26,7 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="relative flex justify-center  w-full pt-20 bg-background">
+        className="relative flex justify-center w-full pt-20 bg-background">
         <div className="w-full border-b-2 2xl:border-b-0 border-watermark max-w-screen-2xl ">
           <div
             className={`${styles.xMargin} relative 2xl:border-b-4 pb-16 bg-background  md:py-20 xl:pt-5 xl:pb-20 flex-col md:flex-row md:border-r-2 md:border-l-2 flex  border-watermark h-full md:min-h-full 2xl:min-h-full bg-green-60  bg-cover  `}>
@@ -35,7 +35,7 @@ const Hero = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{once: true}}
-              className="md:absolute  items-center   w-full flex top-10 lg:pt-0 px-4 xl:pt-12 md:px-4 lg:px-6 xl:px-10">
+              className="flex items-center w-full px-4 md:absolute top-10 lg:pt-0 xl:pt-12 md:px-4 lg:px-6 xl:px-10">
               {/* <Image src={EREXSTUDIO} alt="EREXSTUDIO" /> */}
               <svg
                 width="1358"
@@ -70,7 +70,7 @@ const Hero = () => {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{once: true}}
-                  className="text-gray bg-background  md:pb-10  md:pt-7 pb-8 pt-8  capitalize font-poppins select-none text-[16px] font-normal leading-[26px] text-justify  md:text-justify">
+                  className="text-grey bg-background  md:pb-10  md:pt-7 pb-8 pt-8  capitalize font-poppins select-none text-[16px] font-normal leading-[26px] text-justify  md:text-justify">
                   Erex Studio pioneers digital transformation, delivering cutting-edge
                   software, captivating designs, and strategic digital marketing. Elevate
                   your brand with our innovative solutions and expert guidance.
@@ -86,12 +86,7 @@ const Hero = () => {
                         Hire Us
                       </span>
                     </button> */}
-                    <Button
-                      className="  relative flex border-none items-center  justify-center
-                  overflow-hidden bg-gray-800 text-white transition-all before:absolute
-                  before:h-0 before:w-0 before:rounded-full bg-primary before:bg-secondary
-                  before:duration-500 before:ease-out hover:shadow-bghover
-                 hover:before:h-56 hover:before:w-56">
+                    <Button className="relative flex items-center justify-center overflow-hidden text-white transition-all border-none before:absolute before:h-0 before:w-0 before:rounded-full bg-primary before:bg-secondary before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
                       <span className="relative z-10 font-federo text-[16px]">
                         Hire Us
                       </span>
@@ -102,7 +97,7 @@ const Hero = () => {
             </div>
             <motion.div
               ref={constraintsRef}
-              className="z-50 w-full hidden md:flex relative h-auto md:h-full md:w-1/2">
+              className="relative z-50 hidden w-full h-auto md:flex md:h-full md:w-1/2">
               {/* <Spline
                 className="hidden md:block"
                 scene="https://prod.spline.design/6li3mjiZmpzR3QRo/scene.splinecode"
@@ -115,7 +110,7 @@ const Hero = () => {
                 // viewport={{once: true}}
                 // drag
                 // dragConstraints={constraintsRef}
-                className=" flex items-center relative md:absolute cursor-pointer justify-center w-full xl:mt-12 md:h-full">
+                className="relative flex items-center justify-center w-full cursor-pointer md:absolute xl:mt-12 md:h-full">
                 <HeroImage />
                 {/* <ThreeDCardDemo /> */}
               </motion.div>

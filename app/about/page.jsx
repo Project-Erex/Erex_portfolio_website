@@ -53,7 +53,7 @@ export default function page() {
     },
   ];
   return (
-    <section className="flex justify-center w-full bg-background border-watermark ">
+    <section className="flex w-full bg-background border-watermark ">
       <div className="w-full h-full max-w-screen-2xl ">
         <div
           style={{
@@ -62,13 +62,13 @@ export default function page() {
               "linear-gradient(180deg, rgba(205,221,255,1) 30%, rgba(255,255,255,1) 100%)",
           }}
           className={` ${styles.yPadding}   ${styles.xPadding}  
-             mt-20 h-full  relative  bg-backgroundGray `}>
-          <div className="w-full h-auto gap-6  flex flex-col md:flex-row relative">
-            <div className="w-full flex flex-col  justify-center  gap-3 md:gap-5 h-full">
-              <h3 className=" text-secondary font-public text-base font-medium">
+             mt-20 h-full justify-center flex  relative  bg-background `}>
+          <div className="relative flex flex-col w-full h-auto gap-6 md:flex-row">
+            <div className="flex flex-col justify-center w-full h-full gap-3 md:gap-5">
+              <h3 className="text-base font-medium text-secondary font-public">
                 ABOUT US
               </h3>
-              <p className="font-federo font-medium text-4xl  xl:text-6xl  lg:text-5xl text-justify leading-tight text-secondary">
+              <p className="text-4xl font-medium leading-tight text-justify font-federo xl:text-6xl lg:text-5xl text-secondary">
                 Digital marketing <br />
                 solutions
                 <br /> designed to
@@ -76,7 +76,7 @@ export default function page() {
                 <br /> for your business
               </p>
             </div>
-            <div className="w-full flex justify-end  h-full">
+            <div className="flex justify-end w-full h-full">
               <Image
                 src={Teamwork}
                 alt="TeamWork"
@@ -95,13 +95,13 @@ export default function page() {
             alt="Vector5"
             width={0}
             height={0}
-            className="w-full  h-full"
+            className="w-full h-full"
           />
         </div>
         <div
           className={`$ ${styles.xPadding}  
               h-full  relative  bg-background `}>
-          <div className="w-full h-full flex  justify-center items-center">
+          <div className="flex items-center justify-center w-full h-full">
             <p className="text-secondary font-public w-full text-base py-5 md:pt-8  md:text-xl   xl:text-2xl   lg:w-[65%] xl:w-[45%] font-medium text-clip">
               Numerique was established 1 years ago with the belief that advertising could
               drive significant business leverage for our clients. Initially, our focus
@@ -112,16 +112,16 @@ export default function page() {
             </p>
           </div>
         </div>
-        <div className="w-full h-full relative">
-          <div className=" w-full h-24 md:h-40 g:h-52 xl:h-72"></div>
-          <div className="bg-litesky w-full  h-24 md:h-40 lg:h-52 xl:h-72"></div>
+        <div className="relative w-full h-full">
+          <div className="w-full h-24 md:h-40 g:h-52 xl:h-72"></div>
+          <div className="w-full h-24 bg-litesky md:h-40 lg:h-52 xl:h-72"></div>
           <div className={` ${styles.xPadding} w-full h-full absolute z-[100]  top-0 `}>
             <Image
               src={OurMembar7}
               alt="OurMembar7"
               width={0}
               height={0}
-              className="w-full  h-full"
+              className="w-full h-full"
             />
           </div>
         </div>
@@ -134,13 +134,13 @@ export default function page() {
               "linear-gradient(180deg, rgba(205,221,255,1) 30%, rgba(255,255,255,1) 100%)",
           }}
           className={`  ${styles.yPadding}  ${styles.xPadding}  
-              h-full  relative  bg-backgroundGray `}>
-          <div className="w-full h-full flex flex-col gap-8 md:gap-10">
-            <h1 className="font-federo font-medium text-secondary text-4xl text-center">
+              h-full  relative  bg-background `}>
+          <div className="flex flex-col w-full h-full gap-8 md:gap-10">
+            <h1 className="text-4xl font-medium text-center font-federo text-secondary">
               Our Values
             </h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 w-full">
+            <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
               {data.map((item, index) => (
                 <motion.div
                   key={index}
@@ -155,7 +155,7 @@ export default function page() {
                     },
                   }}
                   viewport={{once: true}}>
-                  <div className=" bg-white shadow-3xl px-5 py-6 gap-3 rounded-2xl w-full h-full flex  flex-col">
+                  <div className="flex flex-col w-full h-full gap-3 px-5 py-6 bg-white shadow-3xl rounded-2xl">
                     <div className={` bg-lightwhite rounded-full w-12 h-12`}>
                       <Image
                         src={item.icon}
@@ -166,10 +166,10 @@ export default function page() {
                       />
                     </div>
 
-                    <h2 className="text-secondary font-public font-medium text-2xl">
+                    <h2 className="text-2xl font-medium text-secondary font-public">
                       {item.title}
                     </h2>
-                    <h5 className="text-secondary font-public font-medium text-base  ">
+                    <h5 className="text-base font-medium text-secondary font-public ">
                       {item.description}
                     </h5>
                   </div>
@@ -183,15 +183,15 @@ export default function page() {
         <div
           className={`$ ${styles.xPadding} lg:pt-10  md:pt-5 py-2
               h-full w-full  relative  bg-background `}>
-          <div className="w-full h-full flex flex-col gap-4">
+          <div className="flex flex-col w-full h-full gap-4">
             <div>
-              <h2 className="font-public font-medium text-secondary text-base">
+              <h2 className="text-base font-medium font-public text-secondary">
                 MARKETING SOLUTIONS PROVIDER
               </h2>
             </div>
-            <div className="w-full flex h-full flex-col md:flex-row gap-4 justify-between items-center">
+            <div className="flex flex-col items-center justify-between w-full h-full gap-4 md:flex-row">
               <div className="w-full h-full">
-                <p className="font-federo font-medium text-secondary text-4xl">
+                <p className="text-4xl font-medium font-federo text-secondary">
                   {`We’re a`} leader in digital
                   <br />
                   marketing solutions
@@ -217,21 +217,21 @@ export default function page() {
           className={` ${styles.xPadding}  ${styles.yPadding} 
               h-full w-full  relative  bg-background `}>
           <div className={`bg-litesky rounded-t-2xl`}>
-            <div className="w-full flex flex-col md:flex-row px-6 pt-6 pb-6 md:pb-10 gap-4 lg:pt-16 md:px-10 lg:px-16 md:pt-10 justify-between items-center">
+            <div className="flex flex-col items-center justify-between w-full gap-4 px-6 pt-6 pb-6 md:flex-row md:pb-10 lg:pt-16 md:px-10 lg:px-16 md:pt-10">
               <div className="w-full">
-                <h2 className="font-federo font-medium  text-secondary text-2xl md:text-3xl lg:text-4xl ">
+                <h2 className="text-2xl font-medium font-federo text-secondary md:text-3xl lg:text-4xl ">
                   See how we can help <br /> your business grow with <br /> digital
                   marketing
                 </h2>
               </div>
-              <div className="w-full flex flex-col text-secondary font-public gap-3 md:justify-end md:items-end">
+              <div className="flex flex-col w-full gap-3 text-secondary font-public md:justify-end md:items-end">
                 <h4 className="md:text-end">
                   Ready to speak with a marketing
                   <br />
                   expert? Give us a ring
                 </h4>
                 <span>+91 8167861850</span>
-                <button className="bg-primary px-6 py-2 text-white rounded-xl">
+                <button className="px-6 py-2 text-white bg-primary rounded-xl">
                   GET A FREE AUDIT
                 </button>
               </div>
@@ -244,18 +244,16 @@ export default function page() {
                 alt="Vector8"
                 width={0}
                 height={0}
-                className="w-full  h-full"
+                className="w-full h-full"
               />
             </div>
           </div>
 
-          <div
-            className="bg-litesky font-public rounded-b-2xl px-6 py-6 md:px-10 lg:px-16 md:py-10 lg:py-16 text-secondary  flex flex-col gap-3
-          ">
+          <div className="flex flex-col gap-3 px-6 py-6 bg-litesky font-public rounded-b-2xl md:px-10 lg:px-16 md:py-10 lg:py-16 text-secondary ">
             <div>
               <h2 className="font-medium">SOLUTIONS</h2>
             </div>
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
+            <div className="grid w-full grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               <h3>Software Development</h3>
               <h3>Creative Designs</h3>
               <h3>Digital Marketing</h3>

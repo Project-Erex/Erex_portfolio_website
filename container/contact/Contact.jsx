@@ -73,7 +73,7 @@ export default function Contact() {
     <section className="flex justify-center w-full bg-background " id="contact">
       <div className="w-full max-w-screen-2xl">
         <div
-          className={`${styles.yPadding}  ${styles.xMargin} md:border-x-2 bg-background border-watermark  h-full  relative  bg-backgroundGray  `}>
+          className={`${styles.yPadding}  ${styles.xMargin} md:border-x-2 bg-background border-watermark  h-full  relative    `}>
           <div className="py-10 mx-4 lg:mx-6 xl:mx-10 bg-lightwhite">
             <motion.div
               initial={{y: 50, opacity: 0}}
@@ -91,7 +91,7 @@ export default function Contact() {
               <span className="font-federo z-50  text-secondary text-[28px] md:text-[44px] xl:text-[70px] text-center font-normal">
                 Send A Message
               </span>
-              <p className="font-normal font-poppins text-gray leading-[18px] text-center text-[10px]  md:text-[18px] px-4">
+              <p className="font-normal font-poppins text-grey leading-[18px] text-center text-[10px]  md:text-[18px] px-4">
                 Your email address will not be published. All fields are required
               </p>
             </motion.div>
@@ -196,11 +196,7 @@ export default function Contact() {
                   type="submit"
                   value="Send"
                   disabled={isloading}
-                  className="  relative flex   border-none items-center justify-center
-                  overflow-hidden bg-gray-800 text-white transition-all before:absolute
-                  before:h-0 before:w-0 before:rounded-full bg-primary before:bg-secondary
-                  before:duration-500 before:ease-out hover:shadow-bghover
-                 hover:before:h-56 hover:before:w-56">
+                  className="relative flex items-center justify-center overflow-hidden text-white transition-all border-none before:absolute before:h-0 before:w-0 before:rounded-full bg-primary before:bg-secondary before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
                   <span className="relative z-10 font-federo text-[16px]">
                     {" "}
                     {isloading ? <ThreeDots width="50" color="#FFFFFF" /> : "Submit Now"}

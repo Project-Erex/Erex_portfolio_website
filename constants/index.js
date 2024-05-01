@@ -42,6 +42,8 @@ import {
 
 const Check = <FaCheck color="#4169E1" />;
 const PurpleCheck = <FaCheck color="#A259FF" />;
+const OrengeCheck = <FaCheck color="#F24E1E" />;
+
 const CheckCircle = <FaCheckCircle />;
 export const navLinks = [
   {
@@ -58,8 +60,8 @@ export const navLinks = [
     title: "Our Client",
   },
   // {
-  //   id: "projects",
-  //   title: "Projects",
+  //   id: "blog",
+  //   title: "Blog",
   // },
   // {
   //   id: "blog",
@@ -323,71 +325,271 @@ const OurContribution = [
 ];
 const DigitalMarketing = [
   {
-    icon: SmalBusiness,
     title: "Small Business",
     price: "4900/",
-    wave: Wave1,
     id: 1,
   },
   {
-    icon: MediumBusiness,
     title: "Medium Business",
     price: "8990/",
-    wave: Wave2,
-
     id: 2,
   },
   {
-    icon: Enterprise,
-    title: "Enterprise",
+    title: "Custom",
     id: 3,
-    wave: Wave3,
     price: "Contact Us",
+  },
+  {
+    title: "Ads Only",
+    id: 4,
+    text: "[ The First Month Incurs No Extra Charges. ]",
+  },
+  {
+    title: "General",
+    id: 5,
+    text: "[ Rs. 14900 First Month ]",
+  },
+  {
+    title: "General Ads",
+    id: 6,
+    text: "[ The First Month Incurs No Extra Charges. ]",
+  },
+  {
+    title: "Basic",
+    id: 7,
+    text: "[ Maintenance Charge Rs. 3000/Year ]",
+  },
+  {
+    title: "Regular",
+    id: 8,
+    text: "[ Maintenance Charge Rs. 3500/Year ]",
+  },
+  {
+    title: "Pro",
+    id: 9,
+    text: "[ The First Month Incurs No Extra Charges. ]",
   },
 ];
 
 const smallBusiness = [
   {
     icon: Check,
-    title: "Social Media Handle Facebook & Instagram.",
+    title: "Manage Your Social Media Accounts, Specifically Facebook & Instagram.",
   },
   {
     icon: Check,
-    title: "Create & post promotional banners 4 in a month.",
+    title: "Analyze The Post Strategy Each Month.",
   },
   {
     icon: Check,
-    title: "Create hoarding design for stores(Max 3 in a month).",
+    title: "Create 8 Posts Per Month For Facebook & Instagram.",
   },
   {
     icon: Check,
-    title: "Basic Logo design support.",
+    title: "Create 2 Reels Per Month For Instagram.",
+  },
+  {
+    icon: Check,
+    title: "Boost On Meta Platform With 2 Posts Per Month.",
+  },
+  {
+    icon: Check,
+    title: "Provide Post For Each Event- Event Posts.",
+  },
+  {
+    icon: Check,
+    title: "Design 2 Banners Per Month.",
+  },
+  {
+    icon: Check,
+    title: "Business Registration On Google My Business.",
+  },
+  {
+    icon: Check,
+    title:
+      "Display The Verified Badge On Your Business, On The Purulia Business Directory (PBD) Website.",
   },
 ];
 const mediumBusiness = [
   {
     icon: PurpleCheck,
-    title: "Social Media Handle Facebook & Instagram.",
+    title:
+      "Manage Your Social Media Accounts, Specifically Facebook, Instagram, X(Twitter) & Youtube.",
   },
   {
     icon: PurpleCheck,
-    title: "Create 8 banners and post on social media each month.",
+    title: "Analyze The Post Strategy Each Month.",
   },
   {
     icon: PurpleCheck,
-    title: "Short video & reels post (max 2 per month)",
+    title: "Create 12 Posts Per Month For Facebook & Instagram.",
   },
   {
     icon: PurpleCheck,
-    title: "Logo and Store banner design support.",
+    title: "Create 4 Reels Per Month For Instagram.",
   },
   {
     icon: PurpleCheck,
-    title: "Static Website for the business.(Domain & server price excluded).",
+    title: "Boost On Meta Platform With 4 Posts Per Month.",
   },
   {
     icon: PurpleCheck,
-    title: "Basic market analysis report monthly.",
+    title: "Provide Post For Each Event- Event Posts.",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Design 4 Banners Per Month.",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Logo & Branding Support.",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Business Registration On Google My Business.",
+  },
+  {
+    icon: PurpleCheck,
+    title:
+      "Display The Verified Badge On Your Business, On The Purulia Business Directory (PBD) Website.",
+  },
+];
+
+export const adsOnly = [
+  {
+    icon: Check,
+    title:
+      "Running Ads - The Ads Budget Is Customizable Depends On The Client's Requirements & Budget, With Facebook & Google Ads Included In The Default Package At Rs. 500 Each Per Month.",
+  },
+  {
+    icon: Check,
+    title:
+      "Create Ads Content Including Images, Reels, Videos, And Animations As Needed.",
+  },
+  {
+    icon: Check,
+    title: "SEO Guide & Keyword Analysis [ If Business Has Website ]",
+  },
+  {
+    icon: Check,
+    title: "Sales Report & Ads Performance Report Each Month.",
+  },
+  {
+    icon: Check,
+    title:
+      "Display The Verified Badge On Your Business, On The Purulia Business Directory (PBD) Website.",
+  },
+];
+
+export const general = [
+  {
+    icon: PurpleCheck,
+    title: "Business & Competitors Analysis. [ First Month Only ]",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Targeted Audience Analysis.  [ First Month Only ]",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Present A Growth Idea Report Based On The Two Points. [ First Month Only ]",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Sales Report & Ads Performance Report Each Month.",
+  },
+  {
+    icon: PurpleCheck,
+    title:
+      "Running Ads - The Ads Budget Is Customizable Depends On The Client's Requirements & Budget, With Facebook & Google Ads Included In The Default Package At Rs. 1000 Each Per Month.",
+  },
+  {
+    icon: PurpleCheck,
+    title:
+      "Create Ads Content Including Images, Reels, Videos, And Animations As Needed.",
+  },
+  {
+    icon: PurpleCheck,
+    title: "SEO Guide & Keyword Analysis [ If Business Has Website ]",
+  },
+  {
+    icon: PurpleCheck,
+    title:
+      "Display The Verified Badge On Your Business, On The Purulia Business Directory (PBD) Website.",
+  },
+];
+
+export const generalAds = [
+  {
+    icon: OrengeCheck,
+    title: "Social Media Packaage [ Small Business ]",
+  },
+  {
+    icon: OrengeCheck,
+    title: "Digital Marketing Package [ Ads only ]",
+  },
+];
+
+export const basic = [
+  {
+    icon: Check,
+    title: "Create A Website That Effectively Showcases Your Business Online.",
+  },
+  {
+    icon: Check,
+    title: "Provide Free Domain Name [ Limit Rs 500]",
+  },
+  {
+    icon: Check,
+    title: "Provide Free Hosting [ Shared Hosting ]",
+  },
+  {
+    icon: Check,
+    title: "Latest Programming Technology Provided.",
+  },
+  {
+    icon: Check,
+    title: "Fixed Design.",
+  },
+  {
+    icon: Check,
+    title: "5 Pages Max.",
+  },
+  {
+    icon: Check,
+    title: "No Database.",
+  },
+];
+
+export const regular = [
+  {
+    icon: PurpleCheck,
+    title:
+      "Create A Informative Website That Effectively Showcases Your Business Online. [ Eg:-  Food Menu Item list For Restaurants ]",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Provide Free Domain Name. [ No Limit ]",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Provide Free Hosting [ Shared Hosting ]",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Latest Programming Technology Provided.",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Client Approved Design.",
+  },
+  {
+    icon: PurpleCheck,
+    title: "15 Pages Max.",
+  },
+  {
+    icon: PurpleCheck,
+    title: "Database Access Up To 512 MB.",
   },
 ];
 

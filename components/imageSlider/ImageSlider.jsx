@@ -1,49 +1,12 @@
 "use client";
 import React, {useState} from "react";
 import {motion, AnimatePresence} from "framer-motion";
-import {Digital_marketing, Pexels_steve} from "@/app/assets";
-import Image from "next/image";
-import {GoDotFill} from "react-icons/go";
 import {FaArrowRightLong} from "react-icons/fa6";
 
-const Blogdata = [
-  {
-    image: Digital_marketing,
-    title: "Digital Marketing",
-    description:
-      "The evolution of live-stream content and short-form video: a look at the TikTok revolution",
-    date: "March, 07, 2024",
-    writer: "Shadab Khan",
-    read: "READ FULL STORY",
-  },
-  {
-    image: Digital_marketing,
-    title: "Digital Marketing",
-    description:
-      "The evolution of live-stream content and short-form video: a look at the TikTok revolution",
-    date: "March, 07, 2024",
-    writer: "Uday kumar",
-    read: "READ FULL STORY",
-  },
-  {
-    image: Digital_marketing,
-    title: "Digital Marketing",
-    description:
-      "The evolution of live-stream content and short-form video: a look at the TikTok revolution",
-    date: "March, 07, 2024",
-    writer: "Shadab Khan",
-    read: "READ FULL STORY",
-  },
-  {
-    image: Digital_marketing,
-    title: "Digital Marketing",
-    description:
-      "The evolution of live-stream content and short-form video: a look at the TikTok revolution",
-    date: "March, 07, 2024",
-    writer: "Uday Kumar",
-    read: "READ FULL STORY",
-  },
-];
+import {GoDotFill} from "react-icons/go";
+import moment from "moment";
+import Image from "next/image";
+import {useEffect} from "react";
 
 const variants = {
   enter: (direction) => {
@@ -71,21 +34,34 @@ const swipePower = (offset, velocity) => {
   return Math.abs(offset) * velocity;
 };
 
-export const ImageSlider = ({isHover}) => {
+export const ImageSlider = ({BlogData, isHover}) => {
   const [[page, direction], setPage] = useState([0, 0]);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setData(BlogData);
+    console.log("badkkd", BlogData);
+  }, [BlogData]);
 
   const paginate = (newDirection) => {
-    setPage([page + newDirection, newDirection]);
+    const totalPages = data.length;
+    let nextPage = page + newDirection;
+    if (nextPage < 0) {
+      nextPage = totalPages - 1;
+    } else if (nextPage >= totalPages) {
+      nextPage = 0;
+    }
+    setPage([nextPage, newDirection]);
   };
 
-  // Ensure page index is within the bounds of the Blogdata array
-  const imageIndex = ((page % Blogdata.length) + Blogdata.length) % Blogdata.length;
+  // Get the current blog post based on the current page index
+  const currentBlog = data.length > 0 ? data[page] : null;
 
   return (
     <>
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
-          className="w-full h-full  absolute"
+          className="absolute w-full h-full"
           key={page}
           custom={direction}
           variants={variants}
@@ -108,40 +84,44 @@ export const ImageSlider = ({isHover}) => {
               paginate(-1);
             }
           }}>
-          <div className="w-full px-5 md:px-6 lg:px-10 py-10  rounded-xl bg-[#407BFF] bg-opacity-40 h-full flex  flex-col md:flex-row">
-            <div className="w-full h-full py-auto md:px-5 md:justify-center    lg:py-10  gap-5  flex  flex-col">
-              <div className="flex  text-secondary font-public text-sm md:text-sm lg:text-base items-center gap-2 lg:gap-4">
-                <h2>By-{Blogdata[imageIndex].writer}</h2>
-                <h2 className="flex items-center gap-2">
-                  <GoDotFill size={12} />
-                  {Blogdata[imageIndex].date}
-                </h2>
+          {currentBlog && (
+            <div key={currentBlog._id}>
+              <div className="w-full px-5 md:px-6 lg:px-10 py-10 rounded-xl bg-[#407BFF] bg-opacity-40 items-center h-full flex flex-col md:flex-row">
+                <div className="flex flex-col w-full h-full gap-5 py-auto md:px-5 md:justify-center lg:py-10">
+                  <div className="flex items-center gap-2 text-sm text-secondary font-public md:text-sm lg:text-base lg:gap-4">
+                    <h2>By-{currentBlog.created_by}</h2>
+                    <h2 className="flex items-center gap-2">
+                      <GoDotFill size={12} />
+                      {moment(currentBlog.created_at).format("MMM DD YYYY h:mm:ss a")}
+                    </h2>
+                  </div>
+                  <p className="text-secondary font-federo font-medium text-xl md:pr-5 lg:pr-10 sm:text-lg md:text-2xl xl:text-5xl xl:leading-[1.15]">
+                    {currentBlog.title}
+                  </p>
+                  <h2 className="font-medium text-secondary font-public">
+                    READ FULL STORY
+                    <div className="h-1 w-36 bg-primary"></div>
+                  </h2>
+                </div>
+                <div className="flex items-center justify-center w-full h-full md:px-5 md:justify-end xl:px-0 ">
+                  <Image
+                    width={0}
+                    height={0}
+                    src={currentBlog.blog_thumbnail}
+                    alt={currentBlog.title}
+                    draggable="false"
+                    className="w-full h-full rounded-xl  sm:w-[450px] md:w-full "
+                  />
+                </div>
               </div>
-              <p className="text-secondary font-federo font-medium text-xl md:pr-5 lg:pr-10 sm:text-lg md:text-2xl xl:text-5xl xl:leading-[1.15]">
-                {Blogdata[imageIndex].description}
-              </p>
-              <h2 className=" text-secondary font-public font-medium">
-                {Blogdata[imageIndex].read}
-                <div className="w-36 h-1 bg-primary"></div>
-              </h2>
             </div>
-            <div className="w-full h-full  md:px-5 flex items-center justify-center md:justify-end  xl:px-0  ">
-              <Image
-                width={0}
-                height={0}
-                src={Blogdata[imageIndex].image}
-                alt={Blogdata[imageIndex].title}
-                draggable="false"
-                className="w-full h-full  sm:w-[450px] md:w-full "
-              />
-            </div>
-          </div>
+          )}
         </motion.div>
       </AnimatePresence>
       {isHover && (
-        <div className="absolute  w-full h-full ">
+        <div className="absolute w-full h-full ">
           <button
-            className="absolute z-50 p-3  -translate-y-1/2 rounded-full cursor-pointer md:text-2xl -right-6 top-1/2    bg-background text-secondary shadow-3xl"
+            className="absolute z-50 p-3 -translate-y-1/2 rounded-full cursor-pointer md:text-2xl -right-6 top-1/2 bg-background text-secondary shadow-3xl"
             onClick={() => paginate(1)}>
             <FaArrowRightLong />
           </button>

@@ -18,13 +18,13 @@ const NpmCardHoverEffect = ({items, className}) => {
       )}>
       {/* First Card */}
       <div
-        className="relative group block p-2 h-full w-full"
+        className="relative block w-full h-full p-2 group"
         onMouseEnter={() => setHoveredIndex(0)}
         onMouseLeave={() => setHoveredIndex(null)}>
         <AnimatePresence>
           {hoveredIndex === 0 && (
             <motion.span
-              className="absolute inset-0 h-full w-full bg-secondary block "
+              className="absolute inset-0 block w-full h-full bg-secondary "
               layoutId="hoverBackground"
               initial={{opacity: 0}}
               animate={{
@@ -43,13 +43,13 @@ const NpmCardHoverEffect = ({items, className}) => {
 
       {/* Second Card */}
       <div
-        className="relative group block p-2 h-full w-full"
+        className="relative block w-full h-full p-2 group"
         onMouseEnter={() => setHoveredIndex(1)}
         onMouseLeave={() => setHoveredIndex(null)}>
         <AnimatePresence>
           {hoveredIndex === 1 && (
             <motion.span
-              className="absolute inset-0 h-full w-full bg-secondary block "
+              className="absolute inset-0 block w-full h-full bg-secondary "
               layoutId="hoverBackground"
               initial={{opacity: 0}}
               animate={{
@@ -68,13 +68,13 @@ const NpmCardHoverEffect = ({items, className}) => {
 
       {/* Third Card */}
       <div
-        className="relative group block p-2 h-full w-full"
+        className="relative block w-full h-full p-2 group"
         onMouseEnter={() => setHoveredIndex(2)}
         onMouseLeave={() => setHoveredIndex(null)}>
         <AnimatePresence>
           {hoveredIndex === 2 && (
             <motion.span
-              className="absolute inset-0 h-full w-full bg-secondary block "
+              className="absolute inset-0 block w-full h-full bg-secondary "
               layoutId="hoverBackground"
               initial={{opacity: 0}}
               animate={{
@@ -96,8 +96,8 @@ const NpmCardHoverEffect = ({items, className}) => {
 
 const Card = ({item}) => {
   return (
-    <div className=" h-full w-full p-4 overflow-hidden bg-lightwhite border border-bordercolor group-hover:border-bordercolor relative z-20">
-      <div className="relative bg-lightwhite z-50">
+    <div className="relative z-20 w-full h-full p-4 overflow-hidden border  bg-lightwhite border-bordercolor group-hover:border-bordercolor">
+      <div className="relative z-50 bg-lightwhite">
         <div className="p-4">
           <div className={` relative  bg-lightwhite   w-full h-full`}>
             <div className="flex flex-col items-start justify-start w-full h-full ">
@@ -115,7 +115,7 @@ const Card = ({item}) => {
                   href={item?.url}
                   to="#"
                   target="_blank"
-                  className="px-2 py-2  bg-white">
+                  className="px-2 py-2 bg-white">
                   <Image src={item?.icon} alt={item?.title} />
                 </Link>
               </div>
@@ -125,7 +125,7 @@ const Card = ({item}) => {
                 </h1>
               </div>
               <div className="w-full h-auto">
-                <h1 className="text-gray font-poppins font-normal  text-ellipsis leading-normal text-[16px] ">
+                <h1 className="text-grey font-poppins font-normal  text-ellipsis leading-normal text-[16px] ">
                   {item?.description}
                 </h1>
               </div>
@@ -139,7 +139,7 @@ const Card = ({item}) => {
 
 const CustomCard = () => {
   return (
-    <div className=" h-full w-full p-4 overflow-hidden flex flex-col items-center justify-center gap-2 bg-lightwhite border border-bordercolor group-hover:border-bordercolor relative z-20">
+    <div className="relative z-20 flex flex-col items-center justify-center w-full h-full gap-2 p-4 overflow-hidden border  bg-lightwhite border-bordercolor group-hover:border-bordercolor">
       <div className="p-4">
         <div className="relative flex flex-col items-center justify-center w-full">
           <Link

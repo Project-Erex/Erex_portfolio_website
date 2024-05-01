@@ -9,7 +9,7 @@ export default function page() {
       <div className="w-full max-w-screen-2xl ">
         <div
           className={`   bg-background 2xl:border-y-4 
-         md:border-x-2 border-watermark   h-full  relative  bg-backgroundGray `}>
+         md:border-x-2 border-watermark   h-full  relative   `}>
           <ClientSlideshow slidesData={slidesData} />
         </div>
       </div>

@@ -25,7 +25,7 @@ export default function ServiceCard({title, icon, description}) {
           </h1>
         </div>
         <div className="w-full h-auto">
-          <h1 className="text-gray font-poppins font-normal  text-ellipsis leading-normal text-[16px] transition-all duration-500 group-hover:text-watermark">
+          <h1 className="text-grey font-poppins font-normal  text-ellipsis leading-normal text-[16px] transition-all duration-500 group-hover:text-watermark">
             {description}
           </h1>
         </div>

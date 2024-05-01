@@ -4,6 +4,8 @@ import Navbar from "../container/navbar/Index";
 import Footer from "../container/footer/Footer";
 import Head from "next/head";
 import Script from "next/script";
+import {SpeedInsights} from "@vercel/speed-insights/next";
+import {Analytics} from "@vercel/analytics/react";
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
@@ -43,17 +45,6 @@ export default function RootLayout({children}) {
       lang="en"
       className={`${poppins.variable} ${federo.variable} ${rubik.variable} ${public_Sans.variable}`}>
       <Head>
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `
-            (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "lq6bp5joht");
-          `,
-          }}></Script>
-
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -79,8 +70,21 @@ export default function RootLayout({children}) {
         />
         <meta property="og:site_name" content="Erex Studio" />
       </Head>
+      <Script
+        id="my-script"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]function(){(c[a].q=c[a].q[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "lq6bp5joht");
+          `,
+        }}></Script>
 
       <body>
+        <SpeedInsights />
+        <Analytics />
         <Navbar />
         <main>{children}</main>
         <Footer />
@@ -88,3 +92,5 @@ export default function RootLayout({children}) {
     </html>
   );
 }
+
+// lq6bp5joht

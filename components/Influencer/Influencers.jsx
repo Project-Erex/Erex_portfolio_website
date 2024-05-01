@@ -17,15 +17,13 @@ import Link from "next/link";
 
 export default function Influencers() {
   return (
-    <div className="w-full relative">
-      <div
-        className="flex w-full
-      justify-center items-center py-28  flex-col gap-8  ">
+    <div className="relative w-full">
+      <div className="flex flex-col items-center justify-center w-full gap-8 py-28 ">
         <h1 className="font-bold font-public tracking-wider leading-[1.15] text-2xl lg:text-7xl text-center text-secondary ">
           Hire Creators & Influencers
           <br /> To Promote Your Brand
         </h1>
-        <p className="text-secondary font-public font-medium text-base md:text-xl  text-center">
+        <p className="text-base font-medium text-center text-secondary font-public md:text-xl">
           Social media networks are open to all. Social media is typically used for social
           interaction
           <br /> and access to news and information, and decision making.
@@ -35,7 +33,7 @@ export default function Influencers() {
           href={"/pricing/business"}
           to="/pricing/business"
           className="relative z-10 font-federo text-lg rounded-full flex h-[48px] w-40 font-medium  sm:w-52   border-none items-center  justify-center
-          overflow-hidden bg-gray-800 text-white transition-all before:absolute
+          overflow-hidden  text-white transition-all before:absolute
           before:h-0 before:w-0 before:rounded-full bg-primary before:bg-secondary
           before:duration-500 before:ease-out hover:shadow-bghover 
          hover:before:h-56 hover:before:w-56">
@@ -57,7 +55,7 @@ export default function Influencers() {
             width={0}
             height={0}
             alt="girl"
-            className="w-10 md:w-14 h-auto"
+            className="w-10 h-auto md:w-14"
           />
         </motion.div>
         <motion.div
@@ -76,7 +74,7 @@ export default function Influencers() {
             width={0}
             height={0}
             alt="girl"
-            className="w-10 md:w-14 h-auto"
+            className="w-10 h-auto md:w-14"
           />
         </motion.div>
         <motion.div
@@ -95,7 +93,7 @@ export default function Influencers() {
             width={0}
             height={0}
             alt="girl"
-            className="w-10 md:w-14 h-auto"
+            className="w-10 h-auto md:w-14"
           />
         </motion.div>
         <motion.div
@@ -114,7 +112,7 @@ export default function Influencers() {
             width={0}
             height={0}
             alt="girl"
-            className="w-10 md:w-14 h-auto"
+            className="w-10 h-auto md:w-14"
           />
         </motion.div>
         <motion.div
@@ -127,13 +125,13 @@ export default function Influencers() {
             delay: 1.3,
             repeat: Infinity,
           }}
-          className="absolute  bottom-32 left-0">
+          className="absolute left-0 bottom-32">
           <Image
             src={Love}
             width={0}
             height={0}
             alt="girl"
-            className="w-10 md:w-14 h-auto"
+            className="w-10 h-auto md:w-14"
           />
         </motion.div>
         <motion.div
@@ -152,7 +150,7 @@ export default function Influencers() {
             width={0}
             height={0}
             alt="girl"
-            className="w-10 md:w-14 h-auto"
+            className="w-10 h-auto md:w-14"
           />
         </motion.div>
         <motion.div
@@ -165,13 +163,13 @@ export default function Influencers() {
             delay: 1.8,
             repeat: Infinity,
           }}
-          className="absolute   bottom-0 md:-bottom-5">
+          className="absolute bottom-0 md:-bottom-5">
           <Image
             src={Girl1}
             width={0}
             height={0}
             alt="girl"
-            className="w-10 md:w-14 h-auto"
+            className="w-10 h-auto md:w-14"
           />
         </motion.div>
         <motion.div
@@ -190,7 +188,7 @@ export default function Influencers() {
             width={0}
             height={0}
             alt="girl"
-            className="w-10 md:w-14 h-auto"
+            className="w-10 h-auto md:w-14"
           />
         </motion.div>
         <motion.div
@@ -209,7 +207,7 @@ export default function Influencers() {
             width={0}
             height={0}
             alt="girl"
-            className="w-10 md:w-14 h-auto"
+            className="w-10 h-auto md:w-14"
           />
         </motion.div>
       </div>

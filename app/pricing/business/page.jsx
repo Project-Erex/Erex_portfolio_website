@@ -13,12 +13,12 @@ export default function BusinessPage() {
     <section className="relative flex justify-center w-full h-full pt-20 bg-background">
       <div className="w-full max-w-screen-2xl">
         <div
-          className={`${styles.yPadding} ${styles.xMargin} px-4 lg:px-6  xl:px-20 md:border-x-2 bg-background border-bordercolor h-full relative bg-backgroundGray `}>
+          className={`${styles.yPadding} ${styles.xMargin} px-4 lg:px-6  xl:px-20 md:border-x-2 bg-background border-bordercolor h-full relative  `}>
           <div className="flex flex-col items-center justify-center w-full gap-5 text-center ">
             <h1 className="text-4xl md:text-5xl lg:text-6xl text-primary font-federo">
               Let’s get to know your business
             </h1>
-            <p className="text-xl font-normal md:text-2xl lg:text-3xl text-gray">
+            <p className="text-xl font-normal md:text-2xl lg:text-3xl text-grey">
               Please provide the following information so we can help you boost up <br />
               your business.
             </p>

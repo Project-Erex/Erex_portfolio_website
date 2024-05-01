@@ -84,6 +84,26 @@ import Digital_marketing from "./digital_marketing/digital_marketing.svg";
 import Star2 from "./digital_marketing/Star-2.svg";
 import Pexels_steve from "./digital_marketing/Pexels_steve.svg";
 
+import Author from "./blog/Author.svg";
+import Category from "./blog/Category.svg";
+import Readingtime from "./blog/Readingtime.svg";
+import Updated from "./blog/Updated.svg";
+import AD from "./digital_marketing/AD.svg";
+import Aeroplane from "./digital_marketing/Aeroplane.svg";
+import Home from "./digital_marketing/Home.svg";
+
+import Mall from "./digital_marketing/Mall.svg";
+
+import Messgae5 from "./digital_marketing/Messgae5.svg";
+
+import Mic from "./digital_marketing/Mic.svg";
+import Paperplane from "./digital_marketing/Paperplane.svg";
+
+import PoliceStation from "./digital_marketing/PoliceStation.svg";
+
+import Redio from "./digital_marketing/Redio.svg";
+import Rocket5 from "./digital_marketing/Rocket5.svg";
+
 export {
   erexLogo,
   menu,
@@ -170,4 +190,18 @@ export {
   Digital_marketing,
   Pexels_steve,
   Star2,
+  Author,
+  Category,
+  Readingtime,
+  Updated,
+  AD,
+  Aeroplane,
+  Home,
+  Mall,
+  Messgae5,
+  Mic,
+  Paperplane,
+  PoliceStation,
+  Redio,
+  Rocket5,
 };

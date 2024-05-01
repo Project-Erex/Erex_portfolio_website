@@ -16,6 +16,16 @@ import {Button} from "@/components/ui/moving-border";
 
 const OtherPageNavbar = () => {
   const router = useRouter();
+
+  const handleGetToken = async () => {
+    const dataToken = await localStorage.getItem("AccessToken");
+    if (!dataToken) {
+      router.replace("admin");
+    } else {
+      router.replace("blog_create");
+    }
+  };
+
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
 
@@ -54,7 +64,7 @@ const OtherPageNavbar = () => {
           }}>
           <ErexLogo />
         </Link>
-        <div className="flex-row hidden gap-4 list-none lg:gap-6 xl:gap-10 md:flex">
+        <div className="flex-row hidden gap-4 list-none md:gap-0 lg:gap-6 xl:gap-10 md:flex">
           {navLinks.map((nav, index) => {
             return (
               <ScrollLink
@@ -74,6 +84,12 @@ const OtherPageNavbar = () => {
               </ScrollLink>
             );
           })}
+          <button
+            onClick={() => handleGetToken()}
+            className={`text-heading 
+               hover:text-primary text-[16px] lg:text-[18px] px-4 py-4 font-regular font-federo cursor-pointer nav-links  `}>
+            Create Blog
+          </button>
           <ScrollLink
             to="contact"
             spy={true}
@@ -83,12 +99,7 @@ const OtherPageNavbar = () => {
             onClick={() => {
               router.push("/");
             }}>
-            <Button
-              className="  relative flex border-none items-center  justify-center
-                  overflow-hidden bg-gray-800 text-white transition-all before:absolute
-                  before:h-0 before:w-0 before:rounded-full bg-primary before:bg-secondary
-                  before:duration-500 before:ease-out hover:shadow-bghover
-                 hover:before:h-56 hover:before:w-56">
+            <Button className="relative flex items-center justify-center overflow-hidden text-white transition-all border-none  before:absolute before:h-0 before:w-0 before:rounded-full bg-primary before:bg-secondary before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
               <span className="relative z-10 font-federo text-[16px]">Contact Us</span>
             </Button>
           </ScrollLink>
@@ -181,7 +192,7 @@ const OtherPageNavbar = () => {
                     onClick={() => {
                       router.push("/");
                     }}
-                    className="relative my-8 mx-6 flex h-[50px] w-40 items-center justify-center overflow-hidden bg-gray-800 text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
+                    className="relative my-8 mx-6 flex h-[50px] w-40 items-center justify-center overflow-hidden  text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
                     <span className="relative z-10 font-federo text-[20px]">
                       Contact Us
                     </span>

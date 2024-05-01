@@ -35,6 +35,7 @@ export default function Footer() {
     // {label: "Site Map", destination: "/sitemap"},
     // {label: "Our Team", destination: "/team"},
     {label: "About Us", destination: "/about"},
+    {label: "Blog", destination: "/blog"},
   ];
   const Services = [
     {label: "Software Development"},
@@ -63,7 +64,7 @@ export default function Footer() {
                 <Image src={erexLogo} alt="logo" className="max-w-full" />
               </ScrollLink>
 
-              <p className="text-base mb-7 text-body-color text-gray">
+              <p className="text-base mb-7 text-body-color text-grey">
                 West Bengal India
               </p>
               <div className="flex justify-start w-full gap-2 ">
@@ -90,7 +91,7 @@ export default function Footer() {
                           onClick={() => {
                             Router.push(client?.destination);
                           }}
-                          className="inline-block text-base leading-normal cursor-pointer text-body-color hover:text-primary text-gray">
+                          className="inline-block text-base leading-normal cursor-pointer text-body-color hover:text-primary text-grey">
                           {client.label}
                         </button>
                       </li>
@@ -112,7 +113,7 @@ export default function Footer() {
                           smooth={true}
                           offset={-70}
                           duration={500}
-                          className="inline-block text-base leading-normal cursor-pointer text-body-color  text-gray">
+                          className="inline-block text-base leading-normal cursor-pointer text-body-color text-grey">
                           {services.label}
                         </ScrollLink>
                       </li>
@@ -126,7 +127,7 @@ export default function Footer() {
                 <h4 className="mb-6 text-xl font-normal font-federo text-secondary">
                   Get In Touch
                 </h4>
-                <p className="text-gray  ">We Are Always Ready For Your Solution</p>
+                <p className="text-grey ">We Are Always Ready For Your Solution</p>
                 <div className="flex justify-start w-full gap-4 py-5 ">
                   <SocialLink />
                 </div>
@@ -139,7 +140,7 @@ export default function Footer() {
               All Rights Reserved.
             </text>
           </div>
-          <div className="relative flex items-center -top-2 justify-center w-full md:hidden ">
+          <div className="relative flex items-center justify-center w-full -top-2 md:hidden ">
             <div
               className=" w-12 h-12 md:w-14 md:h-14 2xl:w-16 2xl:h-16 rounded-full flex justify-center pt-[4px]  md:pt-[5px]    md:bottom-36 bottom-[6.5rem] 2xl:pt-[9px]  right-4 cursor-pointer  bg-primary absolute z-[999] "
               onClick={scrollUp}>

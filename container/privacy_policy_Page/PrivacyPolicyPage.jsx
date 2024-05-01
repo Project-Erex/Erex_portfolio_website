@@ -6,8 +6,8 @@ export default function PrivacyPolicyPage() {
     <section className="flex justify-center w-full border-y-2 2xl:border-y-0 bg-background border-watermark ">
       <div className="w-full max-w-screen-2xl ">
         <div
-          className={` ${styles.yPadding}   ${styles.xMargin} ${styles.xdivPadding} bg-background 2xl:border-y-4  md:border-x-2 border-watermark  mt-20 h-full  relative  bg-backgroundGray `}>
-          <h1 className="text-5xl font-federo font-medium text-secondary pb-8">
+          className={` ${styles.yPadding}   ${styles.xMargin} ${styles.xdivPadding} bg-background 2xl:border-y-4  md:border-x-2 border-watermark  mt-20 h-full  relative   `}>
+          <h1 className="pb-8 text-5xl font-medium font-federo text-secondary">
             Privacy Policy
           </h1>
           <div className="font-poppins font-normal text-base text-[#171717] flex w-full flex-col gap-4">
@@ -31,11 +31,11 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           {/* ********************************************************************************* */}
-          <div className="flex w-full flex-col gap-4 py-8">
-            <h2 className="text-4xl text-secondary font-federo font-medium">
+          <div className="flex flex-col w-full gap-4 py-8">
+            <h2 className="text-4xl font-medium text-secondary font-federo">
               Interpretation and Definitions
             </h2>
-            <h3 className="text-3xl text-secondary font-federo font-medium">
+            <h3 className="text-3xl font-medium text-secondary font-federo">
               Interpretation
             </h3>
             <p className="font-poppins font-normal text-base  text-[#171717]">
@@ -46,17 +46,17 @@ export default function PrivacyPolicyPage() {
           </div>
           {/* ********************************************************************************* */}
           <div>
-            <h3 className="text-3xl text-secondary font-federo font-medium ">
+            <h3 className="text-3xl font-medium text-secondary font-federo ">
               Definitions
             </h3>
 
             <p className="font-poppins font-normal text-base  py-8 text-[#171717]">
               For the purposes of this Privacy Policy:
             </p>
-            <ul className="list-disc text-xl flex text-start pl-12 text-secondary flex-col gap-6 ">
+            <ul className="flex flex-col gap-6 pl-12 text-xl list-disc text-start text-secondary ">
               <li className="">
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     Account
                   </strong>{" "}
                   means a unique account created for You to access our Service or parts of
@@ -65,7 +65,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     Affiliate
                   </strong>{" "}
                   means an entity that controls, is controlled by or is under common
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     Company
                   </strong>{" "}
                   (referred to as either &quot;the Company&quot;, &quot;We&quot;,
@@ -86,7 +86,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     Cookies
                   </strong>{" "}
                   are small files that are placed on Your computer, mobile device or any
@@ -96,7 +96,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     Country
                   </strong>{" "}
                   refers to: West Bengal, India
@@ -104,7 +104,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     Device
                   </strong>{" "}
                   means any device that can access the Service such as a computer, a
@@ -113,7 +113,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     Personal Data
                   </strong>{" "}
                   is any information that relates to an identified or identifiable
@@ -122,7 +122,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     Service
                   </strong>{" "}
                   refers to the Website.
@@ -130,7 +130,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     Service Provider
                   </strong>{" "}
                   means any natural or legal person who processes the data on behalf of
@@ -142,7 +142,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     Third-party Social Media Service
                   </strong>{" "}
                   refers to any website or any social network website through which a User
@@ -151,7 +151,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     Usage Data
                   </strong>{" "}
                   refers to data collected automatically, either generated by the use of
@@ -161,7 +161,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     Website
                   </strong>{" "}
                   refers to Erex Studio, accessible from{" "}
@@ -175,7 +175,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">You</strong>{" "}
+                  <strong className="text-base font-semibold text-secondary">You</strong>{" "}
                   means the individual accessing or using the Service, or the company, or
                   other legal entity on behalf of which such individual is accessing or
                   using the Service, as applicable.
@@ -185,14 +185,14 @@ export default function PrivacyPolicyPage() {
           </div>
           {/* ********************************************************************************* */}
           <div>
-            <h2 className="text-4xl text-secondary font-federo py-8 font-medium">
+            <h2 className="py-8 text-4xl font-medium text-secondary font-federo">
               Collecting and Using Your Personal Data
             </h2>
             <div className="flex flex-col gap-6">
-              <h3 className="text-3xl text-secondary font-federo font-medium">
+              <h3 className="text-3xl font-medium text-secondary font-federo">
                 Types of Data Collected
               </h3>
-              <h4 className="text-secondary text-2xl font-federo">Personal Data</h4>
+              <h4 className="text-2xl text-secondary font-federo">Personal Data</h4>
               <p className="font-poppins font-normal text-base  text-[#171717]">
                 While using Our Service, We may ask You to provide Us with certain
                 personally identifiable information that can be used to contact or
@@ -200,7 +200,7 @@ export default function PrivacyPolicyPage() {
                 limited to:
               </p>
               <div>
-                <ul className="list-disc text-xl flex text-start pl-12 text-secondary flex-col gap-6">
+                <ul className="flex flex-col gap-6 pl-12 text-xl list-disc text-start text-secondary">
                   <li>
                     <p className="font-poppins font-normal text-base  text-[#171717]">
                       Email address
@@ -232,7 +232,7 @@ export default function PrivacyPolicyPage() {
           </div>
           {/* ********************************************************************************* */}
           <div className="py-8">
-            <h4 className="text-secondary text-2xl font-federo pb-8">Usage Data</h4>
+            <h4 className="pb-8 text-2xl text-secondary font-federo">Usage Data</h4>
             <div className="flex flex-col gap-4">
               <p className="font-poppins font-normal text-base  text-[#171717]">
                 Usage Data is collected automatically when using the Service.
@@ -259,14 +259,14 @@ export default function PrivacyPolicyPage() {
           </div>
           {/* ********************************************************************************* */}
           <div className="flex flex-col gap-6">
-            <h4 className="text-secondary text-2xl font-federo">
+            <h4 className="text-2xl text-secondary font-federo">
               Information from Third-Party Social Media Services
             </h4>
             <p className="font-poppins font-normal text-base  text-[#171717]">
               The Company allows You to create an account and log in to use the Service
               through the following Third-party Social Media Services:
             </p>
-            <ul className="list-disc text-xl flex text-start pl-12 text-secondary flex-col gap-6">
+            <ul className="flex flex-col gap-6 pl-12 text-xl list-disc text-start text-secondary">
               <li>Google</li>
               <li>Facebook</li>
               <li>Instagram</li>
@@ -293,8 +293,8 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           {/* ********************************************************************************* */}
-          <div className="py-8 flex-col flex gap-6">
-            <h4 className="text-secondary text-2xl font-federo">
+          <div className="flex flex-col gap-6 py-8">
+            <h4 className="text-2xl text-secondary font-federo">
               Tracking Technologies and Cookies
             </h4>
             <p className="font-poppins font-normal text-base  text-[#171717]">
@@ -303,9 +303,9 @@ export default function PrivacyPolicyPage() {
               beacons, tags, and scripts to collect and track information and to improve
               and analyze Our Service. The technologies We use may include:
             </p>
-            <ul className="list-disc text-xl flex text-start pl-12 text-secondary flex-col gap-6">
+            <ul className="flex flex-col gap-6 pl-12 text-xl list-disc text-start text-secondary">
               <li>
-                <strong className="text-secondary text-base font-semibold">
+                <strong className="text-base font-semibold text-secondary">
                   Cookies or Browser Cookies.
                 </strong>
                 <p
@@ -319,7 +319,7 @@ export default function PrivacyPolicyPage() {
                 </p>
               </li>
               <li>
-                <strong className="text-secondary text-base font-semibold">
+                <strong className="text-base font-semibold text-secondary">
                   Web Beacons.
                 </strong>{" "}
                 <p
@@ -348,15 +348,15 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           {/* ********************************************************************************* */}
-          <div className=" flex flex-col gap-6">
+          <div className="flex flex-col gap-6 ">
             <p className="font-poppins font-normal text-base  text-[#171717]">
               We use both Session and Persistent Cookies for the purposes set out below:
             </p>
-            <ul className="list-disc text-xl flex text-start pl-12 text-secondary flex-col gap-4">
+            <ul className="flex flex-col gap-4 pl-12 text-xl list-disc text-start text-secondary">
               <li>
                 <div className="flex flex-col gap-3">
                   <p className="font-poppins font-normal text-base  text-[#171717]">
-                    <strong className="text-secondary text-base font-semibold">
+                    <strong className="text-base font-semibold text-secondary">
                       Necessary / Essential Cookies
                     </strong>
                   </p>
@@ -380,7 +380,7 @@ export default function PrivacyPolicyPage() {
               <li>
                 <div className="flex flex-col gap-3">
                   <p className="font-poppins font-normal text-base  text-[#171717]">
-                    <strong className="text-secondary text-base font-semibold">
+                    <strong className="text-base font-semibold text-secondary">
                       Cookies Policy / Notice Acceptance Cookies
                     </strong>
                   </p>
@@ -400,7 +400,7 @@ export default function PrivacyPolicyPage() {
               <li>
                 <div className="flex flex-col gap-3">
                   <p className="font-poppins font-normal text-base  text-[#171717]">
-                    <strong className="text-secondary text-base font-semibold">
+                    <strong className="text-base font-semibold text-secondary">
                       Functionality Cookies
                     </strong>
                   </p>
@@ -428,17 +428,17 @@ export default function PrivacyPolicyPage() {
           </div>
 
           {/* ********************************************************************************* */}
-          <div className="py-8 flex flex-col gap-6">
-            <h3 className="text-3xl text-secondary font-federo font-medium">
+          <div className="flex flex-col gap-6 py-8">
+            <h3 className="text-3xl font-medium text-secondary font-federo">
               Use of Your Personal Data
             </h3>
             <p className="font-poppins font-normal text-base  text-[#171717]">
               The Company may use Personal Data for the following purposes:
             </p>
-            <ul className="list-disc text-xl flex text-start pl-12 text-secondary flex-col gap-4">
+            <ul className="flex flex-col gap-4 pl-12 text-xl list-disc text-start text-secondary">
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     To provide and maintain our Service
                   </strong>
                   , including to monitor the usage of our Service.
@@ -446,7 +446,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     To manage Your Account:
                   </strong>{" "}
                   to manage Your registration as a user of the Service. The Personal Data
@@ -456,7 +456,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     For the performance of a contract:
                   </strong>{" "}
                   the development, compliance and undertaking of the purchase contract for
@@ -466,7 +466,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     To contact You:
                   </strong>{" "}
                   {`
@@ -480,7 +480,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     To provide You
                   </strong>{" "}
                   with news, special offers and general information about other goods,
@@ -491,7 +491,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     To manage Your requests:
                   </strong>{" "}
                   To attend and manage Your requests to Us.
@@ -499,7 +499,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     For business transfers:
                   </strong>{" "}
                   We may use Your information to evaluate or conduct a merger,
@@ -512,7 +512,7 @@ export default function PrivacyPolicyPage() {
               </li>
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
-                  <strong className="text-secondary text-base font-semibold">
+                  <strong className="text-base font-semibold text-secondary">
                     For other purposes
                   </strong>
                   : We may use Your information for other purposes, such as data analysis,
@@ -525,16 +525,16 @@ export default function PrivacyPolicyPage() {
             <p className="font-poppins font-normal text-base  text-[#171717]">
               We may share Your personal information in the following situations:
             </p>
-            <ul className="list-disc text-xl flex text-start pl-12 text-secondary flex-col gap-4">
+            <ul className="flex flex-col gap-4 pl-12 text-xl list-disc text-start text-secondary">
               <li>
-                <strong className="text-secondary text-base font-semibold">
+                <strong className="text-base font-semibold text-secondary">
                   With Service Providers:
                 </strong>{" "}
                 We may share Your personal information with Service Providers to monitor
                 and analyze the use of our Service, to contact You.
               </li>
               <li>
-                <strong className="text-secondary text-base font-semibold">
+                <strong className="text-base font-semibold text-secondary">
                   For business transfers:
                 </strong>{" "}
                 We may share or transfer Your personal information in connection with, or
@@ -542,7 +542,7 @@ export default function PrivacyPolicyPage() {
                 acquisition of all or a portion of Our business to another company.
               </li>
               <li>
-                <strong className="text-secondary text-base font-semibold">
+                <strong className="text-base font-semibold text-secondary">
                   With Affiliates:
                 </strong>{" "}
                 We may share Your information with Our affiliates, in which case we will
@@ -552,14 +552,14 @@ export default function PrivacyPolicyPage() {
               </li>
 
               <li>
-                <strong className="text-secondary text-base font-semibold">
+                <strong className="text-base font-semibold text-secondary">
                   With business partners:
                 </strong>{" "}
                 We may share Your information with Our business partners to offer You
                 certain products, services or promotions.
               </li>
               <li>
-                <strong className="text-secondary text-base font-semibold">
+                <strong className="text-base font-semibold text-secondary">
                   With other users:
                 </strong>{" "}
                 when You share personal information or otherwise interact in the public
@@ -571,7 +571,7 @@ export default function PrivacyPolicyPage() {
                 descriptions of Your activity, communicate with You and view Your profile.
               </li>
               <li>
-                <strong className="text-secondary text-base font-semibold">
+                <strong className="text-base font-semibold text-secondary">
                   With Your consent
                 </strong>
                 : We may disclose Your personal information for any other purpose with
@@ -582,7 +582,7 @@ export default function PrivacyPolicyPage() {
           {/* ******************************************************************************************* */}
 
           <div className="flex flex-col gap-6">
-            <h3 className="text-3xl text-secondary font-federo font-medium">
+            <h3 className="text-3xl font-medium text-secondary font-federo">
               Retention of Your Personal Data
             </h3>
             <p className="font-poppins font-normal text-base  text-[#171717]">
@@ -602,7 +602,7 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           <div className="flex flex-col gap-6 py-6">
-            <h3 className="text-3xl text-secondary font-federo font-medium">
+            <h3 className="text-3xl font-medium text-secondary font-federo">
               Transfer of Your Personal Data
             </h3>
             <p className="font-poppins font-normal text-base  text-[#171717]">
@@ -626,7 +626,7 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           <div className="flex flex-col gap-6">
-            <h3 className="text-3xl text-secondary font-federo font-medium">
+            <h3 className="text-3xl font-medium text-secondary font-federo">
               Delete Your Personal Data
             </h3>
             <p className="font-poppins font-normal text-base  text-[#171717]">
@@ -650,11 +650,11 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           <div className="flex flex-col gap-6 py-6">
-            <h3 className="text-3xl text-secondary font-federo font-medium">
+            <h3 className="text-3xl font-medium text-secondary font-federo">
               Disclosure of Your Personal Data
             </h3>
 
-            <h4 className="text-secondary text-2xl font-federo">Business Transactions</h4>
+            <h4 className="text-2xl text-secondary font-federo">Business Transactions</h4>
             <p className="font-poppins font-normal text-base  text-[#171717]">
               If the Company is involved in a merger, acquisition or asset sale, Your
               Personal Data may be transferred. We will provide notice before Your
@@ -663,7 +663,7 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           <div className="flex flex-col gap-6 ">
-            <h4 className="text-secondary text-2xl font-federo">Law enforcement</h4>
+            <h4 className="text-2xl text-secondary font-federo">Law enforcement</h4>
             <p className="font-poppins font-normal text-base  text-[#171717]">
               Under certain circumstances, the Company may be required to disclose Your
               Personal Data if required to do so by law or in response to valid requests
@@ -671,14 +671,14 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           <div className="flex flex-col gap-6 py-6">
-            <h4 className="text-secondary text-2xl font-federo">
+            <h4 className="text-2xl text-secondary font-federo">
               Other legal requirements
             </h4>
             <p className="font-poppins font-normal text-base  text-[#171717]">
               The Company may disclose Your Personal Data in the good faith belief that
               such action is necessary to:
             </p>
-            <ul className="list-disc text-xl flex text-start pl-12 text-secondary flex-col gap-4">
+            <ul className="flex flex-col gap-4 pl-12 text-xl list-disc text-start text-secondary">
               <li>Comply with a legal obligation</li>
               <li>Protect and defend the rights or property of the Company</li>
 
@@ -690,7 +690,7 @@ export default function PrivacyPolicyPage() {
             </ul>
           </div>
           <div className="flex flex-col gap-4">
-            <h3 className="text-3xl text-secondary font-federo font-medium">
+            <h3 className="text-3xl font-medium text-secondary font-federo">
               Security of Your Personal Data
             </h3>
             <p className="font-poppins font-normal text-base  text-[#171717]">
@@ -701,7 +701,7 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           <div className="flex flex-col gap-4 py-6">
-            <h2 className="text-4xl text-secondary font-federo font-medium">
+            <h2 className="text-4xl font-medium text-secondary font-federo">
               {`Children's Privacy`}
             </h2>
             <p className="font-poppins font-normal text-base  text-[#171717]">
@@ -722,7 +722,7 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           <div className="flex flex-col gap-4 ">
-            <h2 className="text-4xl text-secondary font-federo font-medium">
+            <h2 className="text-4xl font-medium text-secondary font-federo">
               Links to Other Websites
             </h2>
             <p className="font-poppins font-normal text-base  text-[#171717]">
@@ -737,7 +737,7 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           <div className="flex flex-col gap-4 py-6">
-            <h2 className="text-4xl text-secondary font-federo font-medium">
+            <h2 className="text-4xl font-medium text-secondary font-federo">
               Changes to this Privacy Policy
             </h2>
             <p className="font-poppins font-normal text-base  text-[#171717]">
@@ -756,13 +756,13 @@ export default function PrivacyPolicyPage() {
             </p>
           </div>
           <div className="flex flex-col gap-4 ">
-            <h2 className="text-4xl text-secondary font-federo font-medium">
+            <h2 className="text-4xl font-medium text-secondary font-federo">
               Contact Us
             </h2>
             <p className="font-poppins font-normal text-base  text-[#171717]">
               If you have any questions about this Privacy Policy, You can contact us:
             </p>
-            <ul className="list-disc text-xl flex text-start pl-12 text-secondary flex-col gap-4">
+            <ul className="flex flex-col gap-4 pl-12 text-xl list-disc text-start text-secondary">
               <li>
                 <p className="font-poppins font-normal text-base  text-[#171717]">
                   By email: support@erex.in

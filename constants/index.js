@@ -342,7 +342,7 @@ const DigitalMarketing = [
   {
     title: "Ads Only",
     id: 4,
-    text: "[ The First Month Incurs No Extra Charges. ]",
+    text: "[ The First Month Includes No Extra Charges. ]",
   },
   {
     title: "General",
@@ -350,9 +350,9 @@ const DigitalMarketing = [
     text: "[ Rs. 14900 First Month ]",
   },
   {
-    title: "General Ads",
+    title: "Social Media & Marketing",
     id: 6,
-    text: "[ The First Month Incurs No Extra Charges. ]",
+    text: "[ The First Month Includes No Extra Charges. ]",
   },
   {
     title: "Basic",

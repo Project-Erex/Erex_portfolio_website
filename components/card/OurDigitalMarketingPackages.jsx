@@ -231,7 +231,7 @@ export default function OurDigitalMarketingPackages() {
                   alt="icon"
                 />
               </div>
-              <p className="text-2xl font-medium text-[#F24E1E]">
+              <p className="md:text-xl text-lg font-medium text-[#F24E1E]">
                 {DigitalMarketing[5].title}
               </p>
             </div>

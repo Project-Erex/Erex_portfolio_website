@@ -43,62 +43,6 @@ export default function BlogDetailsPage({blogId}) {
           </div>
         </div>
         {/* **************************** */}
-        {/* <div className={`w-full flex relative   ${styles.xPadding}`}>
-          <div className={`w-[30%] pt-8   hidden md:block h-full   sticky top-0 `}></div>
-          <div className={`w-[70%] h-full flex flex-col ${styles.xdivPadding}`}>
-            <div className={`  w-full h-full  relative  bg-background`}>
-              <p className="py-6 text-base font-normal text-secondary pr-14 font-public">
-                {`In the battle of short form vs. long form video content, only one can win…right
-                Well, not exactly. Creating videos for your business is a tried-and-true way to
-                boost engagement with your audience. In fact, it can increase conversion rates,
-                email click-through rates (CTR), brand association, and audience engagement.
-                But the question isn’t if you should use either short-form or long-form video for
-                your brand. It’s how you should incorporate both into your video marketing
-                strategy.`}
-              </p>
-              <h4 className="pb-6 text-2xl font-normal text-secondary font-public">
-                Short-form vs. long-form video content: Definitions
-              </h4>
-              <p className="pb-6 text-base font-normal text-secondary pr-14 font-public">
-                {`In the battle of short form vs. long form video content, only one can win…right
-                Well, not exactly. Creating videos for your business is a tried-and-true way to
-                boost engagement with your audience. In fact, it can increase conversion rates,
-                email click-through rates (CTR), brand association, and audience engagement.
-                But the question isn’t if you should use either short-form or long-form video for
-                your brand. It’s how you should incorporate both into your video marketing
-                strategy.`}
-              </p>
-              <Image
-                alt="Pexels_steve"
-                src={Pexels_steve}
-                width={0}
-                height={0}
-                className="w-full h-auto"
-              />
-              <p className="py-6 text-base font-normal text-secondary pr-14 font-public">
-                {`In the battle of short form vs. long form video content, only one can win…right
-                Well, not exactly. Creating videos for your business is a tried-and-true way to
-                boost engagement with your audience. In fact, it can increase conversion rates,
-                email click-through rates (CTR), brand association, and audience engagement.
-                But the question isn’t if you should use either short-form or long-form video for
-                your brand. It’s how you should incorporate both into your video marketing
-                strategy.`}
-              </p>
-              <h4 className="text-2xl font-normal text-secondary font-public">
-                Short-form vs. long-form video content: Definitions
-              </h4>
-              <p className="py-6 text-base font-normal text-secondary pr-14 font-public">
-                {`In the battle of short form vs. long form video content, only one can win…right
-                Well, not exactly. Creating videos for your business is a tried-and-true way to
-                boost engagement with your audience. In fact, it can increase conversion rates,
-                email click-through rates (CTR), brand association, and audience engagement.
-                But the question isn’t if you should use either short-form or long-form video for
-                your brand. It’s how you should incorporate both into your video marketing
-                strategy.`}
-              </p>
-            </div>
-          </div>
-        </div> */}
 
         <div className="relative w-full h-auto pt-10">
           <Image

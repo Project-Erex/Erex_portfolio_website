@@ -10,7 +10,6 @@ import Image from "next/image";
 import moment from "moment";
 
 export default function BlogBanner({data}) {
-  console.log("agag", data);
   const slider = React.useRef(null);
   const settings = {
     dots: true,
@@ -34,7 +33,6 @@ export default function BlogBanner({data}) {
       </button>
       <Slider ref={slider} {...settings}>
         {data.map((Blog, index) => {
-          console.log("baaba", Blog);
           return (
             <div key={index}>
               <div className="w-full px-5 md:px-6 lg:px-10 py-10 rounded-xl bg-[#407BFF]  bg-opacity-40 items-center  h-full flex flex-col md:flex-row">

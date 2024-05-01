@@ -117,6 +117,7 @@
 import React, {Suspense} from "react";
 import {motion} from "framer-motion";
 import {GoDotFill} from "react-icons/go";
+import Image from "next/image";
 
 // Simulated blog data
 const data = [
@@ -175,7 +176,7 @@ export default function BannerData() {
                 </h2>
               </div>
               <div className="flex items-center justify-center w-full h-full md:px-5 md:justify-end xl:px-0">
-                <img
+                <Image
                   src={blog.image}
                   alt={blog.name}
                   className="w-full h-full rounded-xl  sm:w-[450px] md:w-full"

@@ -63,6 +63,7 @@ export default function RevealPriceModal({
       setIsPrice(true);
       localStorage.setItem("isPrice", true);
       priceAnimation();
+      window.location.reload();
     } catch (error) {
       console.error("Error sending form data:", error);
       setIsLoading(false);
@@ -90,33 +91,33 @@ export default function RevealPriceModal({
               exit={{scale: 0}}
               transition={{duration: 0.3}}
               className="bg-background md:w-[400px] w-[350px] px-6 py-6 h-auto mt-24   relative rounded-md shadow-lg">
-              <div className="w-full justify-end items-center flex">
+              <div className="flex items-center justify-end w-full">
                 <button
                   onClick={handleClose}
-                  className="px-1 py-1 border border-secondary rounded-full">
+                  className="px-1 py-1 border rounded-full border-secondary">
                   <RxCross2 />
                 </button>
               </div>
-              <div className="w-full justify-center items-center flex">
+              <div className="flex items-center justify-center w-full">
                 <Image
                   width={0}
                   height={0}
                   alt="image"
                   src={Reveal}
-                  className="md:w-40 w-28 h-auto "
+                  className="h-auto md:w-40 w-28 "
                 />
               </div>
-              <div className="w-full flex flex-col gap-1">
-                <h2 className="text-secondary font-federo text-center font-medium text-2xl md:text-3xl">
+              <div className="flex flex-col w-full gap-1">
+                <h2 className="text-2xl font-medium text-center text-secondary font-federo md:text-3xl">
                   Reveal Our Price
                 </h2>
-                <p className="text-subheading font-poppins text-center font-normal text-sm md:text-base">
+                <p className="text-sm font-normal text-center text-subheading font-poppins md:text-base">
                   Access Exclusive Pricing by Simply Entering Your Mobile Number
                 </p>
                 <form
                   ref={form}
                   onSubmit={handleSubmit(onSubmit)}
-                  className="flex flex-col px-6 items-center">
+                  className="flex flex-col items-center px-6">
                   <div className="w-full lg:mb-4 ">
                     <label
                       className="font-medium md:text-sm xl:text-base font-public text-secondary"
@@ -136,7 +137,7 @@ export default function RevealPriceModal({
                   <div className="mb-6">
                     <div className="w-full ">
                       <label
-                        className="font-medium  md:text-sm xl:text-base  font-public text-secondary"
+                        className="font-medium md:text-sm xl:text-base font-public text-secondary"
                         htmlFor="businessName">
                         Mobile number <span className="text-red-500">*</span>
                       </label>

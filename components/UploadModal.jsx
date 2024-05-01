@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, {useState} from "react";
 
 export default function UploadModal({handleUploadedImage}) {
@@ -30,7 +31,7 @@ export default function UploadModal({handleUploadedImage}) {
                   htmlFor="fileUpload"
                   className="flex flex-col items-center cursor-pointer text-secondary justify-center px-2 py-5 bg-white hover:bg-slate-100 w-full border-2 border-lightGray border-dotted rounded-[10px]">
                   {previewURL ? (
-                    <img
+                    <Image
                       src={previewURL}
                       alt="Preview"
                       className="w-full h-auto rounded-md"

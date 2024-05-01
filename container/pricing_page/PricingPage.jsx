@@ -3,10 +3,7 @@
 import React from "react";
 
 import {styles} from "@/app/styles";
-import {ComputerApp, MobileApp} from "../../app/assets";
-import Image from "next/image";
 import Influencers from "../../components/Influencer/Influencers";
-import Link from "next/link";
 import DigitalMarketingbanner from "@/components/firebase/DigitalMarketingbanner";
 import OurPackegs from "@/components/card/OurPackegs";
 import {PriceHeading} from "@/components/heading/BlogHeading";

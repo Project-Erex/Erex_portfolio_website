@@ -5,7 +5,6 @@ import Categories from "@/components/categories/Categories";
 import FeaturedPostCard from "@/components/card/FeaturedPostCard";
 import {BlogHeading, BlogHeadingSec} from "@/components/heading/BlogHeading";
 import {Banner} from "@/components/Banners/Banner";
-import BlogBanner from "@/components/Banners/BlogBanner";
 
 export default function BlogPage() {
   return (
@@ -19,7 +18,6 @@ export default function BlogPage() {
                 "linear-gradient(180deg, rgba(205,221,255,1) 30%, rgba(255,255,255,1) 100%)",
             }}
             className={`${styles.xPadding}  relative lg:pt-16 md:pt-10 pt-6 mt-[90px] h-full  overflow-hidden  w-full bg-background`}>
-            {/* <BlogBanner /> */}
             <Banner />
           </div>
           <div

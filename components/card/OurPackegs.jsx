@@ -155,7 +155,7 @@ export default function OurPackegs() {
                     <>
                       <button
                         onClick={handlePriceClick}
-                        className=" text-background flex items-center gap-2 text-center bg-primary font-bold py-[6px] px-4 rounded-lg">
+                        className=" text-background flex items-center gap-2 text-center bg-[#A259FF] font-bold py-[6px] px-4 rounded-lg">
                         Show price
                         <span className="pt-1">
                           <FaRegEye size={20} />
@@ -168,7 +168,7 @@ export default function OurPackegs() {
                       <motion.div className="text-4xl font-bold text-secondary ">
                         {rounded}
                       </motion.div>
-                      <p className="text-[#4169E1] pt-[6px] ">
+                      <p className="text-[#A259FF] pt-[6px] ">
                         <span className="text-2xl">/</span>Month
                       </p>
                     </>

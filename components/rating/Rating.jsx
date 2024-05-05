@@ -1,9 +1,8 @@
 "use client";
 import React, {useState} from "react";
 
-const Review = () => {
+const Review = ({setSelectedRating,selectedRating,onpress}) => {
   const [hoveredRating, setHoveredRating] = useState(null);
-  const [selectedRating, setSelectedRating] = useState(null);
 
   const ratings = [
     {emoji: "", name: "Give us a rating"},
@@ -22,9 +21,7 @@ const Review = () => {
     setHoveredRating(null);
   };
 
-  const handleRatingClick = (index) => {
-    setSelectedRating(index + 1);
-  };
+
 
   return (
     <div className="flex flex-col items-center ">
@@ -43,7 +40,7 @@ const Review = () => {
             className="cursor-pointer text-secondary text-5xl"
             onMouseEnter={() => handleRatingHover(index)}
             onMouseLeave={handleRatingLeave}
-            onClick={() => handleRatingClick(index)}>
+            onClick={() => onpress(index)}>
             {index < (hoveredRating || selectedRating) ? "★" : "☆"}
           </span>
         ))}

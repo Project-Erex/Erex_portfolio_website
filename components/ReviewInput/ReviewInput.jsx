@@ -1,12 +1,15 @@
+"use client"
 import React, { useState } from 'react'
 import Rating from "../../components/rating/Rating";
-export default function ReviewInput({clientName}) {
-
+import { useRouter } from 'next/navigation';
+export default function ReviewInput({clientName,project}) {
+	const router = useRouter();
 	const [review,setReview] = useState("")
 	const [rating,setRating] = useState("")
   const [selectedRating, setSelectedRating] = useState(null);
   const [laoding, setLoading] = useState(false);
-  const [messages, setMessage] = useState(false);
+  const [messages, setMessage] = useState("");
+  const [errorMsg, setErrorMsg] = useState(false);
 
 	const handleRatingClick = (index) => {
     setSelectedRating(index + 1);
@@ -14,18 +17,33 @@ export default function ReviewInput({clientName}) {
   };
 	const handleSubmit =async (e)=>{
 e.preventDefault()
+if(!rating){
+	setErrorMsg("Error! Add Rating First");
+	setTimeout(() => {
+		setErrorMsg("");
+	}, 2000);
+	return
+}
+if(!review){
+	setErrorMsg("Error! Add Review First");
+	setTimeout(() => {
+		setErrorMsg("");
+	}, 2000);
+	return
+}
 setLoading(true)
 try {
 	const res = await fetch("/api/add-review", {
-		body: JSON.stringify({client:clientName,review,rating}),
+		body: JSON.stringify({client:clientName,review,rating,project}),
 		headers: {"Content-Type": "application/json"},
 		method: "POST",
 	})
+	console.log("resposne===>",res)
 	if (res.error) {
 		setLoading(false);
-		setMessage("Error! Something went wrong");
+		setErrorMsg("Error! Something went wrong");
 		setTimeout(() => {
-			setMessage("");
+			setErrorMsg("");
 		}, 5000);
 		return;
 	}
@@ -35,13 +53,14 @@ try {
 	setSelectedRating(null)
 	setTimeout(() => {
 		setMessage("");
-	}, 5000);
+		router.push('/thanksGiving');
+	}, 3000);
 	
 } catch (error) {
 	setLoading(false);
-		setMessage("Error! Something went wrong");
+	setErrorMsg("Error! Something went wrong");
 		setTimeout(() => {
-			setMessage("");
+			setErrorMsg("");
 		}, 5000);
 
 }
@@ -77,7 +96,7 @@ try {
 				<button
 					type="submit"
 					value="Send"
-					disabled={!review || laoding}
+					disabled={laoding}
 					onClick={handleSubmit}
 					className="relative flex h-[44px] w-32 items-center justify-center overflow-hidden  rounded-[10px] text-white transition-all before:absolute before:h-0 before:w-0 before:rounded-full bg-primary  before:bg-bghover before:duration-500 before:ease-out hover:shadow-bghover hover:before:h-56 hover:before:w-56">
 				{
@@ -97,6 +116,9 @@ try {
 		</form>
 		{messages &&(
 			<span className="relative z-10 font-federo text-[16px] text-gray-900">{messages}</span>
+		)}
+		{errorMsg &&(
+			<span className="relative z-10 font-federo text-[16px] text-red-500">{errorMsg}</span>
 		)}
 	</div>
 	)
